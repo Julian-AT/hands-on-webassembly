@@ -1,5 +1,5 @@
 import {createHash} from 'node:crypto';
-import {readFile, writeFile, mkdir, access, rm} from 'node:fs/promises';
+import {readFile, writeFile, mkdir, access, rm, statfs} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
 import {resolve, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -8,6 +8,7 @@ const pins = JSON.parse(await readFile(resolve(root,'manifests/toolchain.json'),
 const key = `${process.platform}-${process.arch}`;
 const checksum = pins.node.archives[key];
 if (!checksum) throw new Error(`Unsupported toolchain platform ${key}`);
+const disk=await statfs(root); const reserve=15*1024**3, estimate=3*1024**3; if(disk.bavail*disk.bsize<reserve+estimate) throw new Error('Insufficient space: keep 15 GiB reserve plus 3 GiB next-run footprint');
 const cache = resolve(root,'.tools'); await mkdir(cache,{recursive:true});
 async function download(url, path, algorithm, digest, encoding='hex') {
   let data;

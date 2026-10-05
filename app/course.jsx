@@ -19,11 +19,13 @@ export default function Course() {
       setUnit(current.unit);
       instance.select(current.unit).catch(error => live && setStatus({state: "error", error: error.message}));
     };
-    const leave = event => { if (!event.persisted) instance.close(); };
+    const leave = () => { instance.close(); };
+    const resume = event => { if (event.persisted) window.location.reload(); };
     restore();
     window.addEventListener("popstate", restore);
     window.addEventListener("pagehide", leave);
-    return () => { live = false; window.removeEventListener("popstate", restore); window.removeEventListener("pagehide", leave); instance.close(); launcher.current = null; };
+    window.addEventListener("pageshow", resume);
+    return () => { live = false; window.removeEventListener("popstate", restore); window.removeEventListener("pagehide", leave); window.removeEventListener("pageshow", resume); instance.close(); launcher.current = null; };
   }, []);
   const choose = event => {
     const next = Number(event.target.value);
