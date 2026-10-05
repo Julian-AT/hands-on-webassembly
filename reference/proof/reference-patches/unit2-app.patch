@@ -1,0 +1,111 @@
+--- supplied/unit2/app.py
++++ corrected/unit2/app.py
+@@ -1,6 +1,9 @@
++from pathlib import Path
+ from shiny import App, ui, render, reactive
+ from shinywidgets import output_widget, render_widget, render_plotly
+ import plotly.express as px
++import matplotlib
++matplotlib.use("Agg")
+ import matplotlib.pyplot as plt
+ import numpy as np
+ import spacy
+@@ -66,9 +69,10 @@
+ 
+ app_ui = ui.page_fluid(
+     ui.tags.head(
++        ui.tags.script(src="vendor/plotly/plotly.min.js"),
+         ui.tags.link(
+             rel="stylesheet",
+-            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/zephyr/bootstrap.min.css"
++            href="vendor/zephyr/bootstrap.min.css"
+         ),
+         ui.tags.link(
+             rel="stylesheet",
+@@ -639,7 +643,7 @@
+             height=420,
+         )
+ 
+-        plot_html = fig.to_html(full_html=False, include_plotlyjs="cdn", div_id="wave_plot_div")
++        plot_html = fig.to_html(full_html=False, include_plotlyjs=False, div_id="wave_plot_div")
+ 
+         js = """
+         <script>
+@@ -687,12 +691,12 @@
+             const tryStart = () => {
+             const visible = div.offsetParent !== null && div.clientWidth > 0;
+             if (!visible) { setTimeout(tryStart, 80); return; }
+-            try { window.Plotly.Plots.resize(div); } catch (e) {}
++            try { if (div.isConnected && div.offsetParent !== null && div.clientWidth > 0) window.Plotly.Plots.resize(div).catch(() => undefined); } catch (e) {}
+             startTimer();
+             wireClickToSeek();
+             if (!div.__resizeBound) {
+                 div.__resizeBound = true;
+-                new ResizeObserver(() => { try { window.Plotly.Plots.resize(div); } catch (e) {} }).observe(div);
++                new ResizeObserver(() => { try { if (div.isConnected && div.offsetParent !== null && div.clientWidth > 0) window.Plotly.Plots.resize(div).catch(() => undefined); } catch (e) {} }).observe(div);
+             }
+             };
+             tryStart();
+@@ -759,7 +763,7 @@
+             showlegend=False,
+             height=420,
+         )
+-        return ui.HTML(fig.to_html(full_html=False, include_plotlyjs="cdn", div_id=div_id))
++        return ui.HTML(fig.to_html(full_html=False, include_plotlyjs=False, div_id=div_id))
+ 
+ 
+     def compute_spectrogram_log(points: np.ndarray, sr: int, winsize=1024, hop=512):
+@@ -803,7 +807,7 @@
+         fig.add_shape(type="line", x0=0, x1=0, y0=float(freqs_hz.min()), y1=float(freqs_hz.max()),
+                     line=dict(color="red", width=2))
+ 
+-        html = fig.to_html(full_html=False, include_plotlyjs="cdn", div_id=div_id)
++        html = fig.to_html(full_html=False, include_plotlyjs=False, div_id=div_id)
+ 
+ 
+         move_js = ""
+@@ -838,11 +842,11 @@
+                 const tryStart=()=>{{
+                 const visible=d.offsetParent!==null && d.clientWidth>0;
+                 if(!visible){{ setTimeout(tryStart,80); return; }}
+-                try{{window.Plotly.Plots.resize(d);}}catch(e){{}}
++                try{{if (d.isConnected && d.offsetParent !== null && d.clientWidth > 0) window.Plotly.Plots.resize(d).catch(() => undefined);}}catch(e){{}}
+                 startTimer();
+                 if(!d.__resizeBound){{
+                     d.__resizeBound=true;
+-                    new ResizeObserver(()=>{{ try{{window.Plotly.Plots.resize(d);}}catch(e){{}} }}).observe(d);
++                    new ResizeObserver(()=>{{ try{{if (d.isConnected && d.offsetParent !== null && d.clientWidth > 0) window.Plotly.Plots.resize(d).catch(() => undefined);}}catch(e){{}} }}).observe(d);
+                 }}
+                 }};
+                 tryStart();
+@@ -1019,7 +1023,7 @@
+ 
+         one_hot, _ = u2.convert_to_onehot(words, " ".join(words))
+         df = pd.DataFrame(one_hot.to_numpy(),
+-                     index=get_words(),
++                     index=one_hot.index,
+                      columns=[f"{i}" for i in range(one_hot.shape[1])])
+         view = (
+             df.applymap(lambda x: f"{x:.0f}")
+@@ -1123,7 +1127,7 @@
+             margin=dict(l=40, r=20, t=30, b=40),
+             showlegend=False, height=520
+         )
+-        return ui.HTML(fig.to_html(full_html=False, include_plotlyjs="cdn", div_id="emb2d_div"))
++        return ui.HTML(fig.to_html(full_html=False, include_plotlyjs=False, div_id="emb2d_div"))
+     
+     @output
+     @render.ui
+@@ -1155,9 +1159,9 @@
+             margin=dict(l=0, r=0, t=30, b=0),
+             showlegend=False, height=560
+         )
+-        return ui.HTML(fig.to_html(full_html=False, include_plotlyjs="cdn", div_id="emb3d_div"))
+-
+-app = App(app_ui, server)
++        return ui.HTML(fig.to_html(full_html=False, include_plotlyjs=False, div_id="emb3d_div"))
++
++app = App(app_ui, server, static_assets=Path(__file__).parent / "www")
+ 
+ if __name__ == "__main__":
+     app.run()

@@ -1,0 +1,19 @@
+{
+  "archive": "assignments/Material-20261003/app.zip",
+  "materials": {
+    "assignments/Material-20261003/DataSet_LR_a.csv": "7034b1b197de598c8dac4d0489e0c6ed5d2f2eb9c7aee2d875d57d0c602fda71",
+    "assignments/Material-20261003/Fashion-MNIST/raw/t10k-images-idx3-ubyte": "5b4141f0afbad91edebe8549f8fcffe087ea10ca49f1dbef5c9a5cd8815ce37b",
+    "assignments/Material-20261003/Fashion-MNIST/raw/t10k-images-idx3-ubyte.gz": "346e55b948d973a97e58d2351dde16a484bd415d4595297633bb08f03db6a073",
+    "assignments/Material-20261003/Fashion-MNIST/raw/t10k-labels-idx1-ubyte": "0402a96d92fd2663957122ceb108a494c5af83dab82d92729df917d7dec38c34",
+    "assignments/Material-20261003/Fashion-MNIST/raw/t10k-labels-idx1-ubyte.gz": "67da17c76eaffca5446c3361aaab5c3cd6d1c2608764d35dfb1850b086bf8dd5",
+    "assignments/Material-20261003/Fashion-MNIST/raw/train-images-idx3-ubyte": "c59f468a2f672dc815687fe0f83887768d799fd8a3f3276145d20f83aa44d888",
+    "assignments/Material-20261003/Fashion-MNIST/raw/train-images-idx3-ubyte.gz": "3aede38d61863908ad78613f6a32ed271626dd12800ba2636569512369268a84",
+    "assignments/Material-20261003/Fashion-MNIST/raw/train-labels-idx1-ubyte": "bad3541b69d912435c50bb6ba87bec294ff4f6a2e1246121d8633921760443d9",
+    "assignments/Material-20261003/Fashion-MNIST/raw/train-labels-idx1-ubyte.gz": "a04f17134ac03560a47e3764e11b92fc97de4d1bfaf8ba1a3aa29af54cc90845",
+    "assignments/Material-20261003/app.zip": "ebe8b75dc797e2dffd54121389d30dd5be64afbd2225901d51e4a8b126edddff"
+  },
+  "sources": {
+    "assignments/5/app.py": "97a538bed64f52f3561ef006b2d68bbdcd0fa713a01683e9990826d209881379",
+    "assignments/5/u5_utils.py": "b3670ed061282d624138b90534b7841ead7d6f3a2322456ac5ba5dfd5f5561f8"
+  }
+}

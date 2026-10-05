@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "certification-mac16-7-m4-pro-24gb-v1",
+  "authorization": "User-approved release implementation plan: certify this 24 GB M4 Pro MacBook, replacing the physical 8 GB requirement.",
+  "active": {
+    "machine": "MacBook Pro",
+    "model": "Mac16,7",
+    "cpu": "Apple M4 Pro",
+    "physical_ram_bytes": 25769803776,
+    "integrated_graphics": true
+  },
+  "supersession": {
+    "previous": "physical-8gb-integrated-graphics",
+    "retained_suite_pattern": "unit{unit}/8gb/{browser}",
+    "retained_delivery_case": "physical-8gb-integrated-graphics",
+    "policy": "Legacy IDs remain stable. Fresh evidence must identify and bind the active device; historical 8 GB claims do not certify this contract."
+  }
+}

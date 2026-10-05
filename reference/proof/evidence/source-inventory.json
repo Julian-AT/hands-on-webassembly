@@ -1,0 +1,2874 @@
+{
+  "1": {
+    "folder": "assignments/1",
+    "files": {
+      "assignments/1/app.py": {
+        "sha256": "b37816de0c614a8bea3265074582598671e003d340a479526faff6c06602280d",
+        "bytes": 28279
+      }
+    },
+    "imports": [
+      "io",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "plotly.express",
+      "plotly.graph_objects",
+      "plotly.subplots",
+      "seaborn",
+      "shiny",
+      "shinywidgets",
+      "sklearn",
+      "sklearn.cluster",
+      "sklearn.decomposition",
+      "sklearn.manifold",
+      "sklearn.preprocessing"
+    ],
+    "interface": [
+      {
+        "call": "nav_panel",
+        "line": 98,
+        "args": "ui.nav_panel('Intro', ui.row(ui.column(12, ui.p(), ui.p('This application demonstrates various data analysis                     techniques using several well-known datasets. You can explore dataset                     statistics, visualize data, perform dimensionality reduction,                     and conduct a correlation analysis.'), ui.p('Important note: make sure to use the supplied Anaconda                     environment to run this application.'), ui.h4('Wine Data'), ui.p('The Wine dataset is composed of various measurements of                     different wine attributes (e.g. the alcohol concentration).                     The data set distinguishes three different classes, one for each                     cultivator. It was published/donored by S. Aeberhard and originally                     gathered by:'), ui.markdown('\\n                    _Forina, M. et al, PARVUS - An Extendible Package for Data Exploration, Classification and Correlation. Institute of Pharmaceutical and Food Analysis and Technologies, Via Brigata Salerno, 16147 Genoa, Italy._\\n                    '), ui.p('Currently, it is maintained by the UCI Machine Learning Repository:'), ui.markdown('\\n                    _Lichman, M. (2013). [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php). Irvine, CA: University of California, School of Information and Computer Science._\\n                    '), ui.p('The wine dataset is a table with all 178 samples (we start to                     count at 0). Tabular data can have columns in various data types. In                     our case the thirteen features are given in floating point numbers                     (recall primitive data types). We would refer to the cultivator as a                     ', ui.strong('label '), 'or ', ui.strong('target '), 'rather than a                     feature, because we want to predict the cultivator using all other features.'), ui.p('Summarizing, the popular wine data set contains results of a                     chemical analysis for \\\\(n=178\\\\) different wines from three different                     classes, namely:'), ui.tags.ul(ui.tags.li('Cultivator 0: \\\\(n_{c0}=59\\\\)'), ui.tags.li('Cultivator 1: \\\\(n_{c1}=71\\\\)'), ui.tags.li('Cultivator 2: \\\\(n_{c2}=48\\\\)')), ui.p('Moreover, we have the following \\\\(d=13\\\\) features:'), ui.tags.ul(ui.tags.li('Alcohol'), ui.tags.li('Malic acid'), ui.tags.li('Ash'), ui.tags.li('Alcalinity of ash'), ui.tags.li('Magnesium'), ui.tags.li('Total phenols'), ui.tags.li('Flavanoids'), ui.tags.li('Nonflavanoid phenols'), ui.tags.li('Proanthocyanins'), ui.tags.li('Color intensity'), ui.tags.li('Hue'), ui.tags.li('OD280/OD315 of diluted wines'), ui.tags.li('Proline')), ui.h4('Penguins Data'), ui.p('The Penguins dataset contains 344 samples with measurements of penguin species                     from three different islands in Antarctic.'), ui.p(\"The target variable is 'species', which indicates the species of the penguin:\"), ui.tags.ul(ui.tags.li('Adelie: \\\\(n_{a}=152\\\\)'), ui.tags.li('Chinstrap: \\\\(n_{c}=73\\\\)'), ui.tags.li('Gentoo: \\\\(n_{g}=119\\\\)')), ui.p('Given the following \\\\(d=4\\\\) features:'), ui.tags.ul(ui.tags.li('Bill length (mm)'), ui.tags.li('Bill depth (mm)'), ui.tags.li('Flipper length (mm)'), ui.tags.li('Body mass (g)')), ui.p('The dataset is available from the seaborn library and was                     originally published by:'), ui.markdown('\\n                    _Palmer, T. (2020). [Palmer Penguins: An Introduction to Data Exploration](https://allisonhorst.github.io/palmerpenguins/). Retrieved from https://allisonhorst.github.io/palmerpenguins/_.\\n                    '), ui.h4('Iris Data'), ui.p('The Iris dataset is a classic dataset in machine learning                     and statistics. It contains measurements for 150 samples of iris flowers from three                     different species: Setosa, Versicolor, and Virginica. The dataset                     includes features such as sepal length, sepal width, petal length,                     and petal width.'), ui.p(\"The target variable is 'species', which indicates the species of the iris flower:\"), ui.tags.ul(ui.tags.li('Setosa: \\\\(n_{s}=50\\\\)'), ui.tags.li('Versicolor: \\\\(n_{v}=50\\\\)'), ui.tags.li('Virginica: \\\\(n_{v}=50\\\\)')), ui.p('Given the following \\\\(d=4\\\\) features:'), ui.tags.ul(ui.tags.li('Sepal length (cm)'), ui.tags.li('Sepal width (cm)'), ui.tags.li('Petal length (cm)'), ui.tags.li('Petal width (cm)')), ui.p('The dataset is available from the sklearn library and was                     originally published by:'), ui.markdown('\\n                    _Fisher, R.A. (1936). The use of multiple measurements in taxonomic problems. Annual Eugenics, 7(2), 179-188. doi:10.1111/j.1469-1809.1936.tb02137.x_.\\n                    '), ui.h4('Breast Cancer Data'), ui.p(\"The Breast Cancer dataset contains \\\\(n=569\\\\) samples with measurements of various                     features related to breast cancer tumors. The dataset includes features                     such as mean radius, mean texture, mean perimeter, and diagnosis (malignant                     or benign). The target variable is 'diagnosis', which indicates whether the tumor is malignant or benign:\"), ui.tags.ul(ui.tags.li('Malignant: \\\\(n_{m}=212\\\\)'), ui.tags.li('Benign: \\\\(n_{b}=357\\\\)')), ui.p('Given the following \\\\(d=30\\\\) features (list truncated):'), ui.tags.ul(ui.tags.li('Mean radius'), ui.tags.li('Mean texture'), ui.tags.li('Mean perimeter'), ui.tags.li('Mean area'), ui.tags.li('Mean smoothness'), ui.tags.li('Mean compactness'), ui.tags.li('Mean concavity'), ui.tags.li('Mean concave points'), ui.tags.li('Mean symmetry'), ui.tags.li('Mean fractal dimension')), ui.p('The dataset is available from the sklearn library and was                     originally published by:'), ui.markdown('\\n                    _Wolberg, W.H., Street, W.N., & Mangasarian, O.L. (1992).                     [Breast cancer Wisconsin (diagnostic) dataset](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)). UCI Machine Learning Repository._\\n                    '))))"
+      },
+      {
+        "call": "nav_panel",
+        "line": 229,
+        "args": "ui.nav_panel('Dataset Overview', ui.layout_sidebar(ui.sidebar(ui.tags.aside(ui.h4('Dataset Selection'), ui.input_select('dataset', 'Choose a Dataset:', choices={'wine': 'Wine', 'penguins': 'Penguins', 'iris': 'Iris', 'breast': 'Breast Cancer (Wisconsin)'}, selected='wine'), ui.br(), ui.input_action_button('load_data', 'Load Data', class_='btn-primary'), class_='sidebar'), width=300), ui.panel_conditional('input.load_data > 0', ui.h4('Dataset Information'), ui.output_text_verbatim('dataset_info'), ui.br(), ui.h4('Dataset'), ui.output_data_frame('data_table'), ui.br(), ui.h4('Column Info'), ui.output_text_verbatim('dataset_full_info'), ui.br(), ui.h4('Statistical Summary'), ui.output_data_frame('data_summary'), ui.br(), ui.h4('Value Counts of Target Column'), ui.output_text_verbatim('target_valuecount'))))"
+      },
+      {
+        "call": "input_select",
+        "line": 234,
+        "args": "ui.input_select('dataset', 'Choose a Dataset:', choices={'wine': 'Wine', 'penguins': 'Penguins', 'iris': 'Iris', 'breast': 'Breast Cancer (Wisconsin)'}, selected='wine')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 245,
+        "args": "ui.input_action_button('load_data', 'Load Data', class_='btn-primary')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 251,
+        "args": "ui.output_text_verbatim('dataset_info')"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 254,
+        "args": "ui.output_data_frame('data_table')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 257,
+        "args": "ui.output_text_verbatim('dataset_full_info')"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 260,
+        "args": "ui.output_data_frame('data_summary')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 263,
+        "args": "ui.output_text_verbatim('target_valuecount')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 267,
+        "args": "ui.nav_panel('Data Visualization', ui.layout_sidebar(ui.sidebar(ui.tags.aside(ui.h4('Visualization Controls'), ui.input_selectize('viz_features', 'Select Features:', choices=[], multiple=True), ui.input_select('viz_type', 'Visualization Type:', choices={'pairplot': 'Pairwise Relationships', 'boxplot': 'Box Plots', 'histogram': 'Histograms', 'scatter': 'Scatter Plot', 'violinplot': 'Violin Plots'}), ui.input_checkbox('color_by_target', 'Color by Target', value=True), ui.input_action_button('generate_viz', 'Generate Visualization', class_='btn-primary'), class_='sidebar'), width=300), ui.div(ui.output_plot('visualization_plot', height='600px'), class_='plot-container')))"
+      },
+      {
+        "call": "input_selectize",
+        "line": 272,
+        "args": "ui.input_selectize('viz_features', 'Select Features:', choices=[], multiple=True)"
+      },
+      {
+        "call": "input_select",
+        "line": 276,
+        "args": "ui.input_select('viz_type', 'Visualization Type:', choices={'pairplot': 'Pairwise Relationships', 'boxplot': 'Box Plots', 'histogram': 'Histograms', 'scatter': 'Scatter Plot', 'violinplot': 'Violin Plots'})"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 286,
+        "args": "ui.input_checkbox('color_by_target', 'Color by Target', value=True)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 287,
+        "args": "ui.input_action_button('generate_viz', 'Generate Visualization', class_='btn-primary')"
+      },
+      {
+        "call": "output_plot",
+        "line": 292,
+        "args": "ui.output_plot('visualization_plot', height='600px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 297,
+        "args": "ui.nav_panel('Dimensionality Reduction', ui.layout_sidebar(ui.sidebar(ui.tags.aside(ui.h4('Reduction Parameters'), ui.input_select('reduction_method', 'Method:', choices={'pca': 'PCA', 'tsne': 't-SNE'}), ui.input_numeric('n_components', 'Number of Components:', value=2, min=2, max=3), ui.input_checkbox('standardize', 'Standardize Data', value=True), ui.help_text('Standardizing data to have mean=0 and variance=1 is often beneficial for PCA and t-SNE.'), ui.panel_conditional(\"input.reduction_method === 'tsne'\", ui.input_slider('perplexity', 'Perplexity:', min=5, max=50, value=30)), ui.hr(), ui.input_action_button('apply_reduction', 'Apply Reduction', class_='btn-primary'), ui.br(), ui.br(), class_='sidebar'), width=300), ui.column(12, ui.p(), ui.div(ui.output_plot('reduction_plot', height='600px'), class_='plot-container'), ui.panel_conditional(\"input.reduction_method === 'pca'\", ui.output_text_verbatim('explained_variance')))))"
+      },
+      {
+        "call": "input_select",
+        "line": 302,
+        "args": "ui.input_select('reduction_method', 'Method:', choices={'pca': 'PCA', 'tsne': 't-SNE'})"
+      },
+      {
+        "call": "input_numeric",
+        "line": 306,
+        "args": "ui.input_numeric('n_components', 'Number of Components:', value=2, min=2, max=3)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 307,
+        "args": "ui.input_checkbox('standardize', 'Standardize Data', value=True)"
+      },
+      {
+        "call": "input_slider",
+        "line": 311,
+        "args": "ui.input_slider('perplexity', 'Perplexity:', min=5, max=50, value=30)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 314,
+        "args": "ui.input_action_button('apply_reduction', 'Apply Reduction', class_='btn-primary')"
+      },
+      {
+        "call": "output_plot",
+        "line": 323,
+        "args": "ui.output_plot('reduction_plot', height='600px')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 327,
+        "args": "ui.output_text_verbatim('explained_variance')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 332,
+        "args": "ui.nav_panel('Correlation Analysis', ui.layout_sidebar(ui.sidebar(ui.tags.aside(ui.h4('Features'), ui.input_selectize('analysis_features', 'Select Features for Analysis:', choices=[], multiple=True), ui.input_action_button('run_analysis', 'Run Analysis', class_='btn-primary'), class_='sidebar'), width=300), ui.column(12, ui.p(), ui.output_text_verbatim('analysis_results'), ui.div(ui.output_plot('analysis_plot', height='600px'), class_='plot-container'))))"
+      },
+      {
+        "call": "input_selectize",
+        "line": 337,
+        "args": "ui.input_selectize('analysis_features', 'Select Features for Analysis:', choices=[], multiple=True)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 341,
+        "args": "ui.input_action_button('run_analysis', 'Run Analysis', class_='btn-primary')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 347,
+        "args": "ui.output_text_verbatim('analysis_results')"
+      },
+      {
+        "call": "output_plot",
+        "line": 349,
+        "args": "ui.output_plot('analysis_plot', height='600px')"
+      }
+    ],
+    "declarations": {
+      "DATASETS": "{'wine': ('Wine Dataset', load_wine), 'penguins': ('Penguins Dataset', load_penguins), 'iris': ('Iris Dataset', load_iris_df), 'breast': ('Breast Cancer Dataset', load_breast_cancer_df)}"
+    }
+  },
+  "2": {
+    "folder": "assignments/2",
+    "files": {
+      "assignments/2/u2_utils.py": {
+        "sha256": "eada4f845e6837db9427f01cdaffd5dd4b1c4232fd67b512a31350b4068fd85f",
+        "bytes": 33104
+      },
+      "assignments/2/app.py": {
+        "sha256": "6a9052f52cd2c5b84de249b8b6c6c1acee145f6300e1130ad7217e630f0829be",
+        "bytes": 46205
+      },
+      "assignments/2/resources/river.jpg": {
+        "sha256": "879edfa43b033f2c5e07554bf951d4722ec3febf706566ec84a67d1d687e546c",
+        "bytes": 320851
+      },
+      "assignments/2/resources/piano.wav": {
+        "sha256": "266c85c361e683ddc743bcbe17fafd1506d46e30fba5a1cf676e17b753ed3592",
+        "bytes": 8140402
+      },
+      "assignments/2/resources/beethoven5_piano_10s.wav": {
+        "sha256": "ea5bb307b94f65e882027ce449b8a1d2c004fac5b759d1730184913ea83fc7bb",
+        "bytes": 882078
+      },
+      "assignments/2/resources/charlie_tiny.jpg": {
+        "sha256": "54ba58618d5b0371b650734d603f815e0af359530886e0024ce084e2c3255a44",
+        "bytes": 22275
+      },
+      "assignments/2/resources/audio.wav": {
+        "sha256": "198409c5f64b1c62a26ce7263f0ec8b1b14ba3a12005820abba652f5493e9ab7",
+        "bytes": 89644
+      },
+      "assignments/2/resources/horses.jpg": {
+        "sha256": "e670f608836635e36ffc9cda061ea9f0c290eef67f5e5eb9a2f3ee2120eb3282",
+        "bytes": 762617
+      }
+    },
+    "imports": [
+      "base64",
+      "io",
+      "math",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "pkg_resources",
+      "plotly.express",
+      "plotly.graph_objects",
+      "scipy.io",
+      "scipy.signal",
+      "shiny",
+      "shinywidgets",
+      "sklearn.decomposition",
+      "spacy",
+      "subprocess",
+      "sys",
+      "u2_utils"
+    ],
+    "interface": [
+      {
+        "call": "nav_panel",
+        "line": 126,
+        "args": "ui.nav_panel('Image Processing', ui.layout_sidebar(ui.sidebar(ui.input_file('img_file', 'Upload Image', accept=['.jpg', '.jpeg', '.png']), ui.input_select('img_op', 'Operation', {'show': 'Show Image', 'channels': 'Show RGB Channels', 'rgba': 'Use RGBA', 'grayscale': 'Show Grayscale', 'rotate': 'Rotate', 'flip': 'Flip', 'crop': 'Crop', 'blur': 'Blur', 'hist': 'Color Histograms', 'segment': 'Segment'}), ui.panel_conditional(\"input.img_op == 'show'\", ui.output_text('image_dim'), ui.input_select('channel', 'Channel', {'R': 'Red', 'G': 'Green', 'B': 'Blue'}, selected='R'), ui.output_text('image_max_min')), ui.panel_conditional(\"input.img_op == 'rotate'\", ui.input_numeric('rotate_angle', 'Angle (deg)', value=45)), ui.panel_conditional(\"input.img_op == 'rgba'\", ui.input_slider('alpha', 'Alpha (0-1)', 0, 1, 1, step=0.01)), ui.panel_conditional(\"input.img_op == 'flip'\", ui.input_select('flip_dir', 'Direction', {'horizontal': 'Horizontal', 'vertical': 'Vertical'})), ui.panel_conditional(\"input.img_op == 'crop'\", ui.input_numeric('crop_left', 'Left', value=0), ui.input_numeric('crop_top', 'Top', value=0), ui.input_numeric('crop_width', 'Width', value=100), ui.input_numeric('crop_height', 'Height', value=100)), ui.panel_conditional(\"input.img_op == 'blur'\", ui.input_slider('blur_sigma', 'Sigma (Blur)', 0, 10, 1, step=0.1)), ui.panel_conditional(\"input.img_op == 'segment'\", ui.input_slider('seg_r', 'Red threshold', 0, 255, value=[0, 255]), ui.input_slider('seg_g', 'Green threshold', 0, 255, value=[0, 255]), ui.input_slider('seg_b', 'Blue threshold', 0, 255, value=[0, 255]))), ui.output_plot('img_plot', height=600)))"
+      },
+      {
+        "call": "input_file",
+        "line": 129,
+        "args": "ui.input_file('img_file', 'Upload Image', accept=['.jpg', '.jpeg', '.png'])"
+      },
+      {
+        "call": "input_select",
+        "line": 130,
+        "args": "ui.input_select('img_op', 'Operation', {'show': 'Show Image', 'channels': 'Show RGB Channels', 'rgba': 'Use RGBA', 'grayscale': 'Show Grayscale', 'rotate': 'Rotate', 'flip': 'Flip', 'crop': 'Crop', 'blur': 'Blur', 'hist': 'Color Histograms', 'segment': 'Segment'})"
+      },
+      {
+        "call": "output_text",
+        "line": 143,
+        "args": "ui.output_text('image_dim')"
+      },
+      {
+        "call": "input_select",
+        "line": 144,
+        "args": "ui.input_select('channel', 'Channel', {'R': 'Red', 'G': 'Green', 'B': 'Blue'}, selected='R')"
+      },
+      {
+        "call": "output_text",
+        "line": 145,
+        "args": "ui.output_text('image_max_min')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 149,
+        "args": "ui.input_numeric('rotate_angle', 'Angle (deg)', value=45)"
+      },
+      {
+        "call": "input_slider",
+        "line": 152,
+        "args": "ui.input_slider('alpha', 'Alpha (0-1)', 0, 1, 1, step=0.01)"
+      },
+      {
+        "call": "input_select",
+        "line": 156,
+        "args": "ui.input_select('flip_dir', 'Direction', {'horizontal': 'Horizontal', 'vertical': 'Vertical'})"
+      },
+      {
+        "call": "input_numeric",
+        "line": 159,
+        "args": "ui.input_numeric('crop_left', 'Left', value=0)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 160,
+        "args": "ui.input_numeric('crop_top', 'Top', value=0)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 161,
+        "args": "ui.input_numeric('crop_width', 'Width', value=100)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 162,
+        "args": "ui.input_numeric('crop_height', 'Height', value=100)"
+      },
+      {
+        "call": "input_slider",
+        "line": 165,
+        "args": "ui.input_slider('blur_sigma', 'Sigma (Blur)', 0, 10, 1, step=0.1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 168,
+        "args": "ui.input_slider('seg_r', 'Red threshold', 0, 255, value=[0, 255])"
+      },
+      {
+        "call": "input_slider",
+        "line": 169,
+        "args": "ui.input_slider('seg_g', 'Green threshold', 0, 255, value=[0, 255])"
+      },
+      {
+        "call": "input_slider",
+        "line": 170,
+        "args": "ui.input_slider('seg_b', 'Blue threshold', 0, 255, value=[0, 255])"
+      },
+      {
+        "call": "output_plot",
+        "line": 173,
+        "args": "ui.output_plot('img_plot', height=600)"
+      },
+      {
+        "call": "nav_panel",
+        "line": 176,
+        "args": "ui.nav_panel('Signal Processing', ui.layout_sidebar(ui.sidebar(ui.input_select('sig_op', 'Operation', {'generate': 'Generate Sine Wave - Single', 'generate_multi': 'Generate Sine Wave - Multi', 'upload': 'Upload WAV File'}, selected='generate'), ui.input_select('sig_plot', 'Plot Type', {'wave': 'Waveform', 'spectrum': 'Fourier Spectrum', 'spectrogram': 'Spectrogram'}, selected='wave'), ui.panel_conditional(\"input.sig_op == 'generate'\", ui.input_numeric('sig_freq', 'Frequency (Hz)', value=1)), ui.panel_conditional(\"input.sig_op == 'generate_multi'\", ui.input_text('sig_freq_multi', 'Frequencies (Hz, comma-separated)', value='440,349.228,261.626')), ui.panel_conditional(\"input.sig_op == 'generate' || input.sig_op == 'generate_multi'\", ui.input_numeric('sig_time', 'Duration (s)', value=1), ui.input_numeric('sig_sr', 'Sampling Rate', value=24000)), ui.panel_conditional(\"input.sig_op == 'generate'\", ui.input_checkbox('show_sampling_points', 'Show Sampling Points', value=False)), ui.panel_conditional(\"input.sig_op == 'upload'\", ui.input_file('wav_file', 'Upload WAV', accept=['.wav'])), ui.input_numeric('max_freq', 'Max Frequency (for spectrum)', value=2000), ui.input_select('view_mode', 'View', {'static': 'Static (matplotlib)', 'player': 'Interactive (plotly)'}, selected='player')), ui.panel_conditional(\"input.view_mode == 'player'\", ui.card(ui.card_header('Audio Player'), ui.output_ui('audio_player'))), ui.panel_conditional(\"input.view_mode == 'player' && input.sig_plot == 'wave'\", ui.card(ui.card_header('Waveform'), ui.output_ui('sig_plot_player'))), ui.panel_conditional(\"input.view_mode == 'player' && input.sig_plot == 'spectrum'\", ui.card(ui.card_header('Spectrum'), ui.output_ui('spectrum_plot'))), ui.panel_conditional(\"input.view_mode == 'player' && input.sig_plot == 'spectrogram'\", ui.card(ui.card_header('Spectrogram'), ui.output_ui('spectrogram_plot'))), ui.br(), ui.panel_conditional(\"input.view_mode == 'static'\", ui.panel_conditional(\"input.sig_plot == 'wave'\", ui.card(ui.card_header('Waveform'), ui.output_plot('waveform_plot_static', height=600))), ui.panel_conditional(\"input.sig_plot == 'spectrum'\", ui.card(ui.card_header('Spectrum'), ui.output_plot('spectrum_plot_static', height=600))), ui.panel_conditional(\"input.sig_plot == 'spectrogram'\", ui.card(ui.card_header('Spectrogram'), ui.output_plot('spectrogram_plot_static', height=600))))))"
+      },
+      {
+        "call": "input_select",
+        "line": 179,
+        "args": "ui.input_select('sig_op', 'Operation', {'generate': 'Generate Sine Wave - Single', 'generate_multi': 'Generate Sine Wave - Multi', 'upload': 'Upload WAV File'}, selected='generate')"
+      },
+      {
+        "call": "input_select",
+        "line": 184,
+        "args": "ui.input_select('sig_plot', 'Plot Type', {'wave': 'Waveform', 'spectrum': 'Fourier Spectrum', 'spectrogram': 'Spectrogram'}, selected='wave')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 191,
+        "args": "ui.input_numeric('sig_freq', 'Frequency (Hz)', value=1)"
+      },
+      {
+        "call": "input_text",
+        "line": 194,
+        "args": "ui.input_text('sig_freq_multi', 'Frequencies (Hz, comma-separated)', value='440,349.228,261.626')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 197,
+        "args": "ui.input_numeric('sig_time', 'Duration (s)', value=1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 198,
+        "args": "ui.input_numeric('sig_sr', 'Sampling Rate', value=24000)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 201,
+        "args": "ui.input_checkbox('show_sampling_points', 'Show Sampling Points', value=False)"
+      },
+      {
+        "call": "input_file",
+        "line": 204,
+        "args": "ui.input_file('wav_file', 'Upload WAV', accept=['.wav'])"
+      },
+      {
+        "call": "input_numeric",
+        "line": 206,
+        "args": "ui.input_numeric('max_freq', 'Max Frequency (for spectrum)', value=2000)"
+      },
+      {
+        "call": "input_select",
+        "line": 207,
+        "args": "ui.input_select('view_mode', 'View', {'static': 'Static (matplotlib)', 'player': 'Interactive (plotly)'}, selected='player')"
+      },
+      {
+        "call": "output_ui",
+        "line": 215,
+        "args": "ui.output_ui('audio_player')"
+      },
+      {
+        "call": "output_ui",
+        "line": 219,
+        "args": "ui.output_ui('sig_plot_player')"
+      },
+      {
+        "call": "output_ui",
+        "line": 222,
+        "args": "ui.output_ui('spectrum_plot')"
+      },
+      {
+        "call": "output_ui",
+        "line": 225,
+        "args": "ui.output_ui('spectrogram_plot')"
+      },
+      {
+        "call": "output_plot",
+        "line": 230,
+        "args": "ui.output_plot('waveform_plot_static', height=600)"
+      },
+      {
+        "call": "output_plot",
+        "line": 233,
+        "args": "ui.output_plot('spectrum_plot_static', height=600)"
+      },
+      {
+        "call": "output_plot",
+        "line": 236,
+        "args": "ui.output_plot('spectrogram_plot_static', height=600)"
+      },
+      {
+        "call": "nav_panel",
+        "line": 241,
+        "args": "ui.nav_panel('Text Processing', ui.layout_sidebar(ui.sidebar(ui.input_text_area('word_list', 'Vocabulary (comma-separated)', 'dog,cat,tiger,lion,car,bike,apple,banana,jeans,dress,man,woman,king,queen', rows=5), ui.input_action_button('run_embed', 'Load vocabulary', class_='btn-primary')), ui.navset_pill(ui.nav_panel('One-Hot Encoding', ui.p(), ui.panel_conditional('input.run_embed', ui.h4('Vocabulary Sequence:'), ui.output_text('vocab_sequence'), ui.p(), ui.h4('One-Hot Encoding Table:'), ui.output_data_frame('one_hot_table'), ui.p(), ui.p('Now we can create a one-hot encoded representation of a phrase:'), ui.input_text('phrase', \"Enter a phrase (e.g. 'Paul likes to play tennis')\", placeholder='Paul likes to play tennis', width='400px'), ui.output_data_frame('one_hot_phrase_table'), ui.p(), ui.input_action_button('run_one_hot_phrase', 'Run One-Hot Encoding for Phrase', class_='btn-primary'))), ui.nav_panel('Word Embeddings', ui.p(), ui.panel_conditional('input.run_embed', ui.h4('Word Embeddings DataFrame:'), ui.output_data_frame('embed_df'))), ui.nav_panel('Plot Embeddings', ui.p(), ui.panel_conditional('input.run_embed', ui.layout_columns(ui.input_select('emb_view', 'Embedding view', {'2d': '2D', '3d': '3D'}, selected='2d'), ui.input_action_button('embed_plot_btn', 'Create/Update Plot', class_='btn-primary'), col_widths=(4, 2), class_='d-flex align-items-end'), ui.panel_conditional(\"input.emb_view == '2d'\", ui.card(ui.card_header('Embeddings (2D)'), ui.output_ui('embedding_plot_2d'))), ui.panel_conditional(\"input.emb_view == '3d'\", ui.card(ui.card_header('Embeddings (3D)'), ui.output_ui('embedding_plot_3d'))))), ui.nav_panel('Individual Words', ui.p(), ui.panel_conditional('input.run_embed', ui.input_select('word_select', label='Select a word', choices=[], selected=None), ui.panel_conditional('input.word_select', ui.output_code('word_vector_size'), ui.output_code('word_vector')))), ui.nav_panel('Word Similarity', ui.p(), ui.panel_conditional('input.run_embed', ui.h4('Compare Word Similarity'), ui.p(), ui.input_select('word_select1', 'Select word 1', choices=[], selected=None), ui.output_text('similarity_text'), ui.p(), ui.input_select('word_select2', 'Select word 2', choices=[], selected=None), ui.panel_conditional('input.find_similarity', ui.output_code('word_similarity')), ui.input_action_button('find_similarity', 'Find Similarity', class_='btn-primary'), ui.p(), ui.h4('Find Similar Words'), ui.input_select('word_select_3', 'Select a word', choices=[], selected=None), ui.panel_conditional('input.find_similar', ui.output_code('similar_words')), ui.p(), ui.input_action_button('find_similar', 'Find Similar Words', class_='btn-primary'), ui.p(), ui.h4('Compute Word'), ui.input_text('word_computation', \"Enter a computation (e.g 'king - man + woman')\", placeholder='king - man + woman', width='400px'), ui.panel_conditional('input.compute_word', ui.output_code('computed_words')), ui.p(), ui.input_action_button('compute_word', 'Compute Word', class_='btn-primary'))))))"
+      },
+      {
+        "call": "input_text_area",
+        "line": 244,
+        "args": "ui.input_text_area('word_list', 'Vocabulary (comma-separated)', 'dog,cat,tiger,lion,car,bike,apple,banana,jeans,dress,man,woman,king,queen', rows=5)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 245,
+        "args": "ui.input_action_button('run_embed', 'Load vocabulary', class_='btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 248,
+        "args": "ui.nav_panel('One-Hot Encoding', ui.p(), ui.panel_conditional('input.run_embed', ui.h4('Vocabulary Sequence:'), ui.output_text('vocab_sequence'), ui.p(), ui.h4('One-Hot Encoding Table:'), ui.output_data_frame('one_hot_table'), ui.p(), ui.p('Now we can create a one-hot encoded representation of a phrase:'), ui.input_text('phrase', \"Enter a phrase (e.g. 'Paul likes to play tennis')\", placeholder='Paul likes to play tennis', width='400px'), ui.output_data_frame('one_hot_phrase_table'), ui.p(), ui.input_action_button('run_one_hot_phrase', 'Run One-Hot Encoding for Phrase', class_='btn-primary')))"
+      },
+      {
+        "call": "output_text",
+        "line": 252,
+        "args": "ui.output_text('vocab_sequence')"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 255,
+        "args": "ui.output_data_frame('one_hot_table')"
+      },
+      {
+        "call": "input_text",
+        "line": 258,
+        "args": "ui.input_text('phrase', \"Enter a phrase (e.g. 'Paul likes to play tennis')\", placeholder='Paul likes to play tennis', width='400px')"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 259,
+        "args": "ui.output_data_frame('one_hot_phrase_table')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 261,
+        "args": "ui.input_action_button('run_one_hot_phrase', 'Run One-Hot Encoding for Phrase', class_='btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 264,
+        "args": "ui.nav_panel('Word Embeddings', ui.p(), ui.panel_conditional('input.run_embed', ui.h4('Word Embeddings DataFrame:'), ui.output_data_frame('embed_df')))"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 268,
+        "args": "ui.output_data_frame('embed_df')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 271,
+        "args": "ui.nav_panel('Plot Embeddings', ui.p(), ui.panel_conditional('input.run_embed', ui.layout_columns(ui.input_select('emb_view', 'Embedding view', {'2d': '2D', '3d': '3D'}, selected='2d'), ui.input_action_button('embed_plot_btn', 'Create/Update Plot', class_='btn-primary'), col_widths=(4, 2), class_='d-flex align-items-end'), ui.panel_conditional(\"input.emb_view == '2d'\", ui.card(ui.card_header('Embeddings (2D)'), ui.output_ui('embedding_plot_2d'))), ui.panel_conditional(\"input.emb_view == '3d'\", ui.card(ui.card_header('Embeddings (3D)'), ui.output_ui('embedding_plot_3d')))))"
+      },
+      {
+        "call": "input_select",
+        "line": 275,
+        "args": "ui.input_select('emb_view', 'Embedding view', {'2d': '2D', '3d': '3D'}, selected='2d')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 280,
+        "args": "ui.input_action_button('embed_plot_btn', 'Create/Update Plot', class_='btn-primary')"
+      },
+      {
+        "call": "output_ui",
+        "line": 286,
+        "args": "ui.output_ui('embedding_plot_2d')"
+      },
+      {
+        "call": "output_ui",
+        "line": 290,
+        "args": "ui.output_ui('embedding_plot_3d')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 294,
+        "args": "ui.nav_panel('Individual Words', ui.p(), ui.panel_conditional('input.run_embed', ui.input_select('word_select', label='Select a word', choices=[], selected=None), ui.panel_conditional('input.word_select', ui.output_code('word_vector_size'), ui.output_code('word_vector'))))"
+      },
+      {
+        "call": "input_select",
+        "line": 297,
+        "args": "ui.input_select('word_select', label='Select a word', choices=[], selected=None)"
+      },
+      {
+        "call": "output_code",
+        "line": 299,
+        "args": "ui.output_code('word_vector_size')"
+      },
+      {
+        "call": "output_code",
+        "line": 300,
+        "args": "ui.output_code('word_vector')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 304,
+        "args": "ui.nav_panel('Word Similarity', ui.p(), ui.panel_conditional('input.run_embed', ui.h4('Compare Word Similarity'), ui.p(), ui.input_select('word_select1', 'Select word 1', choices=[], selected=None), ui.output_text('similarity_text'), ui.p(), ui.input_select('word_select2', 'Select word 2', choices=[], selected=None), ui.panel_conditional('input.find_similarity', ui.output_code('word_similarity')), ui.input_action_button('find_similarity', 'Find Similarity', class_='btn-primary'), ui.p(), ui.h4('Find Similar Words'), ui.input_select('word_select_3', 'Select a word', choices=[], selected=None), ui.panel_conditional('input.find_similar', ui.output_code('similar_words')), ui.p(), ui.input_action_button('find_similar', 'Find Similar Words', class_='btn-primary'), ui.p(), ui.h4('Compute Word'), ui.input_text('word_computation', \"Enter a computation (e.g 'king - man + woman')\", placeholder='king - man + woman', width='400px'), ui.panel_conditional('input.compute_word', ui.output_code('computed_words')), ui.p(), ui.input_action_button('compute_word', 'Compute Word', class_='btn-primary')))"
+      },
+      {
+        "call": "input_select",
+        "line": 309,
+        "args": "ui.input_select('word_select1', 'Select word 1', choices=[], selected=None)"
+      },
+      {
+        "call": "output_text",
+        "line": 310,
+        "args": "ui.output_text('similarity_text')"
+      },
+      {
+        "call": "input_select",
+        "line": 312,
+        "args": "ui.input_select('word_select2', 'Select word 2', choices=[], selected=None)"
+      },
+      {
+        "call": "output_code",
+        "line": 314,
+        "args": "ui.output_code('word_similarity')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 316,
+        "args": "ui.input_action_button('find_similarity', 'Find Similarity', class_='btn-primary')"
+      },
+      {
+        "call": "input_select",
+        "line": 320,
+        "args": "ui.input_select('word_select_3', 'Select a word', choices=[], selected=None)"
+      },
+      {
+        "call": "output_code",
+        "line": 322,
+        "args": "ui.output_code('similar_words')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 325,
+        "args": "ui.input_action_button('find_similar', 'Find Similar Words', class_='btn-primary')"
+      },
+      {
+        "call": "input_text",
+        "line": 329,
+        "args": "ui.input_text('word_computation', \"Enter a computation (e.g 'king - man + woman')\", placeholder='king - man + woman', width='400px')"
+      },
+      {
+        "call": "output_code",
+        "line": 332,
+        "args": "ui.output_code('computed_words')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 335,
+        "args": "ui.input_action_button('compute_word', 'Compute Word', class_='btn-primary')"
+      }
+    ],
+    "declarations": {}
+  },
+  "3": {
+    "folder": "assignments/3",
+    "files": {
+      "assignments/3/app.py": {
+        "sha256": "997a8f9616de806ab38197305a28d0ea538ec221481e430784f521fa495954e1",
+        "bytes": 87719
+      },
+      "assignments/3/resources/mall_customers.csv": {
+        "sha256": "416a4f62a8f33841a16e1db5297f0e05d3b65b05e73632cedae58e739e1e1f77",
+        "bytes": 3981
+      },
+      "assignments/3/resources/bluesky_posts_embeddings.csv": {
+        "sha256": "c03bffd21e50bb47d1b07c4b31cf9d5f2b459808883a0abe9b0275b4d16e8697",
+        "bytes": 4704217
+      },
+      "assignments/3/resources/spotify_data.csv": {
+        "sha256": "cbc93c422e212a59865619bb58cf53377979bc99c5566cdb343f82f67a3b4fb5",
+        "bytes": 141189
+      },
+      "assignments/3/resources/spotify_metadata.csv": {
+        "sha256": "09cbca21c9c1a40b56acaa730c37d6f727ee15ef2ca733c190cad5e24f67a4f7",
+        "bytes": 29724
+      },
+      "assignments/3/resources/bluesky_posts.csv": {
+        "sha256": "d84ac5a4323386acf6e236e8c7f5bc0db9ae88a52a9fa7b8b8da50b18bd14646",
+        "bytes": 241296
+      }
+    },
+    "imports": [
+      "__future__",
+      "ast",
+      "base64",
+      "io",
+      "matplotlib.colors",
+      "matplotlib.patches",
+      "matplotlib.pyplot",
+      "numpy",
+      "os",
+      "pandas",
+      "pathlib",
+      "plotly.colors",
+      "plotly.graph_objects",
+      "scipy.cluster.hierarchy",
+      "scipy.spatial",
+      "scipy.special",
+      "seaborn",
+      "shiny",
+      "shinywidgets",
+      "sklearn.cluster",
+      "sklearn.datasets",
+      "sklearn.decomposition",
+      "sklearn.metrics",
+      "sklearn.mixture",
+      "sklearn.neighbors",
+      "sklearn.preprocessing",
+      "textwrap",
+      "tkinter.font",
+      "typing"
+    ],
+    "interface": [
+      {
+        "call": "nav_panel",
+        "line": 689,
+        "args": "ui.nav_panel('Introduction', ui.tags.div(style='margin-top: 15px;'), ui.h3('Basics of Unsupervised Learning and Clustering'), ui.p('A data set \\\\(X\\\\) typically consists of a set of features, where a concrete observation (sample) \\\\(\\\\mathbf{x}_i\\\\) is the \\\\(i\\\\) th entry in the data set. One sample is characterized by a feature vector: \\\\(\\\\mathbf{x}_i = (x_{i1}, \\\\ldots, x_{ij})\\\\), where \\\\(j\\\\) is the number of dimensions.'), ui.p('In supervised learning we have the convenience of another (special) feature: a target \\\\(Y = (Y_1, \\\\ldots, Y_K)\\\\) where \\\\(K\\\\) is the number of groups. For example, for the iris data set \\\\(K=3\\\\) (the three kinds of flowers: setosa, virginica and versicolor). When we now train a model using these feature/target combinations \\\\((\\\\mathbf{x}_1, y_1) \\\\ldots (\\\\mathbf{x}_N, y_N)\\\\) given our data set size \\\\(N\\\\), the target feature basically acts like a feedback signal - we can check the prediction \\\\(\\\\hat{Y}\\\\) of the model, because we know what the actual value for \\\\(Y\\\\) is supposed to be. That is why we call this process supervised learning.'), ui.p('In unsupervised learning we unfortunately do not have this convenience - we only have the plain set of features of our data set \\\\(X\\\\) without the target. This raises quite a few questions:'), ui.tags.ul(ui.tags.li('Is there a group structure in the data set to begin with?'), ui.tags.ul(ui.tags.li('If yes, how many groups are there?'), ui.tags.li('If yes, how are these groups structured (do they have equal shape and form, are they clearly separated, etc.)')), ui.tags.li('Which algorithm should I use?'), ui.tags.li('How do I evaluate whether the solution obtained is actually correct?')), ui.p('As we will see, the answer to some of these questions is not trivial. While there are several sub-areas of unsupervised learning we will limit our discussion here to clustering, which is a technique that groups similar data points together based on their features (essentially unsupervised classification). It is widely used in various applications such as market segmentation, social network analysis, image segmentation, and anomaly detection.'), ui.p('This application demonstrates several clustering algorithms on artificial and real-world datasets. You can work with synthetic and real-world datasets, apply different clustering methods, check model validity, optimize hyperparameters, and visualize the results.'), help_card('Clustering Algorithms', '\\n            - **K-Means**: Partitions data into k clusters by minimizing the variance within each cluster.\\n            - **Hierarchical Clustering**: Builds a hierarchy of clusters using either agglomerative (bottom-up) or divisive (top-down) approaches (here we only use agglomerative).\\n            - **DBSCAN**: Density-Based Spatial Clustering of Applications with Noise; groups together points that are closely packed together, marking points in low-density regions as outliers.\\n            - **Gaussian Mixture Models (GMM)**: Assumes data is generated from a mixture of several Gaussian distributions and uses the Expectation-Maximization algorithm to find the parameters.\\n            '))"
+      },
+      {
+        "call": "nav_panel",
+        "line": 714,
+        "args": "ui.nav_panel('Data Selection', ui.layout_sidebar(ui.sidebar(ui.h4('Data Settings'), ui.input_select('data_kind', 'Dataset', {'blobs': 'Blobs (default)', 'gaussian': 'Gaussian Blobs 1', 'gaussian2': 'Gaussian Blobs 2', 'moons': 'Two Moons', 'circles': 'Concentric Circles', 'uniform': 'Uniform Noise', 'none': '------------------', 'iris': 'Iris (real data)', 'wine': 'Wine (real data)', 'breast_cancer': 'Breast Cancer (real data)', 'ionosphere': 'Ionosphere (real data)', 'seeds': 'Seeds (real data)', 'tweets': 'Bluesky Posts (real data)', 'penguins': 'Penguins (real data)', 'mall': 'Mall Customers (real data)', 'spotify': 'Spotify Songs (real data)', 'none2': '------------------', 'csv': 'Upload CSV File'}, selected='blobs'), ui.panel_conditional(\"input.data_kind == 'blobs'\", ui.input_slider('b_n', 'N (points)', 50, 1000, 300, step=50), ui.input_numeric('b_centers', 'Number of Centers', 4, min=1, step=1), ui.input_slider('b_separation', 'Center Range', 0.1, 5.0, 3.5, step=0.1), ui.input_slider('b_std', 'Cluster stddev', 0.1, 2.0, 0.6, step=0.05)), ui.panel_conditional(\"input.data_kind == 'moons'\", ui.input_slider('m_n', 'N (points)', 50, 1000, 300, step=50), ui.input_slider('m_std', 'Noise', 0.0, 0.5, 0.1, step=0.05)), ui.panel_conditional(\"input.data_kind == 'circles'\", ui.input_slider('c_n', 'N (points)', 50, 1000, 300, step=50), ui.input_slider('c_std', 'Noise', 0.0, 0.5, 0.1, step=0.05), ui.input_slider('c_factor', 'Inner circle size', 0.1, 0.9, 0.5, step=0.05)), ui.panel_conditional(\"input.data_kind == 'gaussian'\", ui.input_slider('bg_n', 'N (points)', 50, 1000, 300, step=50)), ui.input_checkbox('scale', 'Standardize', True), ui.panel_conditional(\"input.data_kind == 'csv'\", ui.input_file('csv_file', 'Upload CSV File (includes header)'), ui.input_checkbox('csv_header', 'File has header row', True), ui.input_checkbox('includes_label', 'Includes Label (last column)', False)), ui.hr(), ui.input_numeric('data_seed', 'Random Seed', 10, min=1, step=1), ui.hr(), ui.input_action_button('generate_data', 'Load Data', class_='btn-primary')), ui.navset_card_pill(ui.nav_panel('Data Plot (True Groups)', ui.panel_conditional('input.generate_data > 0', ui.panel_conditional(\"input.data_kind != 'tweets'\", ui.input_checkbox('color_by_group', 'Color by true group', False)), output_widget('data_plot', height='700px'))), ui.nav_panel('Table View', ui.panel_conditional('input.generate_data > 0', ui.output_data_frame('data_table'))), ui.nav_panel('Data Summary', ui.panel_conditional('input.generate_data > 0', ui.output_text_verbatim('data_summary'))))))"
+      },
+      {
+        "call": "input_select",
+        "line": 718,
+        "args": "ui.input_select('data_kind', 'Dataset', {'blobs': 'Blobs (default)', 'gaussian': 'Gaussian Blobs 1', 'gaussian2': 'Gaussian Blobs 2', 'moons': 'Two Moons', 'circles': 'Concentric Circles', 'uniform': 'Uniform Noise', 'none': '------------------', 'iris': 'Iris (real data)', 'wine': 'Wine (real data)', 'breast_cancer': 'Breast Cancer (real data)', 'ionosphere': 'Ionosphere (real data)', 'seeds': 'Seeds (real data)', 'tweets': 'Bluesky Posts (real data)', 'penguins': 'Penguins (real data)', 'mall': 'Mall Customers (real data)', 'spotify': 'Spotify Songs (real data)', 'none2': '------------------', 'csv': 'Upload CSV File'}, selected='blobs')"
+      },
+      {
+        "call": "input_slider",
+        "line": 740,
+        "args": "ui.input_slider('b_n', 'N (points)', 50, 1000, 300, step=50)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 741,
+        "args": "ui.input_numeric('b_centers', 'Number of Centers', 4, min=1, step=1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 742,
+        "args": "ui.input_slider('b_separation', 'Center Range', 0.1, 5.0, 3.5, step=0.1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 743,
+        "args": "ui.input_slider('b_std', 'Cluster stddev', 0.1, 2.0, 0.6, step=0.05)"
+      },
+      {
+        "call": "input_slider",
+        "line": 747,
+        "args": "ui.input_slider('m_n', 'N (points)', 50, 1000, 300, step=50)"
+      },
+      {
+        "call": "input_slider",
+        "line": 748,
+        "args": "ui.input_slider('m_std', 'Noise', 0.0, 0.5, 0.1, step=0.05)"
+      },
+      {
+        "call": "input_slider",
+        "line": 752,
+        "args": "ui.input_slider('c_n', 'N (points)', 50, 1000, 300, step=50)"
+      },
+      {
+        "call": "input_slider",
+        "line": 753,
+        "args": "ui.input_slider('c_std', 'Noise', 0.0, 0.5, 0.1, step=0.05)"
+      },
+      {
+        "call": "input_slider",
+        "line": 754,
+        "args": "ui.input_slider('c_factor', 'Inner circle size', 0.1, 0.9, 0.5, step=0.05)"
+      },
+      {
+        "call": "input_slider",
+        "line": 758,
+        "args": "ui.input_slider('bg_n', 'N (points)', 50, 1000, 300, step=50)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 760,
+        "args": "ui.input_checkbox('scale', 'Standardize', True)"
+      },
+      {
+        "call": "input_file",
+        "line": 762,
+        "args": "ui.input_file('csv_file', 'Upload CSV File (includes header)')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 763,
+        "args": "ui.input_checkbox('csv_header', 'File has header row', True)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 764,
+        "args": "ui.input_checkbox('includes_label', 'Includes Label (last column)', False)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 767,
+        "args": "ui.input_numeric('data_seed', 'Random Seed', 10, min=1, step=1)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 769,
+        "args": "ui.input_action_button('generate_data', 'Load Data', class_='btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 772,
+        "args": "ui.nav_panel('Data Plot (True Groups)', ui.panel_conditional('input.generate_data > 0', ui.panel_conditional(\"input.data_kind != 'tweets'\", ui.input_checkbox('color_by_group', 'Color by true group', False)), output_widget('data_plot', height='700px')))"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 775,
+        "args": "ui.input_checkbox('color_by_group', 'Color by true group', False)"
+      },
+      {
+        "call": "output_widget",
+        "line": 777,
+        "args": "output_widget('data_plot', height='700px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 780,
+        "args": "ui.nav_panel('Table View', ui.panel_conditional('input.generate_data > 0', ui.output_data_frame('data_table')))"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 782,
+        "args": "ui.output_data_frame('data_table')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 785,
+        "args": "ui.nav_panel('Data Summary', ui.panel_conditional('input.generate_data > 0', ui.output_text_verbatim('data_summary')))"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 787,
+        "args": "ui.output_text_verbatim('data_summary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 793,
+        "args": "ui.nav_panel('Cluster Analysis', ui.layout_sidebar(ui.sidebar(ui.h4('Settings'), ui.input_select('clustering_method', 'Algorithm', {'km': 'K-Means', 'hc': 'Hierarchical (Agg)', 'db': 'DBSCAN', 'gm': 'Gaussian Mixture (GMM)'}, selected='km'), ui.panel_conditional(\"input.clustering_method == 'db'\", ui.input_numeric('eps', 'Epsilon (eps)', 0.1, min=0.01, step=0.01), ui.input_numeric('min_samples', 'Min Samples', 1, min=1, step=1)), ui.panel_conditional(\"input.clustering_method == 'hc'\", ui.input_select('linkage', 'Linkage', {'ward': 'Ward', 'complete': 'Complete', 'average': 'Average', 'single': 'Single'}, selected='ward'), ui.input_numeric('hn_clusters', 'Number of Clusters', 1, min=1, step=1)), ui.panel_conditional(\"input.clustering_method == 'km'\", ui.input_numeric('n_clusters', 'Number of Clusters (k)', 2, min=1, step=1), ui.input_select('init', 'Initialization Method', {'k-means++': 'k-means++', 'random': 'Random'}, selected='k-means++')), ui.panel_conditional(\"input.clustering_method == 'gm'\", ui.input_numeric('n_components', 'Number of Components', 2, min=1, step=1), ui.input_select('covariance_type', 'Covariance Type', {'full': 'Full', 'tied': 'Tied', 'diag': 'Diagonal', 'spherical': 'Spherical'}, selected='full')), ui.hr(), ui.input_numeric('seed', 'Random Seed', 10, min=1, step=1), ui.hr(), ui.input_action_button('run_clustering', 'Run Clustering', class_='btn-primary')), ui.navset_card_pill(ui.nav_panel('Cluster Results Plot', ui.panel_conditional(\"input.clustering_method != 'gm'\", ui.panel_conditional(\"input.clustering_method == 'km'\", ui.row(ui.input_checkbox('show_voronoi', 'Show Voronoi', False), ui.input_checkbox('show_centroids', 'Show Centroids', False))), ui.panel_conditional(\"input.clustering_method == 'hc'\", ui.row(ui.output_ui('show_decision_regions_ag'))), ui.panel_conditional(\"input.clustering_method == 'db'\", ui.row(ui.input_checkbox('show_epsilon', 'Show Epsilon', False), ui.output_ui('show_decision_regions_db'))), output_widget('clustering_plot', height='700px')), ui.panel_conditional(\"input.clustering_method == 'gm' && input.generate_data > 0\", ui.row(ui.input_checkbox('show_contour', 'Show Contour', False), ui.input_checkbox('gm_show_ellipses', 'Show component ellipses (2\u03c3)', False)), output_widget('clustering_plot_gmm', height='700px'))), ui.nav_panel('Cluster Result Details', ui.accordion(ui.accordion_panel('Table with Cluster Labels', ui.output_data_frame('cluster_labels')), open=False), ui.accordion(ui.accordion_panel('Cluster Sizes Summary', ui.output_data_frame('cluster_sizes')), open=False)), ui.nav_panel('Cluster Validation', ui.output_text_verbatim('clustering_info'), ui.panel_conditional(\"input.clustering_method != 'db' && input.clustering_method != 'gm'\", ui.tags.div(style='margin-top: 15px;'), output_widget('silhouette', height='600px'))), ui.nav_panel('Cluster Hyperparameter Tuning', ui.panel_conditional(\"input.clustering_method == 'hc'\", output_widget('linkage_plot', height='700px'), ui.accordion(ui.accordion_panel('Linkage Matrix Info', ui.output_data_frame('linkage_info'), expanded=False))), ui.panel_conditional(\"input.clustering_method == 'km'\", ui.input_slider('elbow_kmax', 'Max k for Elbow Method', 2, 20, 10, step=1), output_widget('elbow_plot', height='500px')), ui.panel_conditional(\"input.clustering_method == 'gm'\", ui.input_slider('aic_bic_kmax', 'Max k for AIC/BIC', 2, 20, 10, step=1), output_widget('aic_bic_plot', height='500px')), ui.panel_conditional(\"input.clustering_method == 'db'\", ui.input_slider('dbscan_k', 'k for k-NN distance plot', 2, 20, 5, step=1), output_widget('dbscan_knn_plot', height='500px'))), ui.nav_panel('Sample from Clusters', ui.panel_conditional(\"input.data_kind == 'csv'\", ui.input_file('auxiliary_csv', 'Upload Auxiliary CSV File (if available, nrow must match)', accept=['.csv'])), ui.row(ui.input_numeric('sample_cluster_nr', 'Cluster Label to Investigate', 0, min=0, step=1), ui.input_numeric('sample_per_cluster', 'Number of Samples per Cluster', 1, min=1, step=1)), ui.output_data_frame('cluster_samples')))))"
+      },
+      {
+        "call": "input_select",
+        "line": 797,
+        "args": "ui.input_select('clustering_method', 'Algorithm', {'km': 'K-Means', 'hc': 'Hierarchical (Agg)', 'db': 'DBSCAN', 'gm': 'Gaussian Mixture (GMM)'}, selected='km')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 805,
+        "args": "ui.input_numeric('eps', 'Epsilon (eps)', 0.1, min=0.01, step=0.01)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 806,
+        "args": "ui.input_numeric('min_samples', 'Min Samples', 1, min=1, step=1)"
+      },
+      {
+        "call": "input_select",
+        "line": 810,
+        "args": "ui.input_select('linkage', 'Linkage', {'ward': 'Ward', 'complete': 'Complete', 'average': 'Average', 'single': 'Single'}, selected='ward')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 816,
+        "args": "ui.input_numeric('hn_clusters', 'Number of Clusters', 1, min=1, step=1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 820,
+        "args": "ui.input_numeric('n_clusters', 'Number of Clusters (k)', 2, min=1, step=1)"
+      },
+      {
+        "call": "input_select",
+        "line": 821,
+        "args": "ui.input_select('init', 'Initialization Method', {'k-means++': 'k-means++', 'random': 'Random'}, selected='k-means++')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 828,
+        "args": "ui.input_numeric('n_components', 'Number of Components', 2, min=1, step=1)"
+      },
+      {
+        "call": "input_select",
+        "line": 829,
+        "args": "ui.input_select('covariance_type', 'Covariance Type', {'full': 'Full', 'tied': 'Tied', 'diag': 'Diagonal', 'spherical': 'Spherical'}, selected='full')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 837,
+        "args": "ui.input_numeric('seed', 'Random Seed', 10, min=1, step=1)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 839,
+        "args": "ui.input_action_button('run_clustering', 'Run Clustering', class_='btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 842,
+        "args": "ui.nav_panel('Cluster Results Plot', ui.panel_conditional(\"input.clustering_method != 'gm'\", ui.panel_conditional(\"input.clustering_method == 'km'\", ui.row(ui.input_checkbox('show_voronoi', 'Show Voronoi', False), ui.input_checkbox('show_centroids', 'Show Centroids', False))), ui.panel_conditional(\"input.clustering_method == 'hc'\", ui.row(ui.output_ui('show_decision_regions_ag'))), ui.panel_conditional(\"input.clustering_method == 'db'\", ui.row(ui.input_checkbox('show_epsilon', 'Show Epsilon', False), ui.output_ui('show_decision_regions_db'))), output_widget('clustering_plot', height='700px')), ui.panel_conditional(\"input.clustering_method == 'gm' && input.generate_data > 0\", ui.row(ui.input_checkbox('show_contour', 'Show Contour', False), ui.input_checkbox('gm_show_ellipses', 'Show component ellipses (2\u03c3)', False)), output_widget('clustering_plot_gmm', height='700px')))"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 847,
+        "args": "ui.input_checkbox('show_voronoi', 'Show Voronoi', False)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 848,
+        "args": "ui.input_checkbox('show_centroids', 'Show Centroids', False)"
+      },
+      {
+        "call": "output_ui",
+        "line": 853,
+        "args": "ui.output_ui('show_decision_regions_ag')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 859,
+        "args": "ui.input_checkbox('show_epsilon', 'Show Epsilon', False)"
+      },
+      {
+        "call": "output_ui",
+        "line": 860,
+        "args": "ui.output_ui('show_decision_regions_db')"
+      },
+      {
+        "call": "output_widget",
+        "line": 863,
+        "args": "output_widget('clustering_plot', height='700px')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 868,
+        "args": "ui.input_checkbox('show_contour', 'Show Contour', False)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 869,
+        "args": "ui.input_checkbox('gm_show_ellipses', 'Show component ellipses (2\u03c3)', False)"
+      },
+      {
+        "call": "output_widget",
+        "line": 871,
+        "args": "output_widget('clustering_plot_gmm', height='700px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 874,
+        "args": "ui.nav_panel('Cluster Result Details', ui.accordion(ui.accordion_panel('Table with Cluster Labels', ui.output_data_frame('cluster_labels')), open=False), ui.accordion(ui.accordion_panel('Cluster Sizes Summary', ui.output_data_frame('cluster_sizes')), open=False))"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 877,
+        "args": "ui.output_data_frame('cluster_labels')"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 882,
+        "args": "ui.output_data_frame('cluster_sizes')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 886,
+        "args": "ui.nav_panel('Cluster Validation', ui.output_text_verbatim('clustering_info'), ui.panel_conditional(\"input.clustering_method != 'db' && input.clustering_method != 'gm'\", ui.tags.div(style='margin-top: 15px;'), output_widget('silhouette', height='600px')))"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 887,
+        "args": "ui.output_text_verbatim('clustering_info')"
+      },
+      {
+        "call": "output_widget",
+        "line": 890,
+        "args": "output_widget('silhouette', height='600px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 893,
+        "args": "ui.nav_panel('Cluster Hyperparameter Tuning', ui.panel_conditional(\"input.clustering_method == 'hc'\", output_widget('linkage_plot', height='700px'), ui.accordion(ui.accordion_panel('Linkage Matrix Info', ui.output_data_frame('linkage_info'), expanded=False))), ui.panel_conditional(\"input.clustering_method == 'km'\", ui.input_slider('elbow_kmax', 'Max k for Elbow Method', 2, 20, 10, step=1), output_widget('elbow_plot', height='500px')), ui.panel_conditional(\"input.clustering_method == 'gm'\", ui.input_slider('aic_bic_kmax', 'Max k for AIC/BIC', 2, 20, 10, step=1), output_widget('aic_bic_plot', height='500px')), ui.panel_conditional(\"input.clustering_method == 'db'\", ui.input_slider('dbscan_k', 'k for k-NN distance plot', 2, 20, 5, step=1), output_widget('dbscan_knn_plot', height='500px')))"
+      },
+      {
+        "call": "output_widget",
+        "line": 897,
+        "args": "output_widget('linkage_plot', height='700px')"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 900,
+        "args": "ui.output_data_frame('linkage_info')"
+      },
+      {
+        "call": "input_slider",
+        "line": 906,
+        "args": "ui.input_slider('elbow_kmax', 'Max k for Elbow Method', 2, 20, 10, step=1)"
+      },
+      {
+        "call": "output_widget",
+        "line": 907,
+        "args": "output_widget('elbow_plot', height='500px')"
+      },
+      {
+        "call": "input_slider",
+        "line": 910,
+        "args": "ui.input_slider('aic_bic_kmax', 'Max k for AIC/BIC', 2, 20, 10, step=1)"
+      },
+      {
+        "call": "output_widget",
+        "line": 911,
+        "args": "output_widget('aic_bic_plot', height='500px')"
+      },
+      {
+        "call": "input_slider",
+        "line": 914,
+        "args": "ui.input_slider('dbscan_k', 'k for k-NN distance plot', 2, 20, 5, step=1)"
+      },
+      {
+        "call": "output_widget",
+        "line": 915,
+        "args": "output_widget('dbscan_knn_plot', height='500px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 918,
+        "args": "ui.nav_panel('Sample from Clusters', ui.panel_conditional(\"input.data_kind == 'csv'\", ui.input_file('auxiliary_csv', 'Upload Auxiliary CSV File (if available, nrow must match)', accept=['.csv'])), ui.row(ui.input_numeric('sample_cluster_nr', 'Cluster Label to Investigate', 0, min=0, step=1), ui.input_numeric('sample_per_cluster', 'Number of Samples per Cluster', 1, min=1, step=1)), ui.output_data_frame('cluster_samples'))"
+      },
+      {
+        "call": "input_file",
+        "line": 920,
+        "args": "ui.input_file('auxiliary_csv', 'Upload Auxiliary CSV File (if available, nrow must match)', accept=['.csv'])"
+      },
+      {
+        "call": "input_numeric",
+        "line": 923,
+        "args": "ui.input_numeric('sample_cluster_nr', 'Cluster Label to Investigate', 0, min=0, step=1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 924,
+        "args": "ui.input_numeric('sample_per_cluster', 'Number of Samples per Cluster', 1, min=1, step=1)"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 926,
+        "args": "ui.output_data_frame('cluster_samples')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 931,
+        "args": "ui.nav_panel('Application: Image Segmentation', ui.layout_sidebar(ui.sidebar(ui.input_file('image_file', 'Upload Image', accept=['.png', '.jpg', '.jpeg']), ui.input_slider('n_segments', 'Number of Segments (k)', 2, 20, 5, step=1), ui.hr(), ui.input_action_button('run_segmentation', 'Run Segmentation', class_='btn-primary')), ui.card(ui.card_header('Image Segmentation Results'), ui.output_plot('segmentation_plot', height='500px'))))"
+      },
+      {
+        "call": "input_file",
+        "line": 934,
+        "args": "ui.input_file('image_file', 'Upload Image', accept=['.png', '.jpg', '.jpeg'])"
+      },
+      {
+        "call": "input_slider",
+        "line": 935,
+        "args": "ui.input_slider('n_segments', 'Number of Segments (k)', 2, 20, 5, step=1)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 937,
+        "args": "ui.input_action_button('run_segmentation', 'Run Segmentation', class_='btn-primary')"
+      },
+      {
+        "call": "output_plot",
+        "line": 941,
+        "args": "ui.output_plot('segmentation_plot', height='500px')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 1071,
+        "args": "ui.input_checkbox('show_regions_ag', 'Show decision regions (2D only)', False)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 1078,
+        "args": "ui.input_checkbox('show_regions_db', 'Show decision regions (2D only)', False)"
+      }
+    ],
+    "declarations": {}
+  },
+  "4": {
+    "folder": "assignments/4",
+    "files": {
+      "assignments/4/app.py": {
+        "sha256": "5c5dafadd96b49ec792fd65ed27a29ebe970e18a72729ef746449d38e49ad380",
+        "bytes": 105866
+      }
+    },
+    "imports": [
+      "__future__",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "plotly.express",
+      "plotly.graph_objects",
+      "plotly.subplots",
+      "seaborn",
+      "shiny",
+      "shinywidgets",
+      "sklearn",
+      "sklearn.base",
+      "sklearn.decomposition",
+      "sklearn.ensemble",
+      "sklearn.inspection",
+      "sklearn.linear_model",
+      "sklearn.metrics",
+      "sklearn.model_selection",
+      "sklearn.neighbors",
+      "sklearn.pipeline",
+      "sklearn.preprocessing",
+      "sklearn.tree"
+    ],
+    "interface": [
+      {
+        "call": "nav_panel",
+        "line": 669,
+        "args": "ui.nav_panel('Function Fitting', ui.layout_sidebar(ui.sidebar(ui.input_select('function', 'Function', ['Noisy sine', 'Mystery function'], selected='Noisy sine'), ui.input_slider('n_samples', 'Samples', 10, 200, 40), ui.input_slider('noise', 'Noise \u03c3', 0.0, 0.6, 0.2, step=0.01), ui.input_numeric('seed', 'Random seed', value=123, min=0, max=999, step=1), ui.input_checkbox('true_curve', 'Show true curve', False), ui.input_slider('degrees', 'Polynomial degree(s)', 1, 50, value=1, step=1), ui.input_action_button('fit', 'Fit polynomial', class_='btn btn-primary')), ui.card(ui.card_header('Curve fitting & MSE'), ui.div(output_widget('poly_fit_plot', width='100%', height='100%'), class_='poly-plot-container')), ui.card(ui.card_header('Fitting info'), ui.output_text_verbatim('poly_mse_info'))))"
+      },
+      {
+        "call": "input_select",
+        "line": 672,
+        "args": "ui.input_select('function', 'Function', ['Noisy sine', 'Mystery function'], selected='Noisy sine')"
+      },
+      {
+        "call": "input_slider",
+        "line": 673,
+        "args": "ui.input_slider('n_samples', 'Samples', 10, 200, 40)"
+      },
+      {
+        "call": "input_slider",
+        "line": 674,
+        "args": "ui.input_slider('noise', 'Noise \u03c3', 0.0, 0.6, 0.2, step=0.01)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 675,
+        "args": "ui.input_numeric('seed', 'Random seed', value=123, min=0, max=999, step=1)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 676,
+        "args": "ui.input_checkbox('true_curve', 'Show true curve', False)"
+      },
+      {
+        "call": "input_slider",
+        "line": 677,
+        "args": "ui.input_slider('degrees', 'Polynomial degree(s)', 1, 50, value=1, step=1)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 678,
+        "args": "ui.input_action_button('fit', 'Fit polynomial', class_='btn btn-primary')"
+      },
+      {
+        "call": "output_widget",
+        "line": 683,
+        "args": "output_widget('poly_fit_plot', width='100%', height='100%')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 689,
+        "args": "ui.output_text_verbatim('poly_mse_info')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 693,
+        "args": "ui.nav_panel('Data Settings & PCA', ui.layout_sidebar(ui.sidebar(ui.input_select('dataset', 'Dataset', list(DATASETS.keys()), selected=DEFAULT_DS), ui.input_numeric('data_seed', 'Seed', 42, min=0, max=9999, step=1), ui.input_checkbox('standardize', 'Standardize features (zero-mean, unit-var)', True), ui.hr(), ui.input_slider('split', 'Train % (of all data)', min=50, max=90, value=70, step=5), ui.input_slider('val_split', 'Validation % (of all data)', min=5, max=40, value=15, step=5), ui.output_text_verbatim('split_overview'), ui.hr(), ui.input_checkbox('use_all_features', 'Use all features in train/val/test split', True), ui.panel_conditional('input.use_all_features == false', ui.input_selectize('feature_select', 'Select features for train/val/test split', choices=[], selected=[], multiple=True, width='100%')), ui.hr(), ui.input_action_button('load', 'Load dataset', class_='btn btn-primary')), ui.navset_card_pill(ui.nav_panel('Dataset', ui.output_data_frame('data_table')), ui.nav_panel('Summary Statistics', ui.output_text_verbatim('data_summary')), ui.nav_panel('PCA', ui.card(ui.div(output_widget('pca_scatter', width='100%', height='100%'), class_='pca-plot-container')), ui.tags.div(style='margin-top: 20px;'), ui.output_text_verbatim('pca_explained'), ui.tags.div(style='margin-top: 10px;'), ui.output_text_verbatim('pca_loadings_top_features')), ui.nav_panel('Feature Pairplots', ui.row(ui.column(6, ui.input_selectize('pairplot_features_all_samples', 'Select features for pairplot', choices=[], selected=[], multiple=True, width='100%')), ui.column(6, ui.div(ui.input_action_button('plot_pairplots_all_samples', 'Plot', class_='btn btn-primary'), style='margin-top: 30px;'))), ui.card(ui.div(output_widget('feature_pairplot_all_samples', width='100%', height='100%'), class_='pairplot-all-container'))), ui.nav_panel('Train/Test Set Pairplots', ui.row(ui.column(6, ui.input_selectize('pairplot_features', 'Select features for pairplot', choices=[], selected=[], multiple=True, width='100%')), ui.column(6, ui.div(ui.input_action_button('plot_pairplots', 'Plot', class_='btn btn-primary'), style='margin-top: 30px;'))), ui.card(ui.card_header('Training set pairplot'), ui.div(output_widget('train_pairplot', width='100%', height='100%'), class_='pairplot-train-container')), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('Test set pairplot'), ui.div(output_widget('test_pairplot', width='100%', height='100%'), class_='pairplot-test-container'))), title='Data Exploration'), ui.card(ui.card_header('Dataset Info'), ui.panel_conditional(\"input.dataset == 'Wine'\", ui.p('The Wine dataset consists of samples of wines from three different cultivators, with several features gained from chemical analysis. The goal is to classify the cultivator based on these features.')), ui.panel_conditional(\"input.dataset == 'Breast Cancer'\", ui.p('The Breast Cancer Wisconsin dataset contains samples of breast tissue, with features computed from digitized images of fine needle aspirate (FNA) of breast masses. The task is to classify the tissue as malignant or benign.')), ui.panel_conditional(\"input.dataset == 'Digits'\", ui.p('The Digits dataset includes samples of handwritten digits (0-9) represented as 8x8 pixel images. In this app, we only use the first three classes (digits 0, 1, and 2) for classification.')), ui.panel_conditional(\"input.dataset == 'Pima Diabetes'\", ui.p('The Pima Indians Diabetes dataset consists of samples with medical predictor features. The goal is to predict whether a patient has diabetes (Outcome) based on these features.')), ui.panel_conditional(\"input.dataset == 'Iris'\", ui.p('The Iris dataset contains samples of iris flowers from three different species, with four features: sepal length, sepal width, petal length, and petal width. The task is to classify the species based on these features.')), ui.panel_conditional(\"input.dataset == 'Banknotes'\", ui.p('The Banknote Authentication dataset includes samples of genuine and forged banknotes, with features extracted from images of the banknotes. The goal is to classify the banknotes as genuine or forged.')), fill=False), ui.panel_conditional(\"input.dataset == 'Digits' && input.load > 0\", ui.card(ui.card_header('Sample Digits'), ui.input_numeric('digit_sample_index', 'Select a sample index', 0, min=0, max=534, step=1), ui.output_plot('digit_samples', height='320px')))))"
+      },
+      {
+        "call": "input_select",
+        "line": 696,
+        "args": "ui.input_select('dataset', 'Dataset', list(DATASETS.keys()), selected=DEFAULT_DS)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 697,
+        "args": "ui.input_numeric('data_seed', 'Seed', 42, min=0, max=9999, step=1)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 698,
+        "args": "ui.input_checkbox('standardize', 'Standardize features (zero-mean, unit-var)', True)"
+      },
+      {
+        "call": "input_slider",
+        "line": 700,
+        "args": "ui.input_slider('split', 'Train % (of all data)', min=50, max=90, value=70, step=5)"
+      },
+      {
+        "call": "input_slider",
+        "line": 701,
+        "args": "ui.input_slider('val_split', 'Validation % (of all data)', min=5, max=40, value=15, step=5)"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 702,
+        "args": "ui.output_text_verbatim('split_overview')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 704,
+        "args": "ui.input_checkbox('use_all_features', 'Use all features in train/val/test split', True)"
+      },
+      {
+        "call": "input_selectize",
+        "line": 707,
+        "args": "ui.input_selectize('feature_select', 'Select features for train/val/test split', choices=[], selected=[], multiple=True, width='100%')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 710,
+        "args": "ui.input_action_button('load', 'Load dataset', class_='btn btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 713,
+        "args": "ui.nav_panel('Dataset', ui.output_data_frame('data_table'))"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 714,
+        "args": "ui.output_data_frame('data_table')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 716,
+        "args": "ui.nav_panel('Summary Statistics', ui.output_text_verbatim('data_summary'))"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 717,
+        "args": "ui.output_text_verbatim('data_summary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 719,
+        "args": "ui.nav_panel('PCA', ui.card(ui.div(output_widget('pca_scatter', width='100%', height='100%'), class_='pca-plot-container')), ui.tags.div(style='margin-top: 20px;'), ui.output_text_verbatim('pca_explained'), ui.tags.div(style='margin-top: 10px;'), ui.output_text_verbatim('pca_loadings_top_features'))"
+      },
+      {
+        "call": "output_widget",
+        "line": 722,
+        "args": "output_widget('pca_scatter', width='100%', height='100%')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 727,
+        "args": "ui.output_text_verbatim('pca_explained')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 729,
+        "args": "ui.output_text_verbatim('pca_loadings_top_features')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 731,
+        "args": "ui.nav_panel('Feature Pairplots', ui.row(ui.column(6, ui.input_selectize('pairplot_features_all_samples', 'Select features for pairplot', choices=[], selected=[], multiple=True, width='100%')), ui.column(6, ui.div(ui.input_action_button('plot_pairplots_all_samples', 'Plot', class_='btn btn-primary'), style='margin-top: 30px;'))), ui.card(ui.div(output_widget('feature_pairplot_all_samples', width='100%', height='100%'), class_='pairplot-all-container')))"
+      },
+      {
+        "call": "input_selectize",
+        "line": 734,
+        "args": "ui.input_selectize('pairplot_features_all_samples', 'Select features for pairplot', choices=[], selected=[], multiple=True, width='100%')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 742,
+        "args": "ui.input_action_button('plot_pairplots_all_samples', 'Plot', class_='btn btn-primary')"
+      },
+      {
+        "call": "output_widget",
+        "line": 749,
+        "args": "output_widget('feature_pairplot_all_samples', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 754,
+        "args": "ui.nav_panel('Train/Test Set Pairplots', ui.row(ui.column(6, ui.input_selectize('pairplot_features', 'Select features for pairplot', choices=[], selected=[], multiple=True, width='100%')), ui.column(6, ui.div(ui.input_action_button('plot_pairplots', 'Plot', class_='btn btn-primary'), style='margin-top: 30px;'))), ui.card(ui.card_header('Training set pairplot'), ui.div(output_widget('train_pairplot', width='100%', height='100%'), class_='pairplot-train-container')), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('Test set pairplot'), ui.div(output_widget('test_pairplot', width='100%', height='100%'), class_='pairplot-test-container')))"
+      },
+      {
+        "call": "input_selectize",
+        "line": 757,
+        "args": "ui.input_selectize('pairplot_features', 'Select features for pairplot', choices=[], selected=[], multiple=True, width='100%')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 765,
+        "args": "ui.input_action_button('plot_pairplots', 'Plot', class_='btn btn-primary')"
+      },
+      {
+        "call": "output_widget",
+        "line": 773,
+        "args": "output_widget('train_pairplot', width='100%', height='100%')"
+      },
+      {
+        "call": "output_widget",
+        "line": 781,
+        "args": "output_widget('test_pairplot', width='100%', height='100%')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 812,
+        "args": "ui.input_numeric('digit_sample_index', 'Select a sample index', 0, min=0, max=534, step=1)"
+      },
+      {
+        "call": "output_plot",
+        "line": 813,
+        "args": "ui.output_plot('digit_samples', height='320px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 818,
+        "args": "ui.nav_panel('Classification Models', ui.layout_sidebar(ui.sidebar(ui.h4('Classifier Settings'), ui.input_select('classifier', 'Classifier', ['k-NN', 'Decision Tree', 'Random Forest'], selected='k-NN'), ui.input_numeric('classifier_seed', 'Seed', 42, min=0, max=9999, step=1), ui.panel_conditional(\"input.classifier == 'k-NN'\", ui.input_slider('knn_k', 'Number of neighbors k', 1, 30, 3, step=1)), ui.panel_conditional(\"input.classifier == 'Decision Tree'\", ui.input_slider('dt_depth', 'Max tree depth (0 = unlimited)', 0, 20, 5, step=1)), ui.panel_conditional(\"input.classifier == 'Random Forest'\", ui.input_slider('rf_trees', 'Number of trees', 10, 100, 50, step=5), ui.input_slider('rf_depth', 'Max tree depth (0 = unlimited)', 0, 20, 5, step=1)), ui.hr(), ui.h4('Data'), ui.output_text_verbatim('selected_data'), ui.hr(), ui.input_action_button('apply_classifier', 'Apply classifier', class_='btn btn-primary')), ui.navset_card_pill(ui.nav_panel('Decision Boundary', ui.column(5, ui.input_selectize('db_features', 'Select features for decision boundary (exactly 2)', choices=[], selected=[], multiple=True, width='100%')), ui.card(ui.div(output_widget('decision_boundary', width='100%', height='100%'), class_='decision-boundary-container'))), ui.nav_panel('Confusion Matrix', ui.row(ui.column(6, ui.input_radio_buttons('cm_normalize', 'Normalize', choices=['Off', 'Row %', 'Column %', 'Overall %'], selected='Off', inline=True))), ui.card(ui.div(output_widget('cm', width='100%', height='100%'), class_='cm-plot-container'))), ui.nav_panel('Classification Report', ui.output_text_verbatim('class_report'), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('Accuracy'), ui.p('The accuracy is the overall fraction of correctly classified samples.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Precision'), ui.p('The precision is the fraction of true positive predictions among all positive predictions, i.e., it measures how many of the predicted positives are actually positive. The formal definition is given by \\\\(\\\\mathrm{Precision} = \\\\frac{TP}{TP + FP}\\\\), where \\\\(TP\\\\) are the true positives and \\\\(FP\\\\) the false positives.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Recall'), ui.p('The recall is the fraction of true positive predictions among all actual positives, i.e., it measures how many of the actual positives were correctly identified. The formal definition is given by \\\\(\\\\mathrm{Recall} = \\\\frac{TP}{TP + FN}\\\\), where \\\\(TP\\\\) are the true positives and \\\\(FN\\\\) the false negatives.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('F1 Score'), ui.p('The F1 score is the harmonic mean of precision and recall and thus balances the trade-off between precision and recall, i.e., it is high only if both precision and recall are high. We cannot maximize both, but we want to find the best trade-off (also see the precision-recall curve). The formal definition is given by \\\\(F1 = 2 \\\\cdot \\\\frac{\\\\mathrm{Precision} \\\\cdot \\\\mathrm{Recall}}{\\\\mathrm{Precision} + \\\\mathrm{Recall}}\\\\).')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Weighted vs. Macro Average'), ui.p('The weighted average aggregates the metrics for all classes, weighted by the number of samples in each class. This is useful when dealing with imbalanced datasets, as it gives more importance to the performance on the majority classes. The macro average computes the metrics for each class independently and then takes the average, treating all classes equally regardless of their size.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Support'), ui.p('The support is the number of actual occurrences of each class in the dataset.'))), ui.nav_panel('Hyperparameter Optimization', ui.tags.div(style='margin-top: 20px;'), ui.panel_conditional(\"input.classifier == 'k-NN'\", ui.h4('k-NN: Accuracy vs. k'), ui.input_slider('knn_k_range', 'Select k range', 2, 30, [2, 15], step=1), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('knn_k_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;'))), ui.panel_conditional(\"input.classifier == 'Random Forest'\", ui.h4('Random Forest: Accuracy vs. Number of Trees'), ui.input_slider('rf_trees_range', 'Select number of trees', 10, 100, [10, 30], step=10), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('rf_trees_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;'))), ui.panel_conditional(\"input.classifier == 'Random Forest'\", ui.tags.div(style='margin-top: 20px;'), ui.h4('Random Forest: Accuracy vs. Max Depth'), ui.input_slider('rf_depth_range', 'Select max depth', 1, 20, [1, 5], step=1), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('rf_depth_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;'))), ui.panel_conditional(\"input.classifier == 'Decision Tree'\", ui.h4('Decision Tree: Accuracy vs. Max Depth'), ui.input_slider('dt_depth_range', 'Select max depth', 1, 20, [1, 5], step=1), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('dt_depth_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;')))), ui.nav_panel('Model Insights', ui.h4('Feature Importance Settings'), ui.row(ui.column(4, ui.div(ui.input_radio_buttons('fi_method', 'Importance method', choices=['Model-based', 'Permutation'], selected='Model-based', inline=True), style='margin-top: 18px;')), ui.column(4, ui.div(ui.input_checkbox('fi_normalize', 'Normalize importances to sum = 1', True), style='margin-top: 50px;')), ui.column(4, ui.input_slider('fi_topn', 'Show top n features', min=1, max=20, value=10, step=1))), ui.hr(), ui.panel_conditional(\"input.fi_method == 'Permutation'\", ui.row(ui.column(4, ui.input_slider('fi_repeats', 'Permutation repeats', min=1, max=50, value=10, step=1)), ui.column(4, ui.input_select('fi_scoring', 'Scoring', choices=['accuracy', 'f1_macro', 'f1_weighted'], selected='accuracy')), style='align-items: center; margin-top: 10px;'), ui.hr()), ui.card(ui.div(output_widget('feat_importance', width='100%', height='100%'), class_='feat-importance-plot-container')), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('Model-based vs. Permutation Feature Importances'), ui.p('Model-based feature importances (e.g., Gini importance in Random Forests) are derived from how much a feature contributes to reducing impurity across all splits in the trees. However, this does not directly measure impact on predictions and can be biased toward:'), ui.tags.ul(ui.tags.li('Features with many possible split points (continuous or high-cardinality features)'), ui.tags.li('Features with high variance'), ui.tags.li('One-hot encoded categorical features')), ui.p('Permutation feature importance instead measures how much the model\u2019s performance (e.g., accuracy or F1) deteriorates when the values of a single feature are randomly permuted. This directly reflects how important the feature is for the model\u2019s actual predictions and works for any model. However, if features are strongly correlated, permutation importance may underestimate their importance, because the model can rely on the correlated feature as a substitute.'))), ui.nav_panel('ROC / PR Curves', ui.row(ui.column(6, ui.input_select('curve_metric', 'Metric', ['ROC', 'PR'], selected='ROC')), ui.panel_conditional(\"input.dataset == 'Wine' || input.dataset == 'Digits' || input.dataset == 'Iris'\", ui.column(6, ui.input_select('curve_class', 'Class (multiclass one-vs-rest)', choices=[], selected=None)))), ui.card(ui.div(output_widget('curve_plot', width='100%', height='100%'), class_='curve-plot-container'))), ui.nav_panel('Error Analysis', ui.h4('Misclassified Samples'), ui.p('Shows all misclassified samples from the test set. Sorted by predicted probability of the (wrong) predicted class.'), ui.hr(), ui.output_data_frame('errors_table')), title='Model Evaluation')))"
+      },
+      {
+        "call": "input_select",
+        "line": 822,
+        "args": "ui.input_select('classifier', 'Classifier', ['k-NN', 'Decision Tree', 'Random Forest'], selected='k-NN')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 823,
+        "args": "ui.input_numeric('classifier_seed', 'Seed', 42, min=0, max=9999, step=1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 826,
+        "args": "ui.input_slider('knn_k', 'Number of neighbors k', 1, 30, 3, step=1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 830,
+        "args": "ui.input_slider('dt_depth', 'Max tree depth (0 = unlimited)', 0, 20, 5, step=1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 834,
+        "args": "ui.input_slider('rf_trees', 'Number of trees', 10, 100, 50, step=5)"
+      },
+      {
+        "call": "input_slider",
+        "line": 835,
+        "args": "ui.input_slider('rf_depth', 'Max tree depth (0 = unlimited)', 0, 20, 5, step=1)"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 839,
+        "args": "ui.output_text_verbatim('selected_data')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 841,
+        "args": "ui.input_action_button('apply_classifier', 'Apply classifier', class_='btn btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 845,
+        "args": "ui.nav_panel('Decision Boundary', ui.column(5, ui.input_selectize('db_features', 'Select features for decision boundary (exactly 2)', choices=[], selected=[], multiple=True, width='100%')), ui.card(ui.div(output_widget('decision_boundary', width='100%', height='100%'), class_='decision-boundary-container')))"
+      },
+      {
+        "call": "input_selectize",
+        "line": 848,
+        "args": "ui.input_selectize('db_features', 'Select features for decision boundary (exactly 2)', choices=[], selected=[], multiple=True, width='100%')"
+      },
+      {
+        "call": "output_widget",
+        "line": 856,
+        "args": "output_widget('decision_boundary', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 861,
+        "args": "ui.nav_panel('Confusion Matrix', ui.row(ui.column(6, ui.input_radio_buttons('cm_normalize', 'Normalize', choices=['Off', 'Row %', 'Column %', 'Overall %'], selected='Off', inline=True))), ui.card(ui.div(output_widget('cm', width='100%', height='100%'), class_='cm-plot-container')))"
+      },
+      {
+        "call": "input_radio_buttons",
+        "line": 864,
+        "args": "ui.input_radio_buttons('cm_normalize', 'Normalize', choices=['Off', 'Row %', 'Column %', 'Overall %'], selected='Off', inline=True)"
+      },
+      {
+        "call": "output_widget",
+        "line": 874,
+        "args": "output_widget('cm', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 879,
+        "args": "ui.nav_panel('Classification Report', ui.output_text_verbatim('class_report'), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('Accuracy'), ui.p('The accuracy is the overall fraction of correctly classified samples.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Precision'), ui.p('The precision is the fraction of true positive predictions among all positive predictions, i.e., it measures how many of the predicted positives are actually positive. The formal definition is given by \\\\(\\\\mathrm{Precision} = \\\\frac{TP}{TP + FP}\\\\), where \\\\(TP\\\\) are the true positives and \\\\(FP\\\\) the false positives.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Recall'), ui.p('The recall is the fraction of true positive predictions among all actual positives, i.e., it measures how many of the actual positives were correctly identified. The formal definition is given by \\\\(\\\\mathrm{Recall} = \\\\frac{TP}{TP + FN}\\\\), where \\\\(TP\\\\) are the true positives and \\\\(FN\\\\) the false negatives.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('F1 Score'), ui.p('The F1 score is the harmonic mean of precision and recall and thus balances the trade-off between precision and recall, i.e., it is high only if both precision and recall are high. We cannot maximize both, but we want to find the best trade-off (also see the precision-recall curve). The formal definition is given by \\\\(F1 = 2 \\\\cdot \\\\frac{\\\\mathrm{Precision} \\\\cdot \\\\mathrm{Recall}}{\\\\mathrm{Precision} + \\\\mathrm{Recall}}\\\\).')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Weighted vs. Macro Average'), ui.p('The weighted average aggregates the metrics for all classes, weighted by the number of samples in each class. This is useful when dealing with imbalanced datasets, as it gives more importance to the performance on the majority classes. The macro average computes the metrics for each class independently and then takes the average, treating all classes equally regardless of their size.')), ui.tags.div(style='margin-top: 10px;'), ui.card(ui.card_header('Support'), ui.p('The support is the number of actual occurrences of each class in the dataset.')))"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 880,
+        "args": "ui.output_text_verbatim('class_report')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 912,
+        "args": "ui.nav_panel('Hyperparameter Optimization', ui.tags.div(style='margin-top: 20px;'), ui.panel_conditional(\"input.classifier == 'k-NN'\", ui.h4('k-NN: Accuracy vs. k'), ui.input_slider('knn_k_range', 'Select k range', 2, 30, [2, 15], step=1), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('knn_k_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;'))), ui.panel_conditional(\"input.classifier == 'Random Forest'\", ui.h4('Random Forest: Accuracy vs. Number of Trees'), ui.input_slider('rf_trees_range', 'Select number of trees', 10, 100, [10, 30], step=10), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('rf_trees_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;'))), ui.panel_conditional(\"input.classifier == 'Random Forest'\", ui.tags.div(style='margin-top: 20px;'), ui.h4('Random Forest: Accuracy vs. Max Depth'), ui.input_slider('rf_depth_range', 'Select max depth', 1, 20, [1, 5], step=1), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('rf_depth_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;'))), ui.panel_conditional(\"input.classifier == 'Decision Tree'\", ui.h4('Decision Tree: Accuracy vs. Max Depth'), ui.input_slider('dt_depth_range', 'Select max depth', 1, 20, [1, 5], step=1), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.div(output_widget('dt_depth_sweep', width='100%', height='100%'), class_='plotly-plot-container', style='height: 500px;'))))"
+      },
+      {
+        "call": "input_slider",
+        "line": 917,
+        "args": "ui.input_slider('knn_k_range', 'Select k range', 2, 30, [2, 15], step=1)"
+      },
+      {
+        "call": "output_widget",
+        "line": 921,
+        "args": "output_widget('knn_k_sweep', width='100%', height='100%')"
+      },
+      {
+        "call": "input_slider",
+        "line": 930,
+        "args": "ui.input_slider('rf_trees_range', 'Select number of trees', 10, 100, [10, 30], step=10)"
+      },
+      {
+        "call": "output_widget",
+        "line": 934,
+        "args": "output_widget('rf_trees_sweep', width='100%', height='100%')"
+      },
+      {
+        "call": "input_slider",
+        "line": 944,
+        "args": "ui.input_slider('rf_depth_range', 'Select max depth', 1, 20, [1, 5], step=1)"
+      },
+      {
+        "call": "output_widget",
+        "line": 948,
+        "args": "output_widget('rf_depth_sweep', width='100%', height='100%')"
+      },
+      {
+        "call": "input_slider",
+        "line": 957,
+        "args": "ui.input_slider('dt_depth_range', 'Select max depth', 1, 20, [1, 5], step=1)"
+      },
+      {
+        "call": "output_widget",
+        "line": 961,
+        "args": "output_widget('dt_depth_sweep', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 968,
+        "args": "ui.nav_panel('Model Insights', ui.h4('Feature Importance Settings'), ui.row(ui.column(4, ui.div(ui.input_radio_buttons('fi_method', 'Importance method', choices=['Model-based', 'Permutation'], selected='Model-based', inline=True), style='margin-top: 18px;')), ui.column(4, ui.div(ui.input_checkbox('fi_normalize', 'Normalize importances to sum = 1', True), style='margin-top: 50px;')), ui.column(4, ui.input_slider('fi_topn', 'Show top n features', min=1, max=20, value=10, step=1))), ui.hr(), ui.panel_conditional(\"input.fi_method == 'Permutation'\", ui.row(ui.column(4, ui.input_slider('fi_repeats', 'Permutation repeats', min=1, max=50, value=10, step=1)), ui.column(4, ui.input_select('fi_scoring', 'Scoring', choices=['accuracy', 'f1_macro', 'f1_weighted'], selected='accuracy')), style='align-items: center; margin-top: 10px;'), ui.hr()), ui.card(ui.div(output_widget('feat_importance', width='100%', height='100%'), class_='feat-importance-plot-container')), ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('Model-based vs. Permutation Feature Importances'), ui.p('Model-based feature importances (e.g., Gini importance in Random Forests) are derived from how much a feature contributes to reducing impurity across all splits in the trees. However, this does not directly measure impact on predictions and can be biased toward:'), ui.tags.ul(ui.tags.li('Features with many possible split points (continuous or high-cardinality features)'), ui.tags.li('Features with high variance'), ui.tags.li('One-hot encoded categorical features')), ui.p('Permutation feature importance instead measures how much the model\u2019s performance (e.g., accuracy or F1) deteriorates when the values of a single feature are randomly permuted. This directly reflects how important the feature is for the model\u2019s actual predictions and works for any model. However, if features are strongly correlated, permutation importance may underestimate their importance, because the model can rely on the correlated feature as a substitute.')))"
+      },
+      {
+        "call": "input_radio_buttons",
+        "line": 973,
+        "args": "ui.input_radio_buttons('fi_method', 'Importance method', choices=['Model-based', 'Permutation'], selected='Model-based', inline=True)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 982,
+        "args": "ui.input_checkbox('fi_normalize', 'Normalize importances to sum = 1', True)"
+      },
+      {
+        "call": "input_slider",
+        "line": 987,
+        "args": "ui.input_slider('fi_topn', 'Show top n features', min=1, max=20, value=10, step=1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 995,
+        "args": "ui.input_slider('fi_repeats', 'Permutation repeats', min=1, max=50, value=10, step=1)"
+      },
+      {
+        "call": "input_select",
+        "line": 998,
+        "args": "ui.input_select('fi_scoring', 'Scoring', choices=['accuracy', 'f1_macro', 'f1_weighted'], selected='accuracy')"
+      },
+      {
+        "call": "output_widget",
+        "line": 1010,
+        "args": "output_widget('feat_importance', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 1026,
+        "args": "ui.nav_panel('ROC / PR Curves', ui.row(ui.column(6, ui.input_select('curve_metric', 'Metric', ['ROC', 'PR'], selected='ROC')), ui.panel_conditional(\"input.dataset == 'Wine' || input.dataset == 'Digits' || input.dataset == 'Iris'\", ui.column(6, ui.input_select('curve_class', 'Class (multiclass one-vs-rest)', choices=[], selected=None)))), ui.card(ui.div(output_widget('curve_plot', width='100%', height='100%'), class_='curve-plot-container')))"
+      },
+      {
+        "call": "input_select",
+        "line": 1028,
+        "args": "ui.input_select('curve_metric', 'Metric', ['ROC', 'PR'], selected='ROC')"
+      },
+      {
+        "call": "input_select",
+        "line": 1032,
+        "args": "ui.input_select('curve_class', 'Class (multiclass one-vs-rest)', choices=[], selected=None)"
+      },
+      {
+        "call": "output_widget",
+        "line": 1038,
+        "args": "output_widget('curve_plot', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 1043,
+        "args": "ui.nav_panel('Error Analysis', ui.h4('Misclassified Samples'), ui.p('Shows all misclassified samples from the test set. Sorted by predicted probability of the (wrong) predicted class.'), ui.hr(), ui.output_data_frame('errors_table'))"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 1047,
+        "args": "ui.output_data_frame('errors_table')"
+      }
+    ],
+    "declarations": {
+      "DATASETS": "{'Wine': (load_wine, 'cultivator'), 'Breast Cancer': (load_breast_cancer, 'diagnosis'), 'Digits': (lambda: load_digits(n_class=3), 'digit'), 'Pima Diabetes': (load_pima, 'Outcome'), 'Iris': (load_iris, 'species'), 'Banknotes': (load_banknote, 'class')}",
+      "DEFAULT_DS": "'Wine'"
+    }
+  },
+  "5": {
+    "folder": "assignments/5",
+    "files": {
+      "assignments/5/app.py": {
+        "sha256": "97a538bed64f52f3561ef006b2d68bbdcd0fa713a01683e9990826d209881379",
+        "bytes": 46962
+      },
+      "assignments/5/u5_utils.py": {
+        "sha256": "b3670ed061282d624138b90534b7841ead7d6f3a2322456ac5ba5dfd5f5561f8",
+        "bytes": 19745
+      }
+    },
+    "imports": [
+      "base64",
+      "io",
+      "json",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "pathlib",
+      "plotly.express",
+      "plotly.graph_objects",
+      "plotly.subplots",
+      "seaborn",
+      "shiny",
+      "shinywidgets",
+      "sklearn.metrics",
+      "torch",
+      "torch.nn",
+      "u5_utils"
+    ],
+    "interface": [
+      {
+        "call": "nav_panel",
+        "line": 89,
+        "args": "ui.nav_panel('Linear Regression', ui.layout_sidebar(ui.sidebar(ui.h4('Data'), ui.input_radio_buttons(id='pr_choice', label='', choices=['Custom', 'Random', 'Classes'], selected='Custom'), ui.input_numeric('pr_seed', 'Seed', 42, min=0), ui.input_numeric('pr_n', 'Number of samples', 200, min=5, max=50000), ui.panel_conditional(\"input.pr_choice!='Classes'\", ui.input_numeric('pr_var', 'Variance', 0.5, min=0.0, step=0.1)), ui.panel_conditional(\"input.pr_choice=='Custom'\", ui.input_text('pr_true_c', 'Coefficients', '0.422;0.241')), ui.input_action_button('pr_make', 'Generate data', class_='btn-primary'), ui.hr(), ui.h4('Model'), ui.input_slider('pr_deg', 'Polynomial degree', min=0, max=10, value=1), ui.input_checkbox('pr_fit', 'Show fitted model'), ui.panel_conditional(\"input.pr_choice=='Custom'\", ui.input_checkbox('pr_true_coefs', 'Show true model')), ui.hr(), ui.download_button('pr_dl_coeffs', 'Download coefficients (.json)', class_='btn-secondary'), ui.download_button('pr_dl_data', 'Download dataset (.csv)', class_='btn-secondary')), ui.navset_card_pill(ui.nav_panel('Plot', ui.card(ui.div(output_widget('pr_plot_model', width='100%', height='100%'), class_='plot-container'), height='400px')), ui.nav_panel('Data (head)', ui.output_data_frame('pr_head'))), ui.card(ui.card_header('Results'), ui.output_text_verbatim('pr_fitted_coeffs'), ui.output_text_verbatim('pr_mse'))))"
+      },
+      {
+        "call": "input_radio_buttons",
+        "line": 94,
+        "args": "ui.input_radio_buttons(id='pr_choice', label='', choices=['Custom', 'Random', 'Classes'], selected='Custom')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 95,
+        "args": "ui.input_numeric('pr_seed', 'Seed', 42, min=0)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 96,
+        "args": "ui.input_numeric('pr_n', 'Number of samples', 200, min=5, max=50000)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 98,
+        "args": "ui.input_numeric('pr_var', 'Variance', 0.5, min=0.0, step=0.1)"
+      },
+      {
+        "call": "input_text",
+        "line": 101,
+        "args": "ui.input_text('pr_true_c', 'Coefficients', '0.422;0.241')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 103,
+        "args": "ui.input_action_button('pr_make', 'Generate data', class_='btn-primary')"
+      },
+      {
+        "call": "input_slider",
+        "line": 107,
+        "args": "ui.input_slider('pr_deg', 'Polynomial degree', min=0, max=10, value=1)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 108,
+        "args": "ui.input_checkbox('pr_fit', 'Show fitted model')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 110,
+        "args": "ui.input_checkbox('pr_true_coefs', 'Show true model')"
+      },
+      {
+        "call": "download_button",
+        "line": 113,
+        "args": "ui.download_button('pr_dl_coeffs', 'Download coefficients (.json)', class_='btn-secondary')"
+      },
+      {
+        "call": "download_button",
+        "line": 114,
+        "args": "ui.download_button('pr_dl_data', 'Download dataset (.csv)', class_='btn-secondary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 117,
+        "args": "ui.nav_panel('Plot', ui.card(ui.div(output_widget('pr_plot_model', width='100%', height='100%'), class_='plot-container'), height='400px'))"
+      },
+      {
+        "call": "output_widget",
+        "line": 120,
+        "args": "output_widget('pr_plot_model', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 125,
+        "args": "ui.nav_panel('Data (head)', ui.output_data_frame('pr_head'))"
+      },
+      {
+        "call": "output_data_frame",
+        "line": 126,
+        "args": "ui.output_data_frame('pr_head')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 131,
+        "args": "ui.output_text_verbatim('pr_fitted_coeffs')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 132,
+        "args": "ui.output_text_verbatim('pr_mse')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 136,
+        "args": "ui.nav_panel('Logistic Regression (1D)', ui.layout_sidebar(ui.sidebar(ui.h4('Data'), ui.input_numeric('lc_seed', 'Seed', 42), ui.input_numeric('lc_n', 'Samples', 200, min=10, max=50000), ui.input_action_button('lc_make', 'Generate data', class_='btn-primary'), ui.hr(), ui.h4('Training (softmax / CE)'), ui.input_numeric('lc_epochs', 'Epochs', 20, min=1), ui.input_numeric('lc_lr', 'Learning rate', 0.1, min=1e-05, step=0.05), ui.input_numeric('lc_mom', 'Momentum', 0.0, min=0.0, max=0.99, step=0.05), ui.input_action_button('lc_train', 'Train linear classifier', class_='btn-primary'), ui.hr(), ui.download_button('lc_dl_coeffs', 'Download coefficients (.json)', class_='btn-secondary'), ui.download_button('lc_dl_data', 'Download dataset (.csv)', class_='btn-secondary')), ui.navset_card_pill(ui.nav_panel('Data & Decision Function', ui.card(ui.div(output_widget('lc_plot', width='100%', height='100%'), class_='plot-container'), height='420px')), ui.nav_panel('Illustration: Sigmoid function', ui.card(ui.div(output_widget('lc_sigmoid', width='100%', height='100%'), class_='plot-container'), height='420px'))), ui.card(ui.card_header('Results'), ui.output_text_verbatim('lc_coeffs_txt'), ui.output_text('lc_metrics'))))"
+      },
+      {
+        "call": "input_numeric",
+        "line": 141,
+        "args": "ui.input_numeric('lc_seed', 'Seed', 42)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 142,
+        "args": "ui.input_numeric('lc_n', 'Samples', 200, min=10, max=50000)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 143,
+        "args": "ui.input_action_button('lc_make', 'Generate data', class_='btn-primary')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 146,
+        "args": "ui.input_numeric('lc_epochs', 'Epochs', 20, min=1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 147,
+        "args": "ui.input_numeric('lc_lr', 'Learning rate', 0.1, min=1e-05, step=0.05)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 148,
+        "args": "ui.input_numeric('lc_mom', 'Momentum', 0.0, min=0.0, max=0.99, step=0.05)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 149,
+        "args": "ui.input_action_button('lc_train', 'Train linear classifier', class_='btn-primary')"
+      },
+      {
+        "call": "download_button",
+        "line": 151,
+        "args": "ui.download_button('lc_dl_coeffs', 'Download coefficients (.json)', class_='btn-secondary')"
+      },
+      {
+        "call": "download_button",
+        "line": 152,
+        "args": "ui.download_button('lc_dl_data', 'Download dataset (.csv)', class_='btn-secondary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 155,
+        "args": "ui.nav_panel('Data & Decision Function', ui.card(ui.div(output_widget('lc_plot', width='100%', height='100%'), class_='plot-container'), height='420px'))"
+      },
+      {
+        "call": "output_widget",
+        "line": 158,
+        "args": "output_widget('lc_plot', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 164,
+        "args": "ui.nav_panel('Illustration: Sigmoid function', ui.card(ui.div(output_widget('lc_sigmoid', width='100%', height='100%'), class_='plot-container'), height='420px'))"
+      },
+      {
+        "call": "output_widget",
+        "line": 167,
+        "args": "output_widget('lc_sigmoid', width='100%', height='100%')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 176,
+        "args": "ui.output_text_verbatim('lc_coeffs_txt')"
+      },
+      {
+        "call": "output_text",
+        "line": 177,
+        "args": "ui.output_text('lc_metrics')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 181,
+        "args": "ui.nav_panel('Logistic Regression (2D)', ui.layout_sidebar(ui.sidebar(ui.h4('Data'), ui.input_numeric('lc_seed_2d', 'Seed', 42), ui.input_file('lc_file_2d', 'Upload CSV', multiple=False, accept=['.csv']), ui.input_checkbox('lc_ignore_header_2d', 'Ignore header (auto-name columns)'), ui.input_action_button('lc_make_2d', 'Load data', class_='btn-primary'), ui.hr(), ui.h4('Train/Test split'), ui.input_numeric('lc_split_2d', 'Train fraction', 0.8, min=0.1, max=0.9, step=0.05), ui.hr(), ui.h4('Training'), ui.input_numeric('lc_epochs_2d', 'Iterations', 20, min=1), ui.input_numeric('lc_lr_2d', 'Learning rate', 0.1, min=1e-05, step=0.05), ui.input_numeric('lc_mom_2d', 'Momentum', 0.0, min=0.0, max=0.99, step=0.05), ui.input_action_button('lc_train_2d', 'Train classifier', class_='btn-primary')), ui.card(ui.card_header('Ground truth'), ui.div(output_widget('lc_plot_2d', width='100%', height='100%'), class_='plot-container'), height='500px'), ui.card(ui.card_header('Results'), ui.div(output_widget('lc_plot_prect_2d', width='100%', height='100%'), class_='plot-container'), ui.output_text_verbatim('lc_coeffs_txt_2d'), ui.output_text_verbatim('lc_metrics_2d'), height='420px')))"
+      },
+      {
+        "call": "input_numeric",
+        "line": 185,
+        "args": "ui.input_numeric('lc_seed_2d', 'Seed', 42)"
+      },
+      {
+        "call": "input_file",
+        "line": 186,
+        "args": "ui.input_file('lc_file_2d', 'Upload CSV', multiple=False, accept=['.csv'])"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 187,
+        "args": "ui.input_checkbox('lc_ignore_header_2d', 'Ignore header (auto-name columns)')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 188,
+        "args": "ui.input_action_button('lc_make_2d', 'Load data', class_='btn-primary')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 191,
+        "args": "ui.input_numeric('lc_split_2d', 'Train fraction', 0.8, min=0.1, max=0.9, step=0.05)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 194,
+        "args": "ui.input_numeric('lc_epochs_2d', 'Iterations', 20, min=1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 195,
+        "args": "ui.input_numeric('lc_lr_2d', 'Learning rate', 0.1, min=1e-05, step=0.05)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 196,
+        "args": "ui.input_numeric('lc_mom_2d', 'Momentum', 0.0, min=0.0, max=0.99, step=0.05)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 197,
+        "args": "ui.input_action_button('lc_train_2d', 'Train classifier', class_='btn-primary')"
+      },
+      {
+        "call": "output_widget",
+        "line": 202,
+        "args": "output_widget('lc_plot_2d', width='100%', height='100%')"
+      },
+      {
+        "call": "output_widget",
+        "line": 209,
+        "args": "output_widget('lc_plot_prect_2d', width='100%', height='100%')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 212,
+        "args": "ui.output_text_verbatim('lc_coeffs_txt_2d')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 213,
+        "args": "ui.output_text_verbatim('lc_metrics_2d')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 217,
+        "args": "ui.nav_panel('MNIST / Fashion-MNIST', ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('About the MNIST and Fashion-MNIST datasets'), ui.tags.p('The MNIST dataset consists of 70,000 grayscale images of handwritten digits (0-9), each of size 28x28 pixels. the Fashion-MNIST dataset is a similar dataset containing images of clothing items, also in grayscale and of the same size. ', 'Both datasets are already split into a training set of 60,000 images and a test set of 10,000 images. ')), ui.card(ui.card_header('MNIST'), ui.div(ui.output_plot('mnist_samples', width='100%', height='100%'), class_='plot-container'), height='420px'), ui.tags.br(), ui.card(ui.card_header('Fashion-MNIST'), ui.div(ui.output_plot('fashionmnist_samples', width='100%', height='100%'), class_='plot-container'), height='420px'))"
+      },
+      {
+        "call": "output_plot",
+        "line": 231,
+        "args": "ui.output_plot('mnist_samples', width='100%', height='100%')"
+      },
+      {
+        "call": "output_plot",
+        "line": 241,
+        "args": "ui.output_plot('fashionmnist_samples', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 247,
+        "args": "ui.nav_panel('Linear Classifier on MNIST', ui.layout_sidebar(ui.sidebar(ui.h4('Dataset'), ui.input_select('mn_ds', 'Dataset', {'mnist': 'MNIST', 'fashion': 'Fashion-MNIST'}, selected='mnist'), ui.input_numeric('mn_seed', 'Seed', 42, min=0), ui.input_numeric('mn_batch', 'Batch size', 256, min=8, max=1024), ui.hr(), ui.h4('Training'), ui.input_numeric('mn_epochs', 'Epochs', 3, min=1), ui.input_numeric('mn_lr', 'Learning rate', 0.1, min=1e-05, step=0.05), ui.input_numeric('mn_mom', 'Momentum', 0.9, min=0.0, max=0.99, step=0.05), ui.input_action_button('mn_train', 'Train', class_='btn-primary'), ui.output_ui('mn_progress'), ui.hr(), ui.h4('Evaluation'), ui.input_action_button('mn_eval', 'Evaluate', class_='btn-primary'), ui.input_checkbox('mn_invert', 'Invert pixels'), ui.input_checkbox('mn_hflip', 'Horizontal flip')), ui.card(ui.card_header('Sample predictions on test set'), ui.output_plot('mn_examples', height='420px')), ui.card(ui.card_header('Evaluation on test set'), ui.output_text('mn_acc'), ui.div(output_widget('mn_cm', width='100%', height='100%'), class_='plot-container'), height='500px')))"
+      },
+      {
+        "call": "input_select",
+        "line": 252,
+        "args": "ui.input_select('mn_ds', 'Dataset', {'mnist': 'MNIST', 'fashion': 'Fashion-MNIST'}, selected='mnist')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 258,
+        "args": "ui.input_numeric('mn_seed', 'Seed', 42, min=0)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 259,
+        "args": "ui.input_numeric('mn_batch', 'Batch size', 256, min=8, max=1024)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 262,
+        "args": "ui.input_numeric('mn_epochs', 'Epochs', 3, min=1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 263,
+        "args": "ui.input_numeric('mn_lr', 'Learning rate', 0.1, min=1e-05, step=0.05)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 264,
+        "args": "ui.input_numeric('mn_mom', 'Momentum', 0.9, min=0.0, max=0.99, step=0.05)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 265,
+        "args": "ui.input_action_button('mn_train', 'Train', class_='btn-primary')"
+      },
+      {
+        "call": "output_ui",
+        "line": 266,
+        "args": "ui.output_ui('mn_progress')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 269,
+        "args": "ui.input_action_button('mn_eval', 'Evaluate', class_='btn-primary')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 270,
+        "args": "ui.input_checkbox('mn_invert', 'Invert pixels')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 271,
+        "args": "ui.input_checkbox('mn_hflip', 'Horizontal flip')"
+      },
+      {
+        "call": "output_plot",
+        "line": 276,
+        "args": "ui.output_plot('mn_examples', height='420px')"
+      },
+      {
+        "call": "output_text",
+        "line": 280,
+        "args": "ui.output_text('mn_acc')"
+      },
+      {
+        "call": "output_widget",
+        "line": 282,
+        "args": "output_widget('mn_cm', width='100%', height='100%')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 289,
+        "args": "ui.nav_panel('Misclassification analysis', ui.tags.div(style='margin-top: 20px;'), ui.card(ui.card_header('Misclassified examples with softmax probabilities'), ui.output_ui('mn_mis_table')))"
+      },
+      {
+        "call": "output_ui",
+        "line": 294,
+        "args": "ui.output_ui('mn_mis_table')"
+      },
+      {
+        "call": "download",
+        "line": 470,
+        "args": "render.download(filename=lambda: 'u5_polynomial_coeffs.json')"
+      },
+      {
+        "call": "download",
+        "line": 475,
+        "args": "render.download(filename=lambda: 'u5_polynomial_regression_dataset.csv')"
+      },
+      {
+        "call": "download",
+        "line": 648,
+        "args": "render.download(filename=lambda: 'u5_logistic_coeffs.json')"
+      },
+      {
+        "call": "download",
+        "line": 653,
+        "args": "render.download(filename=lambda: 'u5_logistic_dataset.csv')"
+      },
+      {
+        "call": "download",
+        "line": 1260,
+        "args": "render.download(filename=lambda: 'u5_mnist_coeffs.json')"
+      }
+    ],
+    "declarations": {}
+  },
+  "6": {
+    "folder": "assignments/6",
+    "files": {
+      "assignments/6/u6_utils.py": {
+        "sha256": "9f871308976f2a6672d432288daa37db3e936f51ab2e9e80b49de50d3bd4e1fb",
+        "bytes": 30330
+      },
+      "assignments/6/app.py": {
+        "sha256": "076ee4cfac8b057e9cc77934605dbebba83dd4c79ae69345a8086153aab077e9",
+        "bytes": 60925
+      }
+    },
+    "imports": [
+      "json",
+      "math",
+      "matplotlib.pyplot",
+      "numpy",
+      "pandas",
+      "random",
+      "scipy.special",
+      "seaborn",
+      "shiny",
+      "torch",
+      "torch.nn",
+      "u6_utils"
+    ],
+    "interface": [
+      {
+        "call": "nav_panel",
+        "line": 414,
+        "args": "ui.nav_panel('Linear Regression', ui.layout_sidebar(ui.sidebar(ui.h4('Parameters'), ui.input_numeric('linear_reg_k', 'Slope (k)', 0.422), ui.input_numeric('linear_reg_d', 'Intercept (d)', 0.241), ui.input_numeric('linear_seed', 'Random seed', 42), ui.input_slider('linear_n', 'Number of samples', 20, 1000, 100, step=10), ui.input_slider('linear_noise', 'Variance', 0.0, 2.0, 0.3, step=0.05), ui.input_action_button('make_linear_data', 'Generate', class_='btn-primary')), ui.navset_card_pill(ui.nav_panel('Plot', ui.output_plot('linear_data', height='520px')), ui.nav_panel('Loss', ui.layout_columns(ui.input_slider('linear_loss_d', 'd', -10.0, 10.0, [-1, 1], step=0.01), ui.input_slider('linear_loss_k', 'k', -10.0, 10.0, [-1, 1], step=0.01), ui.input_slider('linear_loss_grid', 'Grid Points', 101, 501, 101)), ui.output_plot('linear_loss_landscape', height='520px')), ui.nav_panel('Parameter Tweaking', ui.output_plot('linear_fitted_model_custom', height='520px'), ui.panel_fixed(ui.div({'class': 'plot-toolbar d-flex gap-2 align-items-end'}, ui.input_numeric('linear_custom_k', 'k', 0.0, step=0.1, width='110px'), ui.input_numeric('linear_custom_d', 'd', 0.0, step=0.1, width='110px')))), ui.nav_panel('Model Fitting', ui.output_plot('linear_fitted_model_polyfit', height='520px')))))"
+      },
+      {
+        "call": "input_numeric",
+        "line": 418,
+        "args": "ui.input_numeric('linear_reg_k', 'Slope (k)', 0.422)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 419,
+        "args": "ui.input_numeric('linear_reg_d', 'Intercept (d)', 0.241)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 420,
+        "args": "ui.input_numeric('linear_seed', 'Random seed', 42)"
+      },
+      {
+        "call": "input_slider",
+        "line": 421,
+        "args": "ui.input_slider('linear_n', 'Number of samples', 20, 1000, 100, step=10)"
+      },
+      {
+        "call": "input_slider",
+        "line": 422,
+        "args": "ui.input_slider('linear_noise', 'Variance', 0.0, 2.0, 0.3, step=0.05)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 423,
+        "args": "ui.input_action_button('make_linear_data', 'Generate', class_='btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 426,
+        "args": "ui.nav_panel('Plot', ui.output_plot('linear_data', height='520px'))"
+      },
+      {
+        "call": "output_plot",
+        "line": 427,
+        "args": "ui.output_plot('linear_data', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 429,
+        "args": "ui.nav_panel('Loss', ui.layout_columns(ui.input_slider('linear_loss_d', 'd', -10.0, 10.0, [-1, 1], step=0.01), ui.input_slider('linear_loss_k', 'k', -10.0, 10.0, [-1, 1], step=0.01), ui.input_slider('linear_loss_grid', 'Grid Points', 101, 501, 101)), ui.output_plot('linear_loss_landscape', height='520px'))"
+      },
+      {
+        "call": "input_slider",
+        "line": 431,
+        "args": "ui.input_slider('linear_loss_d', 'd', -10.0, 10.0, [-1, 1], step=0.01)"
+      },
+      {
+        "call": "input_slider",
+        "line": 432,
+        "args": "ui.input_slider('linear_loss_k', 'k', -10.0, 10.0, [-1, 1], step=0.01)"
+      },
+      {
+        "call": "input_slider",
+        "line": 433,
+        "args": "ui.input_slider('linear_loss_grid', 'Grid Points', 101, 501, 101)"
+      },
+      {
+        "call": "output_plot",
+        "line": 435,
+        "args": "ui.output_plot('linear_loss_landscape', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 437,
+        "args": "ui.nav_panel('Parameter Tweaking', ui.output_plot('linear_fitted_model_custom', height='520px'), ui.panel_fixed(ui.div({'class': 'plot-toolbar d-flex gap-2 align-items-end'}, ui.input_numeric('linear_custom_k', 'k', 0.0, step=0.1, width='110px'), ui.input_numeric('linear_custom_d', 'd', 0.0, step=0.1, width='110px'))))"
+      },
+      {
+        "call": "output_plot",
+        "line": 438,
+        "args": "ui.output_plot('linear_fitted_model_custom', height='520px')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 441,
+        "args": "ui.input_numeric('linear_custom_k', 'k', 0.0, step=0.1, width='110px')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 442,
+        "args": "ui.input_numeric('linear_custom_d', 'd', 0.0, step=0.1, width='110px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 446,
+        "args": "ui.nav_panel('Model Fitting', ui.output_plot('linear_fitted_model_polyfit', height='520px'))"
+      },
+      {
+        "call": "output_plot",
+        "line": 447,
+        "args": "ui.output_plot('linear_fitted_model_polyfit', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 453,
+        "args": "ui.nav_panel('Logistic Regression', ui.layout_sidebar(ui.sidebar(ui.h4('Parameters'), ui.input_numeric('logistic_seed', 'Random seed', 42), ui.input_slider('logistic_n', 'Number of samples', 20, 1000, 100, step=10), ui.input_slider('logistic_noise', 'Variance (\u03c3)', 0.0, 2.0, 0.3, step=0.05), ui.input_slider('logistic_thr', 'Threshold (for labels)', 0.0, 1.0, 0.5, step=0.01), ui.input_action_button('make_logistic_data', 'Generate', class_='btn-primary')), ui.navset_card_pill(ui.nav_panel('Plot', ui.output_plot('logistic_data', height='520px')), ui.nav_panel('Loss', ui.layout_columns(ui.input_slider('logistic_loss_d', 'd', -10.0, 10.0, [-10, 10], step=0.01), ui.input_slider('logistic_loss_k', 'k', -10.0, 10.0, [-10, 10], step=0.01), ui.input_slider('logistic_loss_grid', 'Grid Points', 101, 501, 101)), ui.output_plot('logistic_loss_landscape', height='520px'), ui.input_checkbox('show_gradient', 'Show Gradient')), ui.nav_panel('Parameter Tweaking', ui.output_plot('logistic_fitted_model_custom', height='520px'), ui.panel_fixed(ui.div({'class': 'plot-toolbar d-flex gap-2 align-items-end'}, ui.input_numeric('logistic_custom_k', 'k', 0.0, step=0.1, width='110px'), ui.input_numeric('logistic_custom_d', 'd', 0.0, step=0.1, width='110px')))), ui.nav_panel('Gradient Descent', ui.layout_column_wrap(ui.div(ui.input_numeric('sgd_start_d', 'Start d', 7.5, step=0.1), class_='mb-2'), ui.div(ui.input_numeric('sgd_start_k', 'Start k', -6.0, step=0.1), class_='mb-2'), ui.div(ui.input_numeric('sgd_iterations', 'Iterations', 1000, step=10), class_='mb-2'), ui.div(ui.input_numeric('sgd_learning_rate', 'Learning Rate', 0.01, step=0.01), class_='mb-2'), ui.div(ui.input_numeric('sgd_momentum', 'Momentum', 0.9, step=0.01), class_='mb-2')), ui.input_action_button('do_gradient', 'Run Gradient Descent', class_='btn-success mt-3'), ui.div(class_='my-3'), ui.div(ui.output_text_verbatim('sgd_result'), class_='mb-2'), ui.output_plot('logistic_gradient', height='520px')), ui.nav_panel('Fitted Model using GD', ui.output_plot('logistic_fitted_model', height='520px')))))"
+      },
+      {
+        "call": "input_numeric",
+        "line": 457,
+        "args": "ui.input_numeric('logistic_seed', 'Random seed', 42)"
+      },
+      {
+        "call": "input_slider",
+        "line": 458,
+        "args": "ui.input_slider('logistic_n', 'Number of samples', 20, 1000, 100, step=10)"
+      },
+      {
+        "call": "input_slider",
+        "line": 459,
+        "args": "ui.input_slider('logistic_noise', 'Variance (\u03c3)', 0.0, 2.0, 0.3, step=0.05)"
+      },
+      {
+        "call": "input_slider",
+        "line": 460,
+        "args": "ui.input_slider('logistic_thr', 'Threshold (for labels)', 0.0, 1.0, 0.5, step=0.01)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 461,
+        "args": "ui.input_action_button('make_logistic_data', 'Generate', class_='btn-primary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 464,
+        "args": "ui.nav_panel('Plot', ui.output_plot('logistic_data', height='520px'))"
+      },
+      {
+        "call": "output_plot",
+        "line": 465,
+        "args": "ui.output_plot('logistic_data', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 467,
+        "args": "ui.nav_panel('Loss', ui.layout_columns(ui.input_slider('logistic_loss_d', 'd', -10.0, 10.0, [-10, 10], step=0.01), ui.input_slider('logistic_loss_k', 'k', -10.0, 10.0, [-10, 10], step=0.01), ui.input_slider('logistic_loss_grid', 'Grid Points', 101, 501, 101)), ui.output_plot('logistic_loss_landscape', height='520px'), ui.input_checkbox('show_gradient', 'Show Gradient'))"
+      },
+      {
+        "call": "input_slider",
+        "line": 469,
+        "args": "ui.input_slider('logistic_loss_d', 'd', -10.0, 10.0, [-10, 10], step=0.01)"
+      },
+      {
+        "call": "input_slider",
+        "line": 470,
+        "args": "ui.input_slider('logistic_loss_k', 'k', -10.0, 10.0, [-10, 10], step=0.01)"
+      },
+      {
+        "call": "input_slider",
+        "line": 471,
+        "args": "ui.input_slider('logistic_loss_grid', 'Grid Points', 101, 501, 101)"
+      },
+      {
+        "call": "output_plot",
+        "line": 473,
+        "args": "ui.output_plot('logistic_loss_landscape', height='520px')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 474,
+        "args": "ui.input_checkbox('show_gradient', 'Show Gradient')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 476,
+        "args": "ui.nav_panel('Parameter Tweaking', ui.output_plot('logistic_fitted_model_custom', height='520px'), ui.panel_fixed(ui.div({'class': 'plot-toolbar d-flex gap-2 align-items-end'}, ui.input_numeric('logistic_custom_k', 'k', 0.0, step=0.1, width='110px'), ui.input_numeric('logistic_custom_d', 'd', 0.0, step=0.1, width='110px'))))"
+      },
+      {
+        "call": "output_plot",
+        "line": 477,
+        "args": "ui.output_plot('logistic_fitted_model_custom', height='520px')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 480,
+        "args": "ui.input_numeric('logistic_custom_k', 'k', 0.0, step=0.1, width='110px')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 481,
+        "args": "ui.input_numeric('logistic_custom_d', 'd', 0.0, step=0.1, width='110px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 485,
+        "args": "ui.nav_panel('Gradient Descent', ui.layout_column_wrap(ui.div(ui.input_numeric('sgd_start_d', 'Start d', 7.5, step=0.1), class_='mb-2'), ui.div(ui.input_numeric('sgd_start_k', 'Start k', -6.0, step=0.1), class_='mb-2'), ui.div(ui.input_numeric('sgd_iterations', 'Iterations', 1000, step=10), class_='mb-2'), ui.div(ui.input_numeric('sgd_learning_rate', 'Learning Rate', 0.01, step=0.01), class_='mb-2'), ui.div(ui.input_numeric('sgd_momentum', 'Momentum', 0.9, step=0.01), class_='mb-2')), ui.input_action_button('do_gradient', 'Run Gradient Descent', class_='btn-success mt-3'), ui.div(class_='my-3'), ui.div(ui.output_text_verbatim('sgd_result'), class_='mb-2'), ui.output_plot('logistic_gradient', height='520px'))"
+      },
+      {
+        "call": "input_numeric",
+        "line": 488,
+        "args": "ui.input_numeric('sgd_start_d', 'Start d', 7.5, step=0.1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 489,
+        "args": "ui.input_numeric('sgd_start_k', 'Start k', -6.0, step=0.1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 490,
+        "args": "ui.input_numeric('sgd_iterations', 'Iterations', 1000, step=10)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 491,
+        "args": "ui.input_numeric('sgd_learning_rate', 'Learning Rate', 0.01, step=0.01)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 492,
+        "args": "ui.input_numeric('sgd_momentum', 'Momentum', 0.9, step=0.01)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 494,
+        "args": "ui.input_action_button('do_gradient', 'Run Gradient Descent', class_='btn-success mt-3')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 496,
+        "args": "ui.output_text_verbatim('sgd_result')"
+      },
+      {
+        "call": "output_plot",
+        "line": 497,
+        "args": "ui.output_plot('logistic_gradient', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 500,
+        "args": "ui.nav_panel('Fitted Model using GD', ui.output_plot('logistic_fitted_model', height='520px'))"
+      },
+      {
+        "call": "output_plot",
+        "line": 501,
+        "args": "ui.output_plot('logistic_fitted_model', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 506,
+        "args": "ui.nav_panel('FNN: Data', ui.layout_sidebar(ui.sidebar(ui.input_select('dataset', 'Dataset', {'toy_reg': 'Toy Regression (y = a + b x + noise)', 'toy_sine': 'Toy Regression (sine wave + noise)', 'toy_bin': 'Toy Classification (threshold + noise)', 'toy_bin2': 'Toy Classification (double interval)', 'blob2d': 'Toy 2D Blobs (nonlinear classification)', 'moons2d': 'Toy 2D Moons (nonlinear classification)', 'MNIST': 'MNIST (10 classes)', 'FashionMNIST': 'FashionMNIST (10 classes)'}, selected='MNIST'), ui.input_numeric('seed', 'Random seed', 42), ui.hr(), ui.panel_conditional(\"input.dataset === 'toy_reg' || input.dataset === 'toy_sine'\", ui.input_slider('n_pairs', 'Num. samples', 20, 2000, 200, step=20), ui.input_slider('variance', 'Noise (\u03c3)', 0.0, 2.0, 0.3, step=0.05), ui.panel_conditional(\"input.dataset === 'toy_reg'\", ui.input_text('coeffs', 'Coefficients (comma-sep)', '0.241,0.422'))), ui.panel_conditional(\"input.dataset === 'blob2d' || input.dataset === 'moons2d'\", ui.input_slider('blob_n', 'Num. samples', 50, 2000, 250, step=50), ui.input_slider('blob_var', 'Noise (\u03c3)', 0.01, 2.0, 0.25, step=0.01), ui.panel_conditional(\"input.dataset === 'blob2d'\", ui.input_slider('blob_thr', 'Threshold (radius)', 0.1, 3.0, 1.25, step=0.05), ui.input_text('blob_offset', 'Offset (x,y)', '0.25, 0.25'))), ui.panel_conditional(\"input.dataset === 'toy_bin' || input.dataset === 'toy_bin2'\", ui.input_slider('n_pairs_c', 'Num. samples', 20, 5000, 500, step=20), ui.input_slider('variance_c', 'Noise (\u03c3)', 0.0, 0.5, 0.1, step=0.01), ui.panel_conditional(\"input.dataset === 'toy_bin'\", ui.input_slider('threshold', 'Threshold', 0.0, 1.0, 0.5, step=0.01))), ui.panel_conditional(\"(input.dataset === 'MNIST') || (input.dataset === 'FashionMNIST')\", ui.input_slider('batch', 'Batch size', 4, 256, 64, step=4), ui.input_slider('valid', 'Validation split', 0.0, 0.5, 0.1, step=0.05)), ui.hr(), ui.input_action_button('load', 'Load/Reload data', class_='btn-success')), ui.panel_conditional('input.load > 0', ui.card(ui.card_header('Dataset Information'), ui.output_text_verbatim('data_info')), ui.card(ui.card_header('Sample Visualization'), ui.panel_conditional(\"input.dataset === 'MNIST' || input.dataset === 'FashionMNIST'\", ui.input_numeric('sample_ix', 'Sample index', 0, min=0, step=1)), ui.output_plot('sample_plot', height='520px')))))"
+      },
+      {
+        "call": "input_select",
+        "line": 509,
+        "args": "ui.input_select('dataset', 'Dataset', {'toy_reg': 'Toy Regression (y = a + b x + noise)', 'toy_sine': 'Toy Regression (sine wave + noise)', 'toy_bin': 'Toy Classification (threshold + noise)', 'toy_bin2': 'Toy Classification (double interval)', 'blob2d': 'Toy 2D Blobs (nonlinear classification)', 'moons2d': 'Toy 2D Moons (nonlinear classification)', 'MNIST': 'MNIST (10 classes)', 'FashionMNIST': 'FashionMNIST (10 classes)'}, selected='MNIST')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 522,
+        "args": "ui.input_numeric('seed', 'Random seed', 42)"
+      },
+      {
+        "call": "input_slider",
+        "line": 525,
+        "args": "ui.input_slider('n_pairs', 'Num. samples', 20, 2000, 200, step=20)"
+      },
+      {
+        "call": "input_slider",
+        "line": 526,
+        "args": "ui.input_slider('variance', 'Noise (\u03c3)', 0.0, 2.0, 0.3, step=0.05)"
+      },
+      {
+        "call": "input_text",
+        "line": 528,
+        "args": "ui.input_text('coeffs', 'Coefficients (comma-sep)', '0.241,0.422')"
+      },
+      {
+        "call": "input_slider",
+        "line": 532,
+        "args": "ui.input_slider('blob_n', 'Num. samples', 50, 2000, 250, step=50)"
+      },
+      {
+        "call": "input_slider",
+        "line": 533,
+        "args": "ui.input_slider('blob_var', 'Noise (\u03c3)', 0.01, 2.0, 0.25, step=0.01)"
+      },
+      {
+        "call": "input_slider",
+        "line": 535,
+        "args": "ui.input_slider('blob_thr', 'Threshold (radius)', 0.1, 3.0, 1.25, step=0.05)"
+      },
+      {
+        "call": "input_text",
+        "line": 536,
+        "args": "ui.input_text('blob_offset', 'Offset (x,y)', '0.25, 0.25')"
+      },
+      {
+        "call": "input_slider",
+        "line": 540,
+        "args": "ui.input_slider('n_pairs_c', 'Num. samples', 20, 5000, 500, step=20)"
+      },
+      {
+        "call": "input_slider",
+        "line": 541,
+        "args": "ui.input_slider('variance_c', 'Noise (\u03c3)', 0.0, 0.5, 0.1, step=0.01)"
+      },
+      {
+        "call": "input_slider",
+        "line": 543,
+        "args": "ui.input_slider('threshold', 'Threshold', 0.0, 1.0, 0.5, step=0.01)"
+      },
+      {
+        "call": "input_slider",
+        "line": 547,
+        "args": "ui.input_slider('batch', 'Batch size', 4, 256, 64, step=4)"
+      },
+      {
+        "call": "input_slider",
+        "line": 548,
+        "args": "ui.input_slider('valid', 'Validation split', 0.0, 0.5, 0.1, step=0.05)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 551,
+        "args": "ui.input_action_button('load', 'Load/Reload data', class_='btn-success')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 556,
+        "args": "ui.output_text_verbatim('data_info')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 561,
+        "args": "ui.input_numeric('sample_ix', 'Sample index', 0, min=0, step=1)"
+      },
+      {
+        "call": "output_plot",
+        "line": 563,
+        "args": "ui.output_plot('sample_plot', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 568,
+        "args": "ui.nav_panel('FNN:Architecture', ui.layout_sidebar(ui.sidebar(ui.input_select('preset', 'Preset', {k: k for k in PRESETS.keys()}), ui.input_action_button('load_preset', 'Load preset'), ui.hr(), ui.input_action_button('apply_arch', 'Apply architecture', class_='btn-success'), ui.download_button('export_arch', 'Export JSON', class_='btn-primary')), ui.card(ui.card_header('Architecture Editor'), ui.tags.p('Edit architecture JSON (Unit 6 supports: flatten, linear, dropout, batchnorm1d, relu/leakyrelu/sigmoid/tanh/gelu).'), ui.div(ui.input_text_area('arch_text', None, rows=1, width='100%', value=''), style='display:none;'), ui.tags.div(id='arch_editor')), ui.card(ui.card_header('Architecture Table'), ui.output_ui('arch_table_block')), ui.card(ui.card_header('Model Architecture (PyTorch)'), ui.output_text_verbatim('model_summary'))))"
+      },
+      {
+        "call": "input_select",
+        "line": 571,
+        "args": "ui.input_select('preset', 'Preset', {k: k for k in PRESETS.keys()})"
+      },
+      {
+        "call": "input_action_button",
+        "line": 572,
+        "args": "ui.input_action_button('load_preset', 'Load preset')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 574,
+        "args": "ui.input_action_button('apply_arch', 'Apply architecture', class_='btn-success')"
+      },
+      {
+        "call": "download_button",
+        "line": 575,
+        "args": "ui.download_button('export_arch', 'Export JSON', class_='btn-primary')"
+      },
+      {
+        "call": "input_text_area",
+        "line": 580,
+        "args": "ui.input_text_area('arch_text', None, rows=1, width='100%', value='')"
+      },
+      {
+        "call": "output_ui",
+        "line": 585,
+        "args": "ui.output_ui('arch_table_block')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 589,
+        "args": "ui.output_text_verbatim('model_summary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 593,
+        "args": "ui.nav_panel('FNN: Training', ui.layout_sidebar(ui.sidebar(ui.input_slider('epochs', 'Epochs', 1, 100, 5), ui.input_numeric('lr', 'Learning rate', 0.01, step=0.001), ui.input_numeric('momentum', 'Momentum', 0.9, step=0.01, min=0.0, max=0.99), ui.output_text_verbatim('which_device'), ui.input_checkbox('early', 'Early stopping (val loss)', False), ui.input_numeric('patience', 'Patience (epochs)', 3), ui.input_numeric('train_seed', 'Training seed', 42), ui.input_action_button('train', 'Train model', class_='btn-success'), ui.input_action_button('reset', 'Reset', class_='btn-danger')), ui.card(ui.card_header('Loss Plot'), ui.output_plot('loss_plot')), ui.card(ui.card_header('Training Progress'), ui.output_ui('train_progress')), ui.card(ui.card_header('Best Model Info'), ui.output_text_verbatim('best_model_info')), ui.card(ui.card_header('Parameter Values'), ui.output_text_verbatim('param_values'))))"
+      },
+      {
+        "call": "input_slider",
+        "line": 596,
+        "args": "ui.input_slider('epochs', 'Epochs', 1, 100, 5)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 597,
+        "args": "ui.input_numeric('lr', 'Learning rate', 0.01, step=0.001)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 598,
+        "args": "ui.input_numeric('momentum', 'Momentum', 0.9, step=0.01, min=0.0, max=0.99)"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 601,
+        "args": "ui.output_text_verbatim('which_device')"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 602,
+        "args": "ui.input_checkbox('early', 'Early stopping (val loss)', False)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 603,
+        "args": "ui.input_numeric('patience', 'Patience (epochs)', 3)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 604,
+        "args": "ui.input_numeric('train_seed', 'Training seed', 42)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 605,
+        "args": "ui.input_action_button('train', 'Train model', class_='btn-success')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 606,
+        "args": "ui.input_action_button('reset', 'Reset', class_='btn-danger')"
+      },
+      {
+        "call": "output_plot",
+        "line": 610,
+        "args": "ui.output_plot('loss_plot')"
+      },
+      {
+        "call": "output_ui",
+        "line": 614,
+        "args": "ui.output_ui('train_progress')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 618,
+        "args": "ui.output_text_verbatim('best_model_info')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 622,
+        "args": "ui.output_text_verbatim('param_values')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 626,
+        "args": "ui.nav_panel('FNN: Predict', ui.tags.div(style='height: 20px;'), ui.div(ui.card(ui.card_header('Predictions'), ui.output_plot('pred_plot', height='520px'), ui.panel_conditional(\"input.dataset === 'MNIST' || input.dataset === 'FashionMNIST'\", ui.output_text_verbatim('metrics_text')), style='margin-left: 40px; margin-right: 40px;')))"
+      },
+      {
+        "call": "output_plot",
+        "line": 631,
+        "args": "ui.output_plot('pred_plot', height='520px')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 633,
+        "args": "ui.output_text_verbatim('metrics_text')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 639,
+        "args": "ui.nav_panel('FNN: Analysis', ui.tags.div(style='height: 20px;'), ui.panel_conditional(\"input.dataset === 'MNIST' || input.dataset === 'FashionMNIST'\", ui.div(ui.navset_card_pill(ui.nav_panel('Confusion Matrix', ui.input_checkbox('cm_norm', 'Normalize confusion matrix', True), ui.output_plot('conf_mat_plot', height='520px')), ui.nav_panel('Input Weights', ui.output_plot('input_weights_plot', height='520px'))), style='margin-left: 40px; margin-right: 40px;')), ui.panel_conditional(\"input.dataset !== 'MNIST' && input.dataset !== 'FashionMNIST'\", ui.card(ui.card_header('Note'), ui.p('Analysis not available for this dataset.'), style='margin-left: 15px; margin-right: 40px;')))"
+      },
+      {
+        "call": "nav_panel",
+        "line": 644,
+        "args": "ui.nav_panel('Confusion Matrix', ui.input_checkbox('cm_norm', 'Normalize confusion matrix', True), ui.output_plot('conf_mat_plot', height='520px'))"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 645,
+        "args": "ui.input_checkbox('cm_norm', 'Normalize confusion matrix', True)"
+      },
+      {
+        "call": "output_plot",
+        "line": 646,
+        "args": "ui.output_plot('conf_mat_plot', height='520px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 648,
+        "args": "ui.nav_panel('Input Weights', ui.output_plot('input_weights_plot', height='520px'))"
+      },
+      {
+        "call": "output_plot",
+        "line": 649,
+        "args": "ui.output_plot('input_weights_plot', height='520px')"
+      },
+      {
+        "call": "output_table",
+        "line": 1088,
+        "args": "ui.output_table('arch_table')"
+      },
+      {
+        "call": "download",
+        "line": 1120,
+        "args": "render.download(filename=lambda: 'architecture_u6.json')"
+      }
+    ],
+    "declarations": {
+      "ACTIVATIONS": "{'relu': nn.ReLU, 'leakyrelu': nn.LeakyReLU, 'sigmoid': nn.Sigmoid, 'tanh': nn.Tanh, 'gelu': nn.GELU}",
+      "PRESETS": "{'MNIST \u2013 2\u00d7Hidden (ReLU)': {'layers': [{'type': 'flatten'}, {'type': 'linear', 'out_features': 128}, {'type': 'relu'}, {'type': 'linear', 'out_features': 64}, {'type': 'relu'}, {'type': 'linear', 'out_features': 10}]}, 'MNIST \u2013 Logistic Regression': {'layers': [{'type': 'flatten'}, {'type': 'linear', 'out_features': 10}]}, 'Toy Classification (Binary) \u2013 2\u00d7Hidden (Tanh)': {'layers': [{'type': 'flatten'}, {'type': 'linear', 'out_features': 16}, {'type': 'tanh'}, {'type': 'linear', 'out_features': 8}, {'type': 'tanh'}, {'type': 'linear', 'out_features': 2}]}, 'Toy Classification (Binary) \u2013 2\u00d7Hidden (ReLU)': {'layers': [{'type': 'flatten'}, {'type': 'linear', 'out_features': 16}, {'type': 'relu'}, {'type': 'linear', 'out_features': 8}, {'type': 'relu'}, {'type': 'linear', 'out_features': 2}]}, 'Toy Regression \u2013 2\u00d7Hidden (ReLU)': {'layers': [{'type': 'flatten'}, {'type': 'linear', 'out_features': 32}, {'type': 'relu'}, {'type': 'linear', 'out_features': 16}, {'type': 'relu'}, {'type': 'linear', 'out_features': 1}]}, 'Toy Classification (Binary) \u2013 1\u00d7Linear': {'layers': [{'type': 'flatten'}, {'type': 'linear', 'out_features': 2}]}, 'Toy Regression \u2013 1xLinear': {'layers': [{'type': 'flatten'}, {'type': 'linear', 'out_features': 1}]}}"
+    }
+  },
+  "7": {
+    "folder": "assignments/7",
+    "files": {
+      "assignments/7/app.py": {
+        "sha256": "6d31a7a5cd82b64ca77b5fdaa0321d6332404d87717beacae3a43328b6aeb2f5",
+        "bytes": 1591931
+      },
+      "assignments/7/imgs/images.jpeg": {
+        "sha256": "d63cf89f209c97e5bfe55dc378dcebc668101b86defbabc0f8bb0bbf4c9a4458",
+        "bytes": 6035
+      },
+      "assignments/7/imgs/lanes.jpg": {
+        "sha256": "face926e89b24d3ca318c428e98d53c706d8e8faf3615d6f4481433054d0a38c",
+        "bytes": 163810
+      },
+      "assignments/7/imgs/charlie_4.jpg": {
+        "sha256": "37d002deb976d9721ceeb243a80afb742b4bda93f82d037dfa80066cd8051643",
+        "bytes": 330182
+      }
+    },
+    "imports": [
+      "asyncio",
+      "collections",
+      "copy",
+      "dataclasses",
+      "json",
+      "math",
+      "matplotlib.pyplot",
+      "numpy",
+      "os",
+      "pandas",
+      "queue",
+      "random",
+      "scipy.signal",
+      "shiny",
+      "shiny.types",
+      "sys",
+      "torch",
+      "torch.nn",
+      "torch.utils.data",
+      "torchvision",
+      "torchvision.transforms",
+      "typing"
+    ],
+    "interface": [
+      {
+        "call": "nav_panel",
+        "line": 19975,
+        "args": "ui.nav_panel('Introduction', ui.tags.div(style='height:20px;'), ui.card(ui.card_header('What is a convolutional neural network?'), ui.markdown('A **convolutional neural network** (CNN, or ConvNet) is a class of deep neural networks, most commonly \\n                            applied to analyzing all sorts of images. The name indicates that the network employs a **mathematical \\n                            operation called convolution**. Convolutional networks are any neural networks that use convolution in \\n                            place of general matrix multiplication in at least one of their layers.\\n                            '), ui.markdown('Like other neural networks, a convolutional neural network consists of an input and an output layer, \\n                            as well as multiple hidden layers. The hidden layers of a CNN typically consist of a series of \\n                            **convolutional layers**, **pooling layers** and **fully connected layers**.'), ui.HTML(f'\\n                    <img src=\"data:image/png;base64,{IMG_CNN_ARCH}\"\\n                        alt=\"CNN Architecture Example\" style=\"max-width:80%; height:auto;\\n                        display: block; margin-left: auto; margin-right: auto;\"/>\\n                    '), ui.hr(), ui.HTML(f'\\n                    <img src=\"data:image/png;base64,{IMG_CNN_SKETCH}\"\\n                        alt=\"CNN Sketch\" style=\"max-width:60%; height:auto;\\n                        display: block; margin-left: auto; margin-right: auto;\"/>\\n                    ')), ui.card(ui.card_header('What is a convolution?'), ui.markdown('Discrete **convolution** is a mathematical operation on two tensors (of the same dimensionality, \\n                            but possibly of different size) to produce a third tensor. The term convolution refers to both the \\n                            resulting tensor and to the process of computing it. In a neural network that processes images, the \\n                            first tensor is the input image, and the second one is a learnable **filter** or **kernel**, \\n                            the size of which we choose in advance. The operation can be seen as sliding the (small) filter \\n                            over the (large) image and computing a weighted sum (or dot product) for every position. One step \\n                            looks as follows:'), ui.HTML(f'\\n                    <img src=\"data:image/png;base64,{IMG_CNN_CONCEPT_1}\"\\n                        alt=\"Convolution Example\" style=\"max-width:40%; height:auto;\\n                        display: block; margin-left: auto; margin-right: auto;\"/>\\n                    '), ui.markdown('The filter is applied to every possible position in the image, producing a new image (the output \\n                            of the convolution operation) called a **feature map** or **activation map**. The feature map \\n                            highlights certain features of the input image, such as edges, textures, or patterns, depending \\n                            on the values in the filter. By stacking multiple convolutional layers with different filters, \\n                            CNNs can learn to recognize complex patterns and objects in images.'), ui.markdown('Technically, for a convolution, the filter needs to be flipped horizontally and vertically before \\n                            sliding it over the input, otherwise it is called a **cross-correlation**. This flipping is usually omitted, \\n                            but we still call it a convolutional neural network. Since the filters are learned, it does not make a difference.\\n                            '), ui.markdown('By applying the learnable filter at every position, we obtain an output image, the so-called **activation map**. \\n                            It can be seen as recording the activation strength of some specific feature at some spatial position in the \\n                            input. For the example above, we would get: '), ui.HTML(f'\\n                    <img src=\"data:image/png;base64,{IMG_CONV_RESULT}\"\\n                        alt=\"Convolution Result Example\" style=\"max-width:15%; height:auto; \\n                        display: block; margin-left: auto; margin-right: auto;\"/>\\n                    '), ui.p(\"Note how the activations are strongest when the pattern of '0.5' in the kernel overlaps with the pattern of '0.4' in the input, giving \\\\(0.5 \\\\cdot 0.4 + 0.5 \\\\cdot 0.4 + 0.5 \\\\cdot 0.4 = 0.6\\\\). Also note that the output is smaller than the input by 2 pixels in each dimension - we could pad the input with a suitably large border of zeros if we wanted to avoid that.\")), ui.card(ui.card_header('Convolutional Layer Parameters'), ui.markdown('A convolutional layer has several important parameters that affect its behavior and performance\\n                            in a neural network:'), ui.markdown('1. **Number of Filters (Kernels)**: This parameter determines how many different filters the layer will learn. \\n                            Each filter is responsible for detecting a specific feature in the input image. More filters allow the layer to \\n                            capture a wider variety of features, but also increase the computational cost. For example, here we apply \\n                            2 kernels on our input (as the input has 3 channels, so do the kernels) and we will get one feature map output per kernel:\\n                            '), ui.HTML(f'\\n                    <img src=\"data:image/png;base64,{IMG_CNN_MULTIPLE_KERNELS}\"\\n                        alt=\"Multiple Filters Example\" style=\"max-width:35%; height:auto;\\n                        display: block; margin-left: auto; margin-right: auto;\"/>\\n                    '), ui.markdown(\"2. **Filter Size**: The dimensions of the filters (e.g., 3x3, 5x5) determine the size of the receptive field that the \\n                layer uses to scan the input image. Smaller filters capture fine details, while larger filters can capture more global features. \\n                            The choice of filter size can impact the model's ability to learn relevant features.\"), ui.markdown('3. **Stride**: The stride parameter specifies how many pixels the filter moves (or \"strides\") across the input image \\n                during the convolution operation. A stride of 1 means the filter moves one pixel at a time, while a stride of 2 means it moves two pixels \\n                at a time. Larger strides result in smaller output feature maps and can reduce computational cost, but may also lead to loss of spatial information.\\n                In the example below, we use a stride of 3, which results in a drastically smaller output feature map:'), ui.HTML(f'\\n                    <img src=\"data:image/png;base64,{IMG_STRIDE}\"\\n                        alt=\"Stride Example\" style=\"max-width:80%; height:auto;\\n                        display: block; margin-left: auto; margin-right: auto;\"/>\\n                    '), ui.markdown('4. **Padding**: As mentioned above, padding involves adding extra pixels (usually zeros) around the borders of the input image before applying \\n                the convolution. This helps to control the spatial dimensions of the output feature map. Common padding strategies include \"valid\" (no padding) \\n                and \"same\" (padding such that the output has the same dimensions as the input). Padding can help preserve important features at the edges of the image.')), ui.card(ui.card_header('Pooling Layers'), ui.markdown('\\n                            Another important concept often used with CNNs is **pooling**, which is a form of nonlinear down-sampling. \\n                            There are several nonlinear functions to implement pooling, among which **max pooling** is the most common. \\n                            It partitions the input image into a set of non-overlapping rectangles and, for each such sub-region, outputs the maximum. \\n                            The size of the rectangles can be chosen at will. Processing the result from our very first convolution example with \\n                            2x2 max-pooling, the first output would be:\\n                            '), ui.HTML(f'\\n                    <img src=\"data:image/png;base64,{IMG_POOL}\"\\n                        alt=\"Max Pooling Result Example\" style=\"max-width:35%; height:auto;\\n                        display: block; margin-left: auto; margin-right: auto;\"/>\\n                    '), ui.markdown('\\n                Note that this is a fixed operation - there are no trainable parameters involved.\\n                ')))"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20106,
+        "args": "ui.nav_panel('Filters', ui.layout_sidebar(ui.sidebar(ui.h4('Filters'), ui.input_select('filter_type', 'Filter Type:', {'custom': 'Custom Filter', 'sobel_x': 'Sobel X (Vertical Edges)', 'sobel_y': 'Sobel Y (Horizontal Edges)', 'edge_detect': 'Edge Detection', 'blur': 'Blur Filter', 'sharpen': 'Sharpen Filter'}, selected='sobel_x'), ui.panel_conditional(\"input.filter_type == 'custom'\", ui.h5('Custom filter'), ui.output_ui('custom_filter_df')), ui.input_file('conv_image', 'Upload Image', accept=['.jpg', '.jpeg', '.png']), ui.input_action_button('apply_filter', 'Apply Filter', class_='btn-primary')), ui.card(ui.card_header('Filter'), ui.output_plot('filter_viz')), ui.card(ui.card_header('Convolution Result'), ui.output_plot('convolution_result'))))"
+      },
+      {
+        "call": "input_select",
+        "line": 20110,
+        "args": "ui.input_select('filter_type', 'Filter Type:', {'custom': 'Custom Filter', 'sobel_x': 'Sobel X (Vertical Edges)', 'sobel_y': 'Sobel Y (Horizontal Edges)', 'edge_detect': 'Edge Detection', 'blur': 'Blur Filter', 'sharpen': 'Sharpen Filter'}, selected='sobel_x')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20127,
+        "args": "ui.output_ui('custom_filter_df')"
+      },
+      {
+        "call": "input_file",
+        "line": 20129,
+        "args": "ui.input_file('conv_image', 'Upload Image', accept=['.jpg', '.jpeg', '.png'])"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20130,
+        "args": "ui.input_action_button('apply_filter', 'Apply Filter', class_='btn-primary')"
+      },
+      {
+        "call": "output_plot",
+        "line": 20134,
+        "args": "ui.output_plot('filter_viz')"
+      },
+      {
+        "call": "output_plot",
+        "line": 20138,
+        "args": "ui.output_plot('convolution_result')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20142,
+        "args": "ui.nav_panel('Components', ui.layout_sidebar(ui.sidebar(ui.input_file('bb_image', 'Upload Image', accept=['.jpg', '.jpeg', '.png']), ui.input_checkbox('bb_use_activation', 'Apply activation (ReLU)', False), ui.input_checkbox('bb_use_pool', 'Apply pooling (MaxPool2d)', False), ui.panel_conditional('input.bb_use_pool === true', ui.input_numeric('bb_pool_size', 'Pooling size', 2, min=2, step=1)), ui.input_checkbox('bb_use_stride', 'Use custom stride', False), ui.panel_conditional('input.bb_use_stride === true', ui.input_numeric('bb_stride', 'Stride', 1, min=1, step=1)), ui.input_action_button('bb_preset', 'Load Preset (4x4)', class_='btn-secondary'), ui.input_select('bb_mode', 'Derived kernels', {'transpose': '(negative) transpose', 'rotate': 'rotate 90/180/270'}, selected='transpose'), ui.input_action_button('bb_apply', 'Apply', class_='btn-primary')), ui.div(ui.input_select('bb_size', 'Kernel size', {3: '3\u00d73', 4: '4\u00d74', 5: '5\u00d75', 7: '7\u00d77', 9: '9\u00d79'}, selected=4), ui.layout_columns(ui.card(ui.h6('K (editable)'), ui.output_ui('bb_kernel_df')), ui.card(ui.output_ui('bb_kneg_title'), ui.output_ui('bb_kneg_df'))), ui.layout_columns(ui.card(ui.output_ui('bb_kt_title'), ui.output_ui('bb_kt_df')), ui.card(ui.output_ui('bb_ktneg_title'), ui.output_ui('bb_ktneg_df'))), ui.hr(), ui.card(ui.card_header('Layer Visualization'), ui.panel_conditional('input.bb_apply == 0', ui.tags.p(\"Click 'Apply' to visualize the filter outputs.\")), ui.output_plot('bb_layer_viz', height='850px')))))"
+      },
+      {
+        "call": "input_file",
+        "line": 20145,
+        "args": "ui.input_file('bb_image', 'Upload Image', accept=['.jpg', '.jpeg', '.png'])"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20146,
+        "args": "ui.input_checkbox('bb_use_activation', 'Apply activation (ReLU)', False)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20147,
+        "args": "ui.input_checkbox('bb_use_pool', 'Apply pooling (MaxPool2d)', False)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20149,
+        "args": "ui.input_numeric('bb_pool_size', 'Pooling size', 2, min=2, step=1)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20151,
+        "args": "ui.input_checkbox('bb_use_stride', 'Use custom stride', False)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20153,
+        "args": "ui.input_numeric('bb_stride', 'Stride', 1, min=1, step=1)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20155,
+        "args": "ui.input_action_button('bb_preset', 'Load Preset (4x4)', class_='btn-secondary')"
+      },
+      {
+        "call": "input_select",
+        "line": 20156,
+        "args": "ui.input_select('bb_mode', 'Derived kernels', {'transpose': '(negative) transpose', 'rotate': 'rotate 90/180/270'}, selected='transpose')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20163,
+        "args": "ui.input_action_button('bb_apply', 'Apply', class_='btn-primary')"
+      },
+      {
+        "call": "input_select",
+        "line": 20166,
+        "args": "ui.input_select('bb_size', 'Kernel size', {3: '3\u00d73', 4: '4\u00d74', 5: '5\u00d75', 7: '7\u00d77', 9: '9\u00d79'}, selected=4)"
+      },
+      {
+        "call": "output_ui",
+        "line": 20176,
+        "args": "ui.output_ui('bb_kernel_df')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20179,
+        "args": "ui.output_ui('bb_kneg_title')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20180,
+        "args": "ui.output_ui('bb_kneg_df')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20187,
+        "args": "ui.output_ui('bb_kt_title')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20188,
+        "args": "ui.output_ui('bb_kt_df')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20191,
+        "args": "ui.output_ui('bb_ktneg_title')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20192,
+        "args": "ui.output_ui('bb_ktneg_df')"
+      },
+      {
+        "call": "output_plot",
+        "line": 20203,
+        "args": "ui.output_plot('bb_layer_viz', height='850px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20208,
+        "args": "ui.nav_panel('CNN: Data', ui.layout_sidebar(ui.sidebar(ui.input_select('variant', 'Dataset', {'MNIST': 'MNIST', 'FashionMNIST': 'FashionMNIST', 'CIFAR10': 'CIFAR10', 'SVHN': 'SVHN', 'USPS': 'USPS'}, selected='MNIST'), ui.input_slider('batch', 'Batch size', 4, 256, 32, step=4), ui.hr(), ui.input_checkbox('augment', 'Augment training data', False), ui.panel_conditional('input.augment', ui.input_checkbox('invert', 'Invert pixels (X^255)', False), ui.input_slider('hflip', 'Horizontal flip p (train)', 0.0, 1.0, 0.0, step=0.05), ui.input_slider('vflip', 'Vertical flip p (train)', 0.0, 1.0, 0.0, step=0.05)), ui.hr(), ui.input_slider('valid', 'Validation split', 0.0, 0.5, 0.1, step=0.05), ui.input_checkbox('use_official_test', 'Use official test set', True), ui.output_ui('test_slider'), ui.hr(), ui.input_action_button('load_data', 'Load/Reload dataset', class_='btn-success')), ui.panel_conditional('input.load_data == 0', ui.card(ui.card_header('Instructions'), ui.tags.p(\"Click 'Load/Reload dataset' to load the selected dataset with the specified options.\"))), ui.panel_conditional('input.load_data > 0', ui.card(ui.card_header('Dataset Info'), ui.output_text_verbatim('data_info')), ui.card(ui.card_header('Sample'), ui.input_numeric('sample_ix', 'Sample index', 0, min=0, step=1), ui.output_plot('sample_plot', height='300px')))))"
+      },
+      {
+        "call": "input_select",
+        "line": 20212,
+        "args": "ui.input_select('variant', 'Dataset', {'MNIST': 'MNIST', 'FashionMNIST': 'FashionMNIST', 'CIFAR10': 'CIFAR10', 'SVHN': 'SVHN', 'USPS': 'USPS'}, selected='MNIST')"
+      },
+      {
+        "call": "input_slider",
+        "line": 20213,
+        "args": "ui.input_slider('batch', 'Batch size', 4, 256, 32, step=4)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20215,
+        "args": "ui.input_checkbox('augment', 'Augment training data', False)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20218,
+        "args": "ui.input_checkbox('invert', 'Invert pixels (X^255)', False)"
+      },
+      {
+        "call": "input_slider",
+        "line": 20219,
+        "args": "ui.input_slider('hflip', 'Horizontal flip p (train)', 0.0, 1.0, 0.0, step=0.05)"
+      },
+      {
+        "call": "input_slider",
+        "line": 20220,
+        "args": "ui.input_slider('vflip', 'Vertical flip p (train)', 0.0, 1.0, 0.0, step=0.05)"
+      },
+      {
+        "call": "input_slider",
+        "line": 20224,
+        "args": "ui.input_slider('valid', 'Validation split', 0.0, 0.5, 0.1, step=0.05)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20227,
+        "args": "ui.input_checkbox('use_official_test', 'Use official test set', True)"
+      },
+      {
+        "call": "output_ui",
+        "line": 20230,
+        "args": "ui.output_ui('test_slider')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20233,
+        "args": "ui.input_action_button('load_data', 'Load/Reload dataset', class_='btn-success')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 20244,
+        "args": "ui.output_text_verbatim('data_info')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20248,
+        "args": "ui.input_numeric('sample_ix', 'Sample index', 0, min=0, step=1)"
+      },
+      {
+        "call": "output_plot",
+        "line": 20249,
+        "args": "ui.output_plot('sample_plot', height='300px')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20254,
+        "args": "ui.nav_panel('CNN: Architecture', ui.layout_sidebar(ui.sidebar(ui.input_select('preset', 'Preset', {k: k for k in PRESETS.keys()}), ui.input_action_button('load_preset', 'Load preset'), ui.hr(), ui.input_file('arch_file', 'Import architecture (JSON)', multiple=False, accept=['.json']), ui.input_action_button('import_arch', 'Import file'), ui.hr(), ui.input_action_button('apply_arch', 'Apply architecture', class_='btn-success'), ui.hr(), ui.download_button('export_arch', 'Export architecture JSON', class_='btn-primary')), ui.card(ui.card_header('Architecture Editor'), ui.tags.p(\"Edit architecture (JSON). Must define a list under key 'layers'.\"), ui.div(ui.input_text_area('arch_text', None, rows=1, width='100%', value=''), style='display:none;'), ui.tags.div(id='arch_editor')), ui.card(ui.card_header('Architecture Summary'), ui.output_ui('arch_table_block')), ui.panel_conditional('input.apply_arch', ui.card(ui.card_header('Model Summary (PyTorch nn.Module)'), ui.output_text_verbatim('model_summary')))))"
+      },
+      {
+        "call": "input_select",
+        "line": 20258,
+        "args": "ui.input_select('preset', 'Preset', {k: k for k in PRESETS.keys()})"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20259,
+        "args": "ui.input_action_button('load_preset', 'Load preset')"
+      },
+      {
+        "call": "input_file",
+        "line": 20261,
+        "args": "ui.input_file('arch_file', 'Import architecture (JSON)', multiple=False, accept=['.json'])"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20262,
+        "args": "ui.input_action_button('import_arch', 'Import file')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20264,
+        "args": "ui.input_action_button('apply_arch', 'Apply architecture', class_='btn-success')"
+      },
+      {
+        "call": "download_button",
+        "line": 20266,
+        "args": "ui.download_button('export_arch', 'Export architecture JSON', class_='btn-primary')"
+      },
+      {
+        "call": "input_text_area",
+        "line": 20274,
+        "args": "ui.input_text_area('arch_text', None, rows=1, width='100%', value='')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20281,
+        "args": "ui.output_ui('arch_table_block')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 20287,
+        "args": "ui.output_text_verbatim('model_summary')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20293,
+        "args": "ui.nav_panel('CNN: Training', ui.layout_sidebar(ui.sidebar(ui.input_slider('epochs', 'Epochs', 1, 100, 5), ui.input_numeric('lr', 'Learning rate', 0.01, step=0.01, min=0.001, max=1.0), ui.input_numeric('momentum', 'Momentum', 0.9, step=0.01, min=0.0, max=1.0), ui.input_checkbox('use_cuda', 'Use CUDA if available', False), ui.output_text_verbatim('device_info'), ui.input_numeric('seed', 'Random seed', 0, min=0, max=9999, step=1), ui.input_checkbox('use_es', 'Use early stopping', False), ui.panel_conditional('input.use_es === true', ui.input_numeric('es_patience', 'Patience (epochs)', 3)), ui.input_action_button('start_train', 'Train model', class_='btn-success'), ui.input_action_button('reset_model', 'Reset model', class_='btn-danger')), ui.card(ui.card_header('Loss Curve'), ui.output_plot('loss_plot')), ui.card(ui.card_header('Training Progress'), ui.output_ui('train_progress')), ui.card(ui.card_header('Selected Model'), ui.output_text_verbatim('early_stop_info'))))"
+      },
+      {
+        "call": "input_slider",
+        "line": 20297,
+        "args": "ui.input_slider('epochs', 'Epochs', 1, 100, 5)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20298,
+        "args": "ui.input_numeric('lr', 'Learning rate', 0.01, step=0.01, min=0.001, max=1.0)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20299,
+        "args": "ui.input_numeric('momentum', 'Momentum', 0.9, step=0.01, min=0.0, max=1.0)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20300,
+        "args": "ui.input_checkbox('use_cuda', 'Use CUDA if available', False)"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 20301,
+        "args": "ui.output_text_verbatim('device_info')"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20302,
+        "args": "ui.input_numeric('seed', 'Random seed', 0, min=0, max=9999, step=1)"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20303,
+        "args": "ui.input_checkbox('use_es', 'Use early stopping', False)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20305,
+        "args": "ui.input_numeric('es_patience', 'Patience (epochs)', 3)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20307,
+        "args": "ui.input_action_button('start_train', 'Train model', class_='btn-success')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20308,
+        "args": "ui.input_action_button('reset_model', 'Reset model', class_='btn-danger')"
+      },
+      {
+        "call": "output_plot",
+        "line": 20313,
+        "args": "ui.output_plot('loss_plot')"
+      },
+      {
+        "call": "output_ui",
+        "line": 20317,
+        "args": "ui.output_ui('train_progress')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 20321,
+        "args": "ui.output_text_verbatim('early_stop_info')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20325,
+        "args": "ui.nav_panel('CNN: Inspect', ui.layout_sidebar(ui.sidebar(ui.input_select('inspect_kind', 'What to visualize', {'filters': 'First Conv Filters', 'activations': 'Layer Activations'}), ui.input_slider('n_show', '# channels to show', 1, 16, 1), ui.panel_conditional(\"input.inspect_kind === 'activations'\", ui.input_numeric('inspect_ix', 'Sample index', 0, min=0, step=1), ui.input_slider('layer_index', 'Layer index', 0, 20, 0)), ui.panel_conditional(\"input.inspect_kind === 'filters'\", ui.output_ui('filter_epoch_ui')), ui.input_action_button('do_inspect', 'Visualize', class_='btn-success')), ui.card(ui.card_header('Inspection Plot'), ui.panel_conditional('input.do_inspect == 0', ui.tags.p(\"Click 'Visualize' to see results.\")), ui.output_plot('inspect_plot'))))"
+      },
+      {
+        "call": "input_select",
+        "line": 20329,
+        "args": "ui.input_select('inspect_kind', 'What to visualize', {'filters': 'First Conv Filters', 'activations': 'Layer Activations'})"
+      },
+      {
+        "call": "input_slider",
+        "line": 20330,
+        "args": "ui.input_slider('n_show', '# channels to show', 1, 16, 1)"
+      },
+      {
+        "call": "input_numeric",
+        "line": 20332,
+        "args": "ui.input_numeric('inspect_ix', 'Sample index', 0, min=0, step=1)"
+      },
+      {
+        "call": "input_slider",
+        "line": 20333,
+        "args": "ui.input_slider('layer_index', 'Layer index', 0, 20, 0)"
+      },
+      {
+        "call": "output_ui",
+        "line": 20337,
+        "args": "ui.output_ui('filter_epoch_ui')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20339,
+        "args": "ui.input_action_button('do_inspect', 'Visualize', class_='btn-success')"
+      },
+      {
+        "call": "output_plot",
+        "line": 20347,
+        "args": "ui.output_plot('inspect_plot')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20351,
+        "args": "ui.nav_panel('CNN: Predict', ui.layout_sidebar(ui.sidebar(ui.input_slider('n_preds', 'How many?', 1, 16, 8), ui.input_action_button('sample_preds', 'Sample predictions (test set)', class_='btn-success')), ui.card(ui.card_header('Predictions'), ui.panel_conditional('input.sample_preds == 0', ui.tags.p(\"Click 'Sample predictions' to see results.\")), ui.output_plot('pred_plot')), ui.card(ui.card_header('Prediction Scores & Class Labels'), ui.panel_conditional('input.sample_preds == 0', ui.tags.p(\"Click 'Sample predictions' to see results.\")), ui.output_text_verbatim('pred_scores'), ui.output_text_verbatim('class_labels_info'))))"
+      },
+      {
+        "call": "input_slider",
+        "line": 20355,
+        "args": "ui.input_slider('n_preds', 'How many?', 1, 16, 8)"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20356,
+        "args": "ui.input_action_button('sample_preds', 'Sample predictions (test set)', class_='btn-success')"
+      },
+      {
+        "call": "output_plot",
+        "line": 20364,
+        "args": "ui.output_plot('pred_plot')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 20372,
+        "args": "ui.output_text_verbatim('pred_scores')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 20373,
+        "args": "ui.output_text_verbatim('class_labels_info')"
+      },
+      {
+        "call": "nav_panel",
+        "line": 20377,
+        "args": "ui.nav_panel('CNN: Analysis', ui.layout_sidebar(ui.sidebar(ui.input_checkbox('cm_normalize', 'Normalize confusion matrix', True), ui.input_select('metric_view', 'Metrics view', {'acc': 'Accuracy (overall & per-class)', 'prf_micro': 'Precision/Recall/F1 \u2013 micro', 'prf_macro': 'Precision/Recall/F1 \u2013 macro', 'prf_weighted': 'Precision/Recall/F1 \u2013 weighted'}, selected='acc'), ui.input_action_button('compute_analysis', 'Compute metrics', class_='btn-success')), ui.card(ui.card_header('Confusion Matrix'), ui.panel_conditional('input.compute_analysis == 0', ui.tags.p(\"Click 'Compute metrics' to see results.\")), ui.div(ui.output_plot('confusion_plot', height='600px'), style='overflow-x:auto;')), ui.card(ui.card_header('Metrics'), ui.panel_conditional('input.compute_analysis == 0', ui.tags.p(\"Click 'Compute metrics' to see results.\")), ui.output_text_verbatim('metrics_text'))))"
+      },
+      {
+        "call": "input_checkbox",
+        "line": 20381,
+        "args": "ui.input_checkbox('cm_normalize', 'Normalize confusion matrix', True)"
+      },
+      {
+        "call": "input_select",
+        "line": 20382,
+        "args": "ui.input_select('metric_view', 'Metrics view', {'acc': 'Accuracy (overall & per-class)', 'prf_micro': 'Precision/Recall/F1 \u2013 micro', 'prf_macro': 'Precision/Recall/F1 \u2013 macro', 'prf_weighted': 'Precision/Recall/F1 \u2013 weighted'}, selected='acc')"
+      },
+      {
+        "call": "input_action_button",
+        "line": 20388,
+        "args": "ui.input_action_button('compute_analysis', 'Compute metrics', class_='btn-success')"
+      },
+      {
+        "call": "output_plot",
+        "line": 20397,
+        "args": "ui.output_plot('confusion_plot', height='600px')"
+      },
+      {
+        "call": "output_text_verbatim",
+        "line": 20407,
+        "args": "ui.output_text_verbatim('metrics_text')"
+      },
+      {
+        "call": "input_slider",
+        "line": 21048,
+        "args": "ui.input_slider('test', 'Test split', 0.0, 0.5, 0.1, step=0.05)"
+      },
+      {
+        "call": "output_table",
+        "line": 21234,
+        "args": "ui.output_table('arch_table')"
+      },
+      {
+        "call": "download",
+        "line": 21239,
+        "args": "render.download(filename=lambda: 'architecture.json')"
+      },
+      {
+        "call": "input_slider",
+        "line": 21701,
+        "args": "ui.input_slider('filter_epoch', 'Filters epoch (history)', 0, len(hist) - 1, len(hist) - 1, step=1)"
+      }
+    ],
+    "declarations": {
+      "ACTIVATIONS": "{'relu': nn.ReLU, 'leakyrelu': nn.LeakyReLU, 'sigmoid': nn.Sigmoid, 'tanh': nn.Tanh}",
+      "PRESETS": "{'Preset_MNIST (small)': {'layers': [{'type': 'conv2d', 'out_channels': 8, 'kernel_size': 5, 'stride': 1, 'padding': 0}, {'type': 'relu'}, {'type': 'maxpool2d', 'kernel_size': 4}, {'type': 'flatten'}, {'type': 'linear', 'out_features': 64}, {'type': 'relu'}, {'type': 'linear', 'out_features': 10}]}, 'Preset_MNIST': {'layers': [{'type': 'conv2d', 'out_channels': 8, 'kernel_size': 3, 'stride': 1, 'padding': 1}, {'type': 'relu'}, {'type': 'maxpool2d', 'kernel_size': 2}, {'type': 'conv2d', 'out_channels': 16, 'kernel_size': 3, 'stride': 1, 'padding': 1}, {'type': 'relu'}, {'type': 'maxpool2d', 'kernel_size': 2}, {'type': 'flatten'}, {'type': 'linear', 'out_features': 128}, {'type': 'relu'}, {'type': 'linear', 'out_features': 10}]}, 'Preset_CIFAR10': {'layers': [{'type': 'conv2d', 'out_channels': 10, 'kernel_size': 5, 'padding': 1}, {'type': 'relu'}, {'type': 'maxpool2d', 'kernel_size': 2}, {'type': 'linear', 'out_features': 10}]}}"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+--- supplied/unit7/app.py
++++ corrected/unit7/app.py
+@@ -1,3 +1,4 @@
++from pathlib import Path
+ from shiny import App, ui, render, reactive
+ from shiny.types import FileInfo
+ import json
+@@ -8,9 +9,12 @@
+ import random
+ import collections
+ import torch
++import isolated_training
+ import torch.nn as nn
+ import numpy as np
+ import pandas as pd
++import matplotlib
++matplotlib.use("Agg")
+ import matplotlib.pyplot as plt
+ import torchvision
+ import torchvision.transforms as T
+@@ -19562,7 +19566,7 @@
+         data = json.loads(t)
+     except Exception as e:
+         raise ValueError(f"Failed to parse architecture text as JSON/YAML-ish: {e}")
+-    layers = data.get('layers', data if isinstance(data, list) else [])
++    layers = data if isinstance(data, list) else data.get('layers', []) if isinstance(data, dict) else None
+     if not isinstance(layers, list):
+         raise ValueError("Architecture root must be a list under key 'layers' or a list itself.")
+     specs: List[LayerSpec] = []
+@@ -19691,13 +19695,13 @@
+         conv = nn.Conv2d(c, out_ch, kernel_size=k, stride=s, padding=p, bias=cfg["bias"])
+         layers.append(conv)
+ 
+-        def _dim(Lin, k, s, p):
++        def _dim(height, width, k, s, p):
+             kx, ky = (k if isinstance(k, tuple) else (k, k))
+             sx, sy = (s if isinstance(s, tuple) else (s, s))
+             px, py = (p if isinstance(p, tuple) else (p, p))
+-            return math.floor((Lin + 2 * px - kx) / sx + 1), math.floor((Lin + 2 * py - ky) / sy + 1)
+-
+-        h, w = _dim(h, k, s, p)
++            return math.floor((height + 2 * px - kx) / sx + 1), math.floor((width + 2 * py - ky) / sy + 1)
++
++        h, w = _dim(h, w, k, s, p)
+         c = out_ch
+ 
+     def add_pool(kind: str, cfg: Dict[str, Any]):
+@@ -19709,12 +19713,12 @@
+         else:
+             layers.append(nn.AvgPool2d(kernel_size=k, stride=s))
+ 
+-        def _dim(Lin, k, s):
++        def _dim(height, width, k, s):
+             kx, ky = (k if isinstance(k, tuple) else (k, k))
+             sx, sy = (s if isinstance(s, tuple) else (s, s))
+-            return math.floor((Lin - kx) / sx + 1), math.floor((Lin - ky) / sy + 1)
+-
+-        h, w = _dim(h, k, s)
++            return math.floor((height - kx) / sx + 1), math.floor((width - ky) / sy + 1)
++
++        h, w = _dim(h, w, k, s)
+ 
+     # Build pre-flatten stack
+     for kind, cfg in pre_flatten:
+@@ -19918,7 +19922,7 @@
+     """),
+     ui.tags.link(
+             rel="stylesheet",
+-            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/zephyr/bootstrap.min.css"
++            href="vendor/zephyr/bootstrap.min.css"
+         ),
+         ui.tags.link(
+             rel="stylesheet",
+@@ -21341,6 +21345,9 @@
+         """Thread-safe enqueue (SimpleQueue is safe for threads)."""
+         _train_q.put(msg)
+ 
++    _training_context = isolated_training.Executor(7)
++    session.on_ended(_training_context.cancel)
++
+     def run_training_sync(params: dict) -> dict:
+         """
+         Runs the whole training synchronously (CPU/GPU), but DOES NOT touch Shiny reactives directly.
+@@ -21548,12 +21555,18 @@
+     @reactive.extended_task
+     async def train_task(params: dict):
+         # Run the sync training in a worker thread so Shiny's event loop stays responsive
+-        return await asyncio.to_thread(run_training_sync, params)
++        result = await _training_context.run(params, _q_put)
++        result["model"] = isolated_training.restore_model(result.pop("model_record"), build_model, parse_architecture(params["arch_text"]))
++        return result
+ 
+ 
+     @reactive.effect
+     @reactive.event(input.start_train)
+     def _start_train_task():
++        _training_context.cancel()
++        train_task.cancel()
++        while not _train_q.empty():
++            _train_q.get_nowait()
+         # reset UI immediately (main thread)
+         train_progress_pct.set(0)
+         train_progress_msg.set("Initializing…")
+@@ -21674,6 +21687,10 @@
+     @reactive.effect
+     @reactive.event(input.reset_model)
+     def _reset_model():
++        _training_context.cancel()
++        train_task.cancel()
++        while not _train_q.empty():
++            _train_q.get_nowait()
+         trained_model.set(None)
+         train_history.set(pd.DataFrame())
+         train_progress_pct.set(0)
+@@ -22101,4 +22118,4 @@
+ 
+ 
+ 
+-app = App(app_ui, server)
++app = App(app_ui, server, static_assets=Path(__file__).parent / "www")

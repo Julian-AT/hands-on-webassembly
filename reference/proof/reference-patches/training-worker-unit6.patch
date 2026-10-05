@@ -1,0 +1,20 @@
+--- previous/course-training-worker.js
++++ corrected/course-training-worker.js
+@@ -11,7 +11,7 @@
+   }
+   if (current) return;
+   const tags = data.tags;
+-  if (tags?.protocol !== 2 || tags.unit !== 7 || !tags.session_id || !Number.isInteger(tags.task_id)) {
++  if (tags?.protocol !== 2 || ![6,7].includes(tags.unit) || !tags.session_id || !Number.isInteger(tags.task_id)) {
+     if (tags) self.postMessage({kind:'error',tags,error:'Training protocol changed. Reload and retry.'});
+     return;
+   }
+@@ -26,7 +26,7 @@
+     const response = await fetch(root+'manifest.json',{signal:abort.signal,cache:'no-cache'});
+     if (!response.ok) throw new Error('Training runtime could not load. Retry training.');
+     const manifest = await response.json();
+-    if (manifest.sources['7'] !== digest || manifest.build_id !== tags.build_id) throw new Error('Training runtime is obsolete. Reload and retry.');
++    if (manifest.sources[String(tags.unit)] !== digest || manifest.build_ids[String(tags.unit)] !== tags.build_id) throw new Error('Training runtime is obsolete. Reload and retry.');
+     async function bytes(name) {
+       const response = await fetch(root+name,{signal:abort.signal});
+       if (!response.ok) throw new Error(`${name}: HTTP ${response.status}. Retry training.`);

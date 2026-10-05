@@ -1,0 +1,28 @@
+name: iml
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - jupyter
+  - ipywidgets
+  - numpy=1.26.4
+  - pandas=2.2.2
+  - matplotlib=3.8.4
+  - seaborn=0.13.2
+  - scipy=1.13.1
+  - scikit-learn=1.5.0
+  - scikit-image=0.23.2
+  - tqdm=4.66.4
+  - plotly=6.3.0
+  - opencv                    # (conda package; cross-platform)
+  - spacy=3.7.2
+  - shiny                     # from conda-forge
+  - rdkit=2024.09.1           # from conda-forge (works on Py 3.12)
+  - gymnasium=0.28.1
+  - pip
+  - pip:
+      - pillow==11.0.0
+      - imutils==0.5.4
+      - shinywidgets==0.7.0
+

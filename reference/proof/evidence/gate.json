@@ -1,0 +1,880 @@
+{
+  "generated_at": "2026-10-05T16:11:09.993138+00:00",
+  "status": "BLOCKED",
+  "nextjs_authorized": false,
+  "application_parity": "BLOCKED",
+  "application_blockers": [
+    "unit1/workflows/chrome",
+    "unit1/appearance/chrome",
+    "unit1/lifecycle/chrome",
+    "unit1/numerical",
+    "unit2/workflows/chrome",
+    "unit2/appearance/chrome",
+    "unit2/lifecycle/chrome",
+    "unit2/numerical",
+    "unit3/workflows/chrome",
+    "unit3/appearance/chrome",
+    "unit3/lifecycle/chrome",
+    "unit3/numerical",
+    "unit4/workflows/chrome",
+    "unit4/appearance/chrome",
+    "unit4/lifecycle/chrome",
+    "unit4/numerical",
+    "unit5/workflows/chrome",
+    "unit5/appearance/chrome",
+    "unit5/lifecycle/chrome",
+    "unit5/numerical",
+    "unit6/workflows/chrome",
+    "unit6/appearance/chrome",
+    "unit6/lifecycle/chrome",
+    "unit6/numerical",
+    "unit7/workflows/chrome",
+    "unit7/appearance/chrome",
+    "unit7/lifecycle/chrome",
+    "unit7/numerical",
+    "full-image-assets",
+    "neural-seeded-behavior",
+    "reproducible-static-build",
+    "unit4/default-workflows/native",
+    "unit5/default-workflows/native"
+  ],
+  "fingerprint": "c9c57adf1f1690250293aa7bf0765310dcc42e66ae34d9c508d2229cf84d6834",
+  "source_unchanged": true,
+  "required": 140,
+  "passed": 9,
+  "coverage": {
+    "unit1/workflows/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-workflows-chrome.json"
+    },
+    "unit1/appearance/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-appearance-chrome.json"
+    },
+    "unit1/lifecycle/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-lifecycle-chrome.json"
+    },
+    "unit1/8gb/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-8gb-chrome.json"
+    },
+    "unit1/workflows/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-workflows-edge.json"
+    },
+    "unit1/appearance/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-appearance-edge.json"
+    },
+    "unit1/lifecycle/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-lifecycle-edge.json"
+    },
+    "unit1/8gb/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-8gb-edge.json"
+    },
+    "unit1/workflows/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-workflows-firefox.json"
+    },
+    "unit1/appearance/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-appearance-firefox.json"
+    },
+    "unit1/lifecycle/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-lifecycle-firefox.json"
+    },
+    "unit1/8gb/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-8gb-firefox.json"
+    },
+    "unit1/workflows/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-workflows-safari.json"
+    },
+    "unit1/appearance/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-appearance-safari.json"
+    },
+    "unit1/lifecycle/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-lifecycle-safari.json"
+    },
+    "unit1/8gb/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-8gb-safari.json"
+    },
+    "unit1/numerical": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit1-numerical.json"
+    },
+    "unit2/workflows/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-workflows-chrome.json"
+    },
+    "unit2/appearance/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-appearance-chrome.json"
+    },
+    "unit2/lifecycle/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-lifecycle-chrome.json"
+    },
+    "unit2/8gb/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-8gb-chrome.json"
+    },
+    "unit2/workflows/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-workflows-edge.json"
+    },
+    "unit2/appearance/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-appearance-edge.json"
+    },
+    "unit2/lifecycle/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-lifecycle-edge.json"
+    },
+    "unit2/8gb/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-8gb-edge.json"
+    },
+    "unit2/workflows/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-workflows-firefox.json"
+    },
+    "unit2/appearance/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-appearance-firefox.json"
+    },
+    "unit2/lifecycle/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-lifecycle-firefox.json"
+    },
+    "unit2/8gb/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-8gb-firefox.json"
+    },
+    "unit2/workflows/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-workflows-safari.json"
+    },
+    "unit2/appearance/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-appearance-safari.json"
+    },
+    "unit2/lifecycle/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-lifecycle-safari.json"
+    },
+    "unit2/8gb/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-8gb-safari.json"
+    },
+    "unit2/numerical": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit2-numerical.json"
+    },
+    "unit3/workflows/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-workflows-chrome.json"
+    },
+    "unit3/appearance/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-appearance-chrome.json"
+    },
+    "unit3/lifecycle/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-lifecycle-chrome.json"
+    },
+    "unit3/8gb/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-8gb-chrome.json"
+    },
+    "unit3/workflows/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-workflows-edge.json"
+    },
+    "unit3/appearance/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-appearance-edge.json"
+    },
+    "unit3/lifecycle/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-lifecycle-edge.json"
+    },
+    "unit3/8gb/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-8gb-edge.json"
+    },
+    "unit3/workflows/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-workflows-firefox.json"
+    },
+    "unit3/appearance/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-appearance-firefox.json"
+    },
+    "unit3/lifecycle/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-lifecycle-firefox.json"
+    },
+    "unit3/8gb/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-8gb-firefox.json"
+    },
+    "unit3/workflows/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-workflows-safari.json"
+    },
+    "unit3/appearance/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-appearance-safari.json"
+    },
+    "unit3/lifecycle/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-lifecycle-safari.json"
+    },
+    "unit3/8gb/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-8gb-safari.json"
+    },
+    "unit3/numerical": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit3-numerical.json"
+    },
+    "unit4/workflows/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-workflows-chrome.json"
+    },
+    "unit4/appearance/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-appearance-chrome.json"
+    },
+    "unit4/lifecycle/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-lifecycle-chrome.json"
+    },
+    "unit4/8gb/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-8gb-chrome.json"
+    },
+    "unit4/workflows/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-workflows-edge.json"
+    },
+    "unit4/appearance/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-appearance-edge.json"
+    },
+    "unit4/lifecycle/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-lifecycle-edge.json"
+    },
+    "unit4/8gb/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-8gb-edge.json"
+    },
+    "unit4/workflows/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-workflows-firefox.json"
+    },
+    "unit4/appearance/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-appearance-firefox.json"
+    },
+    "unit4/lifecycle/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-lifecycle-firefox.json"
+    },
+    "unit4/8gb/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-8gb-firefox.json"
+    },
+    "unit4/workflows/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-workflows-safari.json"
+    },
+    "unit4/appearance/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-appearance-safari.json"
+    },
+    "unit4/lifecycle/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-lifecycle-safari.json"
+    },
+    "unit4/8gb/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-8gb-safari.json"
+    },
+    "unit4/numerical": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit4-numerical.json"
+    },
+    "unit5/workflows/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-workflows-chrome.json"
+    },
+    "unit5/appearance/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-appearance-chrome.json"
+    },
+    "unit5/lifecycle/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-lifecycle-chrome.json"
+    },
+    "unit5/8gb/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-8gb-chrome.json"
+    },
+    "unit5/workflows/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-workflows-edge.json"
+    },
+    "unit5/appearance/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-appearance-edge.json"
+    },
+    "unit5/lifecycle/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-lifecycle-edge.json"
+    },
+    "unit5/8gb/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-8gb-edge.json"
+    },
+    "unit5/workflows/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-workflows-firefox.json"
+    },
+    "unit5/appearance/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-appearance-firefox.json"
+    },
+    "unit5/lifecycle/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-lifecycle-firefox.json"
+    },
+    "unit5/8gb/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-8gb-firefox.json"
+    },
+    "unit5/workflows/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-workflows-safari.json"
+    },
+    "unit5/appearance/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-appearance-safari.json"
+    },
+    "unit5/lifecycle/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-lifecycle-safari.json"
+    },
+    "unit5/8gb/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-8gb-safari.json"
+    },
+    "unit5/numerical": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit5-numerical.json"
+    },
+    "unit6/workflows/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-workflows-chrome.json"
+    },
+    "unit6/appearance/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-appearance-chrome.json"
+    },
+    "unit6/lifecycle/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-lifecycle-chrome.json"
+    },
+    "unit6/8gb/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-8gb-chrome.json"
+    },
+    "unit6/workflows/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-workflows-edge.json"
+    },
+    "unit6/appearance/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-appearance-edge.json"
+    },
+    "unit6/lifecycle/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-lifecycle-edge.json"
+    },
+    "unit6/8gb/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-8gb-edge.json"
+    },
+    "unit6/workflows/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-workflows-firefox.json"
+    },
+    "unit6/appearance/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-appearance-firefox.json"
+    },
+    "unit6/lifecycle/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-lifecycle-firefox.json"
+    },
+    "unit6/8gb/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-8gb-firefox.json"
+    },
+    "unit6/workflows/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-workflows-safari.json"
+    },
+    "unit6/appearance/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-appearance-safari.json"
+    },
+    "unit6/lifecycle/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-lifecycle-safari.json"
+    },
+    "unit6/8gb/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-8gb-safari.json"
+    },
+    "unit6/numerical": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit6-numerical.json"
+    },
+    "unit7/workflows/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-workflows-chrome.json"
+    },
+    "unit7/appearance/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-appearance-chrome.json"
+    },
+    "unit7/lifecycle/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-lifecycle-chrome.json"
+    },
+    "unit7/8gb/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-8gb-chrome.json"
+    },
+    "unit7/workflows/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-workflows-edge.json"
+    },
+    "unit7/appearance/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-appearance-edge.json"
+    },
+    "unit7/lifecycle/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-lifecycle-edge.json"
+    },
+    "unit7/8gb/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-8gb-edge.json"
+    },
+    "unit7/workflows/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-workflows-firefox.json"
+    },
+    "unit7/appearance/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-appearance-firefox.json"
+    },
+    "unit7/lifecycle/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-lifecycle-firefox.json"
+    },
+    "unit7/8gb/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-8gb-firefox.json"
+    },
+    "unit7/workflows/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-workflows-safari.json"
+    },
+    "unit7/appearance/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-appearance-safari.json"
+    },
+    "unit7/lifecycle/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-lifecycle-safari.json"
+    },
+    "unit7/8gb/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-8gb-safari.json"
+    },
+    "unit7/numerical": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/unit7-numerical.json"
+    },
+    "full-image-assets": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/full-image-assets.json"
+    },
+    "neural-seeded-behavior": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/neural-seeded.json"
+    },
+    "reproducible-static-build": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/build.json"
+    },
+    "unit4/default-workflows/chrome": {
+      "status": "pass",
+      "executed_cases": 26,
+      "report": "browser-chrome-unit4.json"
+    },
+    "unit4/default-workflows/native": {
+      "status": "stale",
+      "reason": "Evidence does not match current source, assets, runtime and tests",
+      "report": "native-chrome-unit4.json"
+    },
+    "unit1/diagnostic-numerical": {
+      "status": "pass",
+      "executed_cases": 4104,
+      "report": "browser-chrome-unittabular.json"
+    },
+    "unit4/diagnostic-numerical": {
+      "status": "pass",
+      "executed_cases": 1848,
+      "report": "browser-chrome-unitsupervised.json"
+    },
+    "unit6/diagnostic-numerical": {
+      "status": "pass",
+      "executed_cases": 480,
+      "report": "browser-chrome-unitneural.json"
+    },
+    "unit5/default-workflows/browser": {
+      "status": "pass",
+      "executed_cases": 14,
+      "report": "browser-chrome-unit5.json"
+    },
+    "unit5/default-workflows/native": {
+      "status": "stale",
+      "reason": "Evidence does not match current source, assets, runtime and tests",
+      "report": "native-chrome-unit5.json"
+    },
+    "unit5/unit5probe/chrome": {
+      "status": "pass",
+      "executed_cases": 81,
+      "report": "browser-chrome-unitunit5probe.json"
+    },
+    "unit5/unit5full/chrome": {
+      "status": "pass",
+      "executed_cases": 123,
+      "report": "browser-chrome-unitunit5full.json"
+    },
+    "scientific-runtime/chrome": {
+      "status": "pass",
+      "executed_cases": 4,
+      "report": "browser-chrome-unitruntime.json"
+    },
+    "unit5/cancellation/chrome": {
+      "status": "pass",
+      "executed_cases": 5,
+      "report": "browser-chrome-unitunit5life.json"
+    },
+    "nextjs/navigation/chrome": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/nextjs-navigation-chrome.json"
+    },
+    "nextjs/navigation/edge": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/nextjs-navigation-edge.json"
+    },
+    "nextjs/navigation/firefox": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/nextjs-navigation-firefox.json"
+    },
+    "nextjs/navigation/safari": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/nextjs-navigation-safari.json"
+    },
+    "nextjs/reproducible-export": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/nextjs-build.json"
+    },
+    "vercel/https-static-delivery": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/vercel-https.json"
+    },
+    "release/benchmarks-and-materials": {
+      "status": "missing",
+      "reason": "Required report has not been produced",
+      "report": "coverage/release-materials.json"
+    }
+  },
+  "blockers": [
+    "unit1/workflows/chrome: missing (coverage/unit1-workflows-chrome.json)",
+    "unit1/appearance/chrome: missing (coverage/unit1-appearance-chrome.json)",
+    "unit1/lifecycle/chrome: missing (coverage/unit1-lifecycle-chrome.json)",
+    "unit1/8gb/chrome: missing (coverage/unit1-8gb-chrome.json)",
+    "unit1/workflows/edge: missing (coverage/unit1-workflows-edge.json)",
+    "unit1/appearance/edge: missing (coverage/unit1-appearance-edge.json)",
+    "unit1/lifecycle/edge: missing (coverage/unit1-lifecycle-edge.json)",
+    "unit1/8gb/edge: missing (coverage/unit1-8gb-edge.json)",
+    "unit1/workflows/firefox: missing (coverage/unit1-workflows-firefox.json)",
+    "unit1/appearance/firefox: missing (coverage/unit1-appearance-firefox.json)",
+    "unit1/lifecycle/firefox: missing (coverage/unit1-lifecycle-firefox.json)",
+    "unit1/8gb/firefox: missing (coverage/unit1-8gb-firefox.json)",
+    "unit1/workflows/safari: missing (coverage/unit1-workflows-safari.json)",
+    "unit1/appearance/safari: missing (coverage/unit1-appearance-safari.json)",
+    "unit1/lifecycle/safari: missing (coverage/unit1-lifecycle-safari.json)",
+    "unit1/8gb/safari: missing (coverage/unit1-8gb-safari.json)",
+    "unit1/numerical: missing (coverage/unit1-numerical.json)",
+    "unit2/workflows/chrome: missing (coverage/unit2-workflows-chrome.json)",
+    "unit2/appearance/chrome: missing (coverage/unit2-appearance-chrome.json)",
+    "unit2/lifecycle/chrome: missing (coverage/unit2-lifecycle-chrome.json)",
+    "unit2/8gb/chrome: missing (coverage/unit2-8gb-chrome.json)",
+    "unit2/workflows/edge: missing (coverage/unit2-workflows-edge.json)",
+    "unit2/appearance/edge: missing (coverage/unit2-appearance-edge.json)",
+    "unit2/lifecycle/edge: missing (coverage/unit2-lifecycle-edge.json)",
+    "unit2/8gb/edge: missing (coverage/unit2-8gb-edge.json)",
+    "unit2/workflows/firefox: missing (coverage/unit2-workflows-firefox.json)",
+    "unit2/appearance/firefox: missing (coverage/unit2-appearance-firefox.json)",
+    "unit2/lifecycle/firefox: missing (coverage/unit2-lifecycle-firefox.json)",
+    "unit2/8gb/firefox: missing (coverage/unit2-8gb-firefox.json)",
+    "unit2/workflows/safari: missing (coverage/unit2-workflows-safari.json)",
+    "unit2/appearance/safari: missing (coverage/unit2-appearance-safari.json)",
+    "unit2/lifecycle/safari: missing (coverage/unit2-lifecycle-safari.json)",
+    "unit2/8gb/safari: missing (coverage/unit2-8gb-safari.json)",
+    "unit2/numerical: missing (coverage/unit2-numerical.json)",
+    "unit3/workflows/chrome: missing (coverage/unit3-workflows-chrome.json)",
+    "unit3/appearance/chrome: missing (coverage/unit3-appearance-chrome.json)",
+    "unit3/lifecycle/chrome: missing (coverage/unit3-lifecycle-chrome.json)",
+    "unit3/8gb/chrome: missing (coverage/unit3-8gb-chrome.json)",
+    "unit3/workflows/edge: missing (coverage/unit3-workflows-edge.json)",
+    "unit3/appearance/edge: missing (coverage/unit3-appearance-edge.json)",
+    "unit3/lifecycle/edge: missing (coverage/unit3-lifecycle-edge.json)",
+    "unit3/8gb/edge: missing (coverage/unit3-8gb-edge.json)",
+    "unit3/workflows/firefox: missing (coverage/unit3-workflows-firefox.json)",
+    "unit3/appearance/firefox: missing (coverage/unit3-appearance-firefox.json)",
+    "unit3/lifecycle/firefox: missing (coverage/unit3-lifecycle-firefox.json)",
+    "unit3/8gb/firefox: missing (coverage/unit3-8gb-firefox.json)",
+    "unit3/workflows/safari: missing (coverage/unit3-workflows-safari.json)",
+    "unit3/appearance/safari: missing (coverage/unit3-appearance-safari.json)",
+    "unit3/lifecycle/safari: missing (coverage/unit3-lifecycle-safari.json)",
+    "unit3/8gb/safari: missing (coverage/unit3-8gb-safari.json)",
+    "unit3/numerical: missing (coverage/unit3-numerical.json)",
+    "unit4/workflows/chrome: missing (coverage/unit4-workflows-chrome.json)",
+    "unit4/appearance/chrome: missing (coverage/unit4-appearance-chrome.json)",
+    "unit4/lifecycle/chrome: missing (coverage/unit4-lifecycle-chrome.json)",
+    "unit4/8gb/chrome: missing (coverage/unit4-8gb-chrome.json)",
+    "unit4/workflows/edge: missing (coverage/unit4-workflows-edge.json)",
+    "unit4/appearance/edge: missing (coverage/unit4-appearance-edge.json)",
+    "unit4/lifecycle/edge: missing (coverage/unit4-lifecycle-edge.json)",
+    "unit4/8gb/edge: missing (coverage/unit4-8gb-edge.json)",
+    "unit4/workflows/firefox: missing (coverage/unit4-workflows-firefox.json)",
+    "unit4/appearance/firefox: missing (coverage/unit4-appearance-firefox.json)",
+    "unit4/lifecycle/firefox: missing (coverage/unit4-lifecycle-firefox.json)",
+    "unit4/8gb/firefox: missing (coverage/unit4-8gb-firefox.json)",
+    "unit4/workflows/safari: missing (coverage/unit4-workflows-safari.json)",
+    "unit4/appearance/safari: missing (coverage/unit4-appearance-safari.json)",
+    "unit4/lifecycle/safari: missing (coverage/unit4-lifecycle-safari.json)",
+    "unit4/8gb/safari: missing (coverage/unit4-8gb-safari.json)",
+    "unit4/numerical: missing (coverage/unit4-numerical.json)",
+    "unit5/workflows/chrome: missing (coverage/unit5-workflows-chrome.json)",
+    "unit5/appearance/chrome: missing (coverage/unit5-appearance-chrome.json)",
+    "unit5/lifecycle/chrome: missing (coverage/unit5-lifecycle-chrome.json)",
+    "unit5/8gb/chrome: missing (coverage/unit5-8gb-chrome.json)",
+    "unit5/workflows/edge: missing (coverage/unit5-workflows-edge.json)",
+    "unit5/appearance/edge: missing (coverage/unit5-appearance-edge.json)",
+    "unit5/lifecycle/edge: missing (coverage/unit5-lifecycle-edge.json)",
+    "unit5/8gb/edge: missing (coverage/unit5-8gb-edge.json)",
+    "unit5/workflows/firefox: missing (coverage/unit5-workflows-firefox.json)",
+    "unit5/appearance/firefox: missing (coverage/unit5-appearance-firefox.json)",
+    "unit5/lifecycle/firefox: missing (coverage/unit5-lifecycle-firefox.json)",
+    "unit5/8gb/firefox: missing (coverage/unit5-8gb-firefox.json)",
+    "unit5/workflows/safari: missing (coverage/unit5-workflows-safari.json)",
+    "unit5/appearance/safari: missing (coverage/unit5-appearance-safari.json)",
+    "unit5/lifecycle/safari: missing (coverage/unit5-lifecycle-safari.json)",
+    "unit5/8gb/safari: missing (coverage/unit5-8gb-safari.json)",
+    "unit5/numerical: missing (coverage/unit5-numerical.json)",
+    "unit6/workflows/chrome: missing (coverage/unit6-workflows-chrome.json)",
+    "unit6/appearance/chrome: missing (coverage/unit6-appearance-chrome.json)",
+    "unit6/lifecycle/chrome: missing (coverage/unit6-lifecycle-chrome.json)",
+    "unit6/8gb/chrome: missing (coverage/unit6-8gb-chrome.json)",
+    "unit6/workflows/edge: missing (coverage/unit6-workflows-edge.json)",
+    "unit6/appearance/edge: missing (coverage/unit6-appearance-edge.json)",
+    "unit6/lifecycle/edge: missing (coverage/unit6-lifecycle-edge.json)",
+    "unit6/8gb/edge: missing (coverage/unit6-8gb-edge.json)",
+    "unit6/workflows/firefox: missing (coverage/unit6-workflows-firefox.json)",
+    "unit6/appearance/firefox: missing (coverage/unit6-appearance-firefox.json)",
+    "unit6/lifecycle/firefox: missing (coverage/unit6-lifecycle-firefox.json)",
+    "unit6/8gb/firefox: missing (coverage/unit6-8gb-firefox.json)",
+    "unit6/workflows/safari: missing (coverage/unit6-workflows-safari.json)",
+    "unit6/appearance/safari: missing (coverage/unit6-appearance-safari.json)",
+    "unit6/lifecycle/safari: missing (coverage/unit6-lifecycle-safari.json)",
+    "unit6/8gb/safari: missing (coverage/unit6-8gb-safari.json)",
+    "unit6/numerical: missing (coverage/unit6-numerical.json)",
+    "unit7/workflows/chrome: missing (coverage/unit7-workflows-chrome.json)",
+    "unit7/appearance/chrome: missing (coverage/unit7-appearance-chrome.json)",
+    "unit7/lifecycle/chrome: missing (coverage/unit7-lifecycle-chrome.json)",
+    "unit7/8gb/chrome: missing (coverage/unit7-8gb-chrome.json)",
+    "unit7/workflows/edge: missing (coverage/unit7-workflows-edge.json)",
+    "unit7/appearance/edge: missing (coverage/unit7-appearance-edge.json)",
+    "unit7/lifecycle/edge: missing (coverage/unit7-lifecycle-edge.json)",
+    "unit7/8gb/edge: missing (coverage/unit7-8gb-edge.json)",
+    "unit7/workflows/firefox: missing (coverage/unit7-workflows-firefox.json)",
+    "unit7/appearance/firefox: missing (coverage/unit7-appearance-firefox.json)",
+    "unit7/lifecycle/firefox: missing (coverage/unit7-lifecycle-firefox.json)",
+    "unit7/8gb/firefox: missing (coverage/unit7-8gb-firefox.json)",
+    "unit7/workflows/safari: missing (coverage/unit7-workflows-safari.json)",
+    "unit7/appearance/safari: missing (coverage/unit7-appearance-safari.json)",
+    "unit7/lifecycle/safari: missing (coverage/unit7-lifecycle-safari.json)",
+    "unit7/8gb/safari: missing (coverage/unit7-8gb-safari.json)",
+    "unit7/numerical: missing (coverage/unit7-numerical.json)",
+    "full-image-assets: missing (coverage/full-image-assets.json)",
+    "neural-seeded-behavior: missing (coverage/neural-seeded.json)",
+    "reproducible-static-build: missing (coverage/build.json)",
+    "unit4/default-workflows/native: stale (native-chrome-unit4.json)",
+    "unit5/default-workflows/native: stale (native-chrome-unit5.json)",
+    "nextjs/navigation/chrome: missing (coverage/nextjs-navigation-chrome.json)",
+    "nextjs/navigation/edge: missing (coverage/nextjs-navigation-edge.json)",
+    "nextjs/navigation/firefox: missing (coverage/nextjs-navigation-firefox.json)",
+    "nextjs/navigation/safari: missing (coverage/nextjs-navigation-safari.json)",
+    "nextjs/reproducible-export: missing (coverage/nextjs-build.json)",
+    "vercel/https-static-delivery: missing (coverage/vercel-https.json)",
+    "release/benchmarks-and-materials: missing (coverage/release-materials.json)"
+  ]
+}

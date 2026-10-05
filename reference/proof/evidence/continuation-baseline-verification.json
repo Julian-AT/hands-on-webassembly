@@ -1,0 +1,51 @@
+{
+  "status": "pass",
+  "failures": [],
+  "files_verified": 2541,
+  "inconsistencies": [
+    {
+      "path": "proof/evidence/startup-handoff-edge-unit6-continuation-original.json",
+      "kind": "archived-evidence",
+      "resolved_path": "proof/evidence/history/startup-handoff-edge-unit6-continuation-original-20261004T114704990767Z.json"
+    },
+    {
+      "path": "proof/runtime/service-worker-http.js",
+      "kind": "copied-file-binding",
+      "original": {
+        "sha256": "0eaada2a745f87172b42df46e17bfb902609e93b532387b183a77476592c4c26",
+        "bytes": 4369
+      },
+      "corrected": {
+        "sha256": "54a859a459013097773e985193fee58c63674ff827e1dd5be3d116d85d672b63",
+        "bytes": 4139
+      }
+    },
+    {
+      "path": "proof/scripts/continuation_baseline.py",
+      "kind": "copied-file-binding",
+      "original": {
+        "sha256": "8f979f90605e60bfa355149dd250d5134d78119341ff77ae0f1a319d3d341be2",
+        "bytes": 2592
+      },
+      "corrected": {
+        "sha256": "73a73cfe733dfabf81b765e7df4239117cbe799cccb86fa7de38e8d267c7fe1f",
+        "bytes": 2511
+      }
+    },
+    {
+      "path": "proof/scripts/patch_runtime.py",
+      "kind": "copied-file-binding",
+      "original": {
+        "sha256": "62708389cce6295f8cb945c01075c13a26a636bbdc154b437e44512f0eaf5102",
+        "bytes": 12104
+      },
+      "corrected": {
+        "sha256": "9e053883e6d9cc2aca8ff5642747693c3d56104745e522809a9887b3cdb45dd5",
+        "bytes": 10941
+      }
+    }
+  ],
+  "corrected_manifest": "continuation-baseline/manifest.corrected.json",
+  "original_manifest_sha256": "0c545d0d8235298b760d94b990054340bd7722a53baa110c23ec49a4223f4492",
+  "corrected_manifest_sha256": "3d34160b049e8d7ee6dcde31c4b8f2c42ea15accf1553e5e6510066d09266f0b"
+}

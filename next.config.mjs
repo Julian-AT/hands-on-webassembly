@@ -1,0 +1,1 @@
+export default { output: "export", trailingSlash: true, generateBuildId: async () => { if (!process.env.COURSE_BUILD_ID) throw new Error("Use the pinned build wrapper"); return process.env.COURSE_BUILD_ID; } };

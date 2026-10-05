@@ -1,0 +1,15 @@
+{
+  "node": {
+    "version": "24.21.0",
+    "checksums_url": "https://nodejs.org/dist/v24.21.0/SHASUMS256.txt",
+    "archives": {
+      "darwin-arm64": "bed7eea5325e1108f32ce5228ddd6a5f0f08a499ee42aa7442aea583702f6057",
+      "linux-x64": "6e1db87ef58b8819e5d5402eff1536491b18edd8eb7bee5ef7897876e88dc5ff",
+      "linux-arm64": "724282c3b43aec998aa9527380465b45d229e021b58035f5f4f63095eabfe5d5"
+    }
+  },
+  "npm": {
+    "version": "11.19.0",
+    "integrity": "sha512-SDd/hHg3KqHE5Ht2NHWxNYNtqCQ2pXAPLl6OtQhPyED5PHsRfrOtO199MZTIG2cQoQ1ZRI9t28shrD+2cr3AAw=="
+  }
+}

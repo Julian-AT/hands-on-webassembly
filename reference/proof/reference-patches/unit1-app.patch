@@ -1,0 +1,30 @@
+--- supplied/unit1/app.py
++++ corrected/unit1/app.py
+@@ -1,6 +1,9 @@
++from pathlib import Path
+ from shiny import App, ui, render, reactive
+ import pandas as pd
+ import numpy as np
++import matplotlib
++matplotlib.use("Agg")
+ import matplotlib.pyplot as plt
+ import seaborn as sns
+ from sklearn import datasets as skds
+@@ -67,7 +70,7 @@
+     ui.tags.head(
+         ui.tags.link(
+             rel="stylesheet",
+-            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/zephyr/bootstrap.min.css"
++            href="vendor/zephyr/bootstrap.min.css"
+         ),
+         ui.tags.link(
+             rel="stylesheet",
+@@ -647,7 +650,7 @@
+     
+         return results_text
+ 
+-app = App(app_ui, server)
++app = App(app_ui, server, static_assets=Path(__file__).parent / "www")
+ 
+ if __name__ == "__main__":
+     app.run()

@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Compatibility diagnostics — not a course application</title>
+<h1>Compatibility diagnostics</h1>
+<p>Small numerical tests of the original architecture builders. This page cannot establish full application parity.</p>
+<button id="run">Run probes</button>
+<pre id="result">Ready</pre>
+<script type="module">
+let worker;
+window.runProof = (kind = 'neural') => new Promise((resolve, reject) => {
+  worker?.terminate();
+  worker = new Worker(({neural:'./worker.js',tabular:'./tabular-worker.js',supervised:'./supervised-worker.js',embedding:'./embedding-worker.js',training:'./training-worker.js',unit5probe:'./unit5-worker.js',unit5full:'./unit5-worker.js',runtime:'./runtime-worker.js'})[kind]);
+  const timer = setTimeout(() => { worker.terminate(); reject(new Error('Probe timeout')); }, 240000);
+  worker.onmessage = ({data}) => {
+    document.querySelector('#result').textContent = JSON.stringify(data, null, 2);
+    if (data.done || data.error) {
+      clearTimeout(timer); worker.terminate(); worker = undefined;
+      data.error ? reject(new Error(data.error)) : resolve(data);
+    }
+  };
+  worker.onerror = (event) => { clearTimeout(timer); worker.terminate(); reject(new Error(event.message)); };
+  worker.postMessage(kind);
+});
+document.querySelector('#run').onclick = () => window.runProof().catch(e => document.querySelector('#result').textContent = e.message);
+window.addEventListener('pagehide', () => worker?.terminate());
+</script>
