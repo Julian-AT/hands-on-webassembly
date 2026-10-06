@@ -288,7 +288,7 @@ def version_runtime():
         html = html.replace(
             'id="root"></div>',
             'id="root"></div>'
-            + f'<section id="course-startup" role="status" style="position:fixed;inset:0;z-index:10000;background:white;padding:2rem;font:16px system-ui">'
+            + f'<section id="course-startup" hidden role="status" style="position:fixed;inset:0;z-index:10000;background:white;padding:2rem;font:16px system-ui">'
             f"<p>Loading Assignment {unit}… The first load may take a moment.</p>"
             '<button type="button" hidden>Reload to retry</button></section>',
         )

@@ -1,0 +1,12 @@
+{
+  "current_path": "scripts/proof/patch_runtime.py",
+  "current_sha256": "8ebad9cc6ab452bf466812b6a16fb75dc004d2692a3776af712c199bb6e982aa",
+  "historical_patch": {
+    "path": "reference/proof/scripts/patch_runtime.py",
+    "original_sha256": "00a17ac730b13e1c21d5ede67b099185e44a1aa05f750a49f5b9552a3a119c3b",
+    "sha256": "40872298f6921e8f6d46b1b471af6816d2c6c92569775f514307633000a2d64e",
+    "original_retained_in": "immutable supplemental original-reference-sources.tar.gz"
+  },
+  "archive_index": "proof/archives/history.json",
+  "scope": "Canonical generator correction; historical startup manifest remains immutable."
+}
