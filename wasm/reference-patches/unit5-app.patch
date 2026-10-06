@@ -1,0 +1,227 @@
+--- supplied/unit5/app.py
++++ corrected/unit5/app.py
+@@ -1,6 +1,8 @@
+ from shiny import App, ui, render, reactive
+ import pandas as pd
+ import numpy as np
++import matplotlib
++matplotlib.use("Agg")
+ import matplotlib.pyplot as plt
+ import seaborn as sns
+ from pathlib import Path
+@@ -8,6 +10,8 @@
+ import json
+ 
+ import torch
++import inspection_rng
++import isolated_training
+ import torch.nn as nn
+ import u5_utils as U5
+ 
+@@ -24,7 +28,7 @@
+     ui.tags.head(
+         ui.tags.link(
+             rel="stylesheet",
+-            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/zephyr/bootstrap.min.css"
++            href="vendor/zephyr/bootstrap.min.css"
+         ),
+         ui.tags.style("""
+         /* Remove border around nav tabs and sidebar panels */
+@@ -909,7 +913,7 @@
+         )
+ 
+ 
+-    def _get_loaders():
++    def _get_loaders(input=input):
+         batch = int(input.mn_batch())
+         seed = int(input.mn_seed())
+         if input.mn_ds() == "mnist":
+@@ -928,67 +932,98 @@
+             )
+         return train, test
+ 
++
++    import queue as _course_queue
++    _course_train_q = _course_queue.SimpleQueue()
++    _course_training_context = isolated_training.Executor(5)
++    _course_train_ticket = reactive.Value(0)
++    _course_data_generation = reactive.Value(0)
++
++    class _CourseTrainingError(RuntimeError):
++        def __init__(self, ticket, error):
++            super().__init__(str(error))
++            self.ticket = ticket
++
++    @reactive.extended_task
++    async def _mn_train_task(ticket, params):
++        try:
++            from types import SimpleNamespace
++            snapshot = SimpleNamespace(**{key: (lambda value=value: value) for key, value in params['inputs'].items()})
++            # Construction reseeds global generators. Preserve the UI streams;
++            # the original constructors' reseeding is repeated in the worker.
++            with inspection_rng.preserve(torch):
++                loaders = _get_loaders(snapshot)
++            result = await _course_training_context.run(dict(params, loaders=loaders),
++                lambda message: _course_train_q.put(dict(ticket=ticket, message=message)))
++            return dict(ticket=ticket, **result)
++        except Exception as error:
++            raise _CourseTrainingError(ticket, error) from error
++
++    def _course_cancel_train():
++        _course_train_ticket.set(_course_train_ticket.get() + 1)
++        _course_training_context.cancel()
++        _mn_train_task.cancel()
++        while not _course_train_q.empty():
++            _course_train_q.get_nowait()
++
+     @reactive.effect
+     @reactive.event(input.mn_train)
+-    async def _mn_train():
+-        U5.set_seed(int(input.mn_seed()))
+-
+-        # Reset progress
++    def _mn_train():
++        _course_cancel_train()
++        ticket = _course_train_ticket.get()
++        params = dict(inputs={name: getattr(input, name)() for name in ('mn_batch', 'mn_ds', 'mn_epochs', 'mn_hflip', 'mn_invert', 'mn_lr', 'mn_mom', 'mn_seed')},
++            dataset_generation=_course_data_generation.get(), model_generation=ticket)
++        mn_coeffs.set(None)
++        mn_accuracy.set(None)
++        mn_samples.set(None)
++        mn_cm_mat.set(None)
++        mn_mis.set(None)
+         mn_progress_pct.set(0)
+         mn_progress_msg.set("Initializing…")
+-        mn_coeffs.set(None)
+-        await reactive.flush()
+-
+-        train_loader, _ = _get_loaders()
+-
+-        # Build a plain logistic/linear classifier (Flatten -> Linear(784->10))
+-        # Works for both MNIST and Fashion-MNIST (28x28, 10 classes)
+-        model = nn.Sequential(
+-            nn.Flatten(),
+-            nn.Linear(28*28, 10)
+-        )
+-        device = torch.device("cpu") # cpu is good enough for this
+-        model.to(device)
+-
+-        loss_fn = nn.CrossEntropyLoss()
+-        optimizer = torch.optim.SGD(model.parameters(),
+-                                    lr=float(input.mn_lr()),
+-                                    momentum=float(input.mn_mom()))
+-
+-        epochs = int(input.mn_epochs())
+-        n_batches = max(1, len(train_loader))
+-
+-        for ep in range(epochs):
+-            model.train(True)
+-            for i, (xb, yb) in enumerate(train_loader):
+-                xb = xb.to(device)
+-                yb = yb.to(device)
+-
+-                logits = model(xb)
+-                loss = loss_fn(logits, yb)
+-
+-                optimizer.zero_grad()
+-                loss.backward()
+-                optimizer.step()
+-
+-                # Update progress per batch
+-                done = ep * n_batches + (i + 1)
+-                total = epochs * n_batches
+-                pct = int(100 * done / max(1, total))
+-                mn_progress_pct.set(pct)
+-                mn_progress_msg.set(f"Epoch {ep+1}/{epochs} · batch {i+1}/{n_batches}")
+-                await reactive.flush()
+-
+-        # Export weights in the SAME format that U5.minimize_ce() returns
+-        # => tuple((bias, *weights) for each class)
+-        b = model[1].bias.detach().cpu().numpy()
+-        W = model[1].weight.detach().cpu().numpy()   # shape (10, 784)
+-        coeffs = tuple((float(bi), *Wi.tolist()) for bi, Wi in zip(b, W))
+-        mn_coeffs.set(coeffs)
+-
+-        mn_progress_msg.set("Training complete")
+-        mn_progress_pct.set(100)
+-        await reactive.flush()
++        _mn_train_task.invoke(ticket, params)
++
++    @reactive.effect
++    def _course_pump_train():
++        reactive.invalidate_later(.05)
++        values = dict(mn_progress_pct=mn_progress_pct, mn_progress_msg=mn_progress_msg)
++        while not _course_train_q.empty():
++            item = _course_train_q.get_nowait()
++            if item['ticket'] != _course_train_ticket.get():
++                continue
++            message = item['message']
++            # Completion is committed atomically with coefficients by the
++            # reactive consumer, never by a progress message.
++            if message.get('name') == 'mn_progress_msg' and message.get('value') == 'Training complete':
++                continue
++            if message.get('type') == 'value' and message.get('name') in values:
++                values[message['name']].set(message['value'])
++
++    @reactive.effect
++    def _course_finalize_train():
++        if _mn_train_task.status() == 'error':
++            error = _mn_train_task.error()
++            if getattr(error, 'ticket', None) != _course_train_ticket.get():
++                return
++            mn_coeffs.set(None)
++            mn_progress_pct.set(0)
++            mn_progress_msg.set('Error: ' + str(error))
++            return
++        if _mn_train_task.status() != 'success':
++            return
++        receipt = _mn_train_task.result()
++        if receipt['ticket'] != _course_train_ticket.get():
++            return
++        while not _course_train_q.empty():
++            _course_train_q.get_nowait()
++        mn_coeffs.set(receipt['coefficients'])
++        mn_progress_pct.set(receipt['progress_pct'])
++        mn_progress_msg.set(receipt['progress_msg'])
++
++    def _course_end_training():
++        _course_training_context.cancel()
++        _mn_train_task.cancel()
++
++    session.on_ended(_course_end_training)
+ 
+ 
+     @reactive.effect
+@@ -1264,6 +1299,7 @@
+ 
+     @output
+     @render.plot
++    @inspection_rng.protected(torch)
+     def mnist_samples():
+         # Load MNIST once
+         train_loader, _ = U5.get_dataset_mnist(
+@@ -1291,6 +1327,7 @@
+ 
+     @output
+     @render.plot
++    @inspection_rng.protected(torch)
+     def fashionmnist_samples():
+         train_loader, _ = U5.get_dataset_fashionmnist(
+             batch_size=9,
+@@ -1330,6 +1367,8 @@
+     @reactive.effect
+     @reactive.event(input.mn_ds)
+     def _mn_reset_on_dataset_change():
++        _course_data_generation.set(_course_data_generation.get() + 1)
++        _course_cancel_train()
+         # Clear everything derived from the old dataset
+         mn_coeffs.set(None)
+         mn_accuracy.set(None)
+@@ -1383,5 +1422,5 @@
+         lc_df_2d_test.set(pd.DataFrame())
+ 
+ 
+-app = App(app_ui, server)
+-
++app = App(app_ui, server, static_assets=Path(__file__).parent / "www")
++

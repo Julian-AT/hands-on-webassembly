@@ -1,0 +1,53 @@
+--- previous/isolated_training.py
++++ corrected/isolated_training.py
+@@ -35,6 +35,10 @@
+                 raise ValueError('Isolated course training requires num_workers=0')
+             loader.worker_init_fn = None
+             if hasattr(loader, '_iterator'): loader._iterator = None
++    if 'bundle' in result:
++        result['bundle'] = dict(result['bundle'])
++        for name, loader in zip(('train','val','test'), result['loaders']):
++            result['bundle'][name] = loader
+     return cloudpickle.dumps(result)
+ 
+ 
+@@ -102,11 +106,29 @@
+ def execute_payload(source, payload, notify):
+     """Run the complete original body without cooperative scheduling on native."""
+     module,params,shapes=_prepare(source,payload,notify)
+-    return _serialize(module.run_training_sync(params),params,shapes)
++    if hasattr(module, 'run_training_async'):
++        async def flush():
++            pass
++        module._course_checkpoint = flush
++        result = asyncio.run(module.run_training_async(params))
++    else:
++        result = module.run_training_sync(params)
++    return _serialize(result,params,shapes)
+ 
+ 
+ async def execute_payload_async(source, payload, notify, cancelled):
+     """Yield after batch updates; arithmetic, data and RNG calls are unchanged."""
++    if 'async def run_training_async(' in source:
++        validation='                    val_sum += vloss.item()'
++        if source.count(validation)!=1:
++            raise ValueError('Unit 6 validation cancellation source changed')
++        source=source.replace(validation,validation+'\n                    await _course_checkpoint()')
++        module,params,shapes=_prepare(source,payload,notify)
++        async def checkpoint():
++            await asyncio.sleep(.001)
++            if cancelled():raise asyncio.CancelledError()
++        module._course_checkpoint=checkpoint
++        return _serialize(await module.run_training_async(params),params,shapes)
+     declaration='def run_training_sync('
+     update='            optimizer.step()'
+     validation='                    nval += int(xv.size(0))'
+@@ -138,7 +160,7 @@
+ 
+ class Executor:
+     def __init__(self, unit):
+-        if unit != 7: raise ValueError('Unsupported isolated training assignment')
++        if unit not in (6,7): raise ValueError('Unsupported isolated training assignment')
+         self.unit = unit
+         config = json.loads(Path(__file__).with_name('course-training.json').read_text())
+         self.source = config['source']

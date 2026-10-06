@@ -1,0 +1,28 @@
+--- supplied/unit4/app.py
++++ corrected/unit4/app.py
+@@ -1,7 +1,10 @@
++from pathlib import Path
+ from __future__ import annotations
+ 
+ import numpy as np
+ import pandas as pd
++import matplotlib
++matplotlib.use("Agg")
+ import matplotlib.pyplot as plt
+ import seaborn as sns
+ import plotly.graph_objects as go
+@@ -459,7 +462,7 @@
+ head = ui.head_content(
+     ui.tags.link(
+         rel="stylesheet",
+-        href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/zephyr/bootstrap.min.css"
++        href="vendor/zephyr/bootstrap.min.css"
+     ),
+     ui.tags.style("""
+     /* Remove border around nav tabs and sidebar panels */
+@@ -2806,4 +2809,4 @@
+                 lines.append(f"  {feat:<25}: {val:7.4f}")
+         return "\n".join(lines)
+ 
+-app = App(app_ui, server)
++app = App(app_ui, server, static_assets=Path(__file__).parent / "www")

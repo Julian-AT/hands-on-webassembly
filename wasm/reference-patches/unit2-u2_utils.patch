@@ -1,0 +1,17 @@
+--- supplied/unit2/u2_utils.py
++++ corrected/unit2/u2_utils.py
+@@ -744,12 +744,12 @@
+     assert (type(vocab) == list)
+     assert (type(sentence) == str)
+     words_sentence = sentence.split()
+-    words_vocab = np.unique(vocab)
++    words_vocab = list(dict.fromkeys(vocab))
+     one_hot = np.zeros(shape=(len(words_sentence), len(words_vocab)), dtype=np.uint8)
+     exceptions_msg = []
+     for i, word in enumerate(words_sentence):
+         try:
+-            one_hot[i, vocab.index(word)] = 1
++            one_hot[i, words_vocab.index(word)] = 1
+         except Exception as e:
+             exceptions_msg.append(f"Word '{word}' not found in vocabulary.")
+     return pd.DataFrame(data=one_hot, index=words_sentence), exceptions_msg
