@@ -1,0 +1,16 @@
+{
+  "iml_env.yaml": "3460dca034492dc315aa225eb731ea4474a10e01489a2116324be1da150ca510",
+  "manifests/application-files.json": "98e21975a31f480eed9d72c059a0b5cbb51a0eb3758ed6bbc7cbb84d3f48f152",
+  "manifests/application-hashes.json": "25858fc37dafff74f0e967c88607d4ec9ba1b85a54c85be68bf28f42983ebcd5",
+  "manifests/assets-release.json": "a2f1fa017ecf26ec79b93562ed8e1818c211dc98b86332c80b5f2e8b4398e179",
+  "manifests/licenses.json": "7b22859854d59d45bc719708e41481d89cac245822768e492eba7db4c777d1c8",
+  "manifests/reference-source-files.json": "06b03f65a84ad68b3c42e258da615aaf09fcae65d400a3733136a8094cdefaf2",
+  "manifests/startup-ui.json": "1bd4224777a557952de780f8afacd7e31aac20e5654d84d141c018ca79e2780f",
+  "manifests/toolchain.json": "78139917151fd32e250e33d281668cae0740011559688ad91ca64fc1c9413825",
+  "proof/assets.lock.json": "2d4264b2c5b418f7242cc814279eb3fa7ad6b32c3057b9a1eadca8fa65d2a994",
+  "proof/assignment5-materials.lock.json": "e97f52fb83033b60019d3dbc94d9d227b50706f89c1a98477c2dde381523881e",
+  "proof/hardware-contract.json": "c1274db4486d7e623d78f6cb76325d875c1c6d30e597aa5405c5f9deb3ae4b1b",
+  "proof/source.lock.json": "7a49efc251af38d4f9655d088e1ee4811f9a8ad8d2311f359991473274ebdec3",
+  "requirements/browser.lock": "18069a870dc2949b950ac7c9e2998217db36c4f39b426c12146dc20d09535826",
+  "requirements/native.lock": "8c71aefd758fb1ff0873386e322f3afd57a561dc5dc3cc2b229225d4aa79ed29"
+}

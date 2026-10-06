@@ -1,0 +1,9 @@
+{
+  "name": "original-reference-sources.tar.gz",
+  "bytes": 116218718,
+  "sha256": "87328b448723d63426e3c1ebc6f328d4b740acaf5f5b7f39d4b68e33109f6852",
+  "file_count": 948,
+  "repository": "Julian-AT/hands-on-webassembly",
+  "tag": "application-1689b7b72f85608fb743-25858fc37dafff74",
+  "api_url": "https://api.github.com/repos/Julian-AT/hands-on-webassembly/releases/assets/613565130"
+}
