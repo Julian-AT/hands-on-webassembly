@@ -1,0 +1,38 @@
+{
+  "name": "hands-on-webassembly",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "web"
+  ],
+  "engines": {
+    "node": "24.21.0",
+    "npm": "11.19.0"
+  },
+  "packageManager": "npm@11.19.0",
+  "scripts": {
+    "prepare": "husky",
+    "setup": "node scripts/toolchain.mjs setup",
+    "check": "node scripts/toolchain.mjs check",
+    "test": "node scripts/toolchain.mjs test",
+    "build": "node scripts/toolchain.mjs build",
+    "preview": "node scripts/toolchain.mjs preview",
+    "proof": "node scripts/toolchain.mjs proof",
+    "archive-verify": "node scripts/toolchain.mjs archive-verify",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "staged": "lint-staged",
+    "commitlint": "commitlint"
+  },
+  "devDependencies": {
+    "husky": "9.1.7",
+    "lint-staged": "17.6.0",
+    "@commitlint/cli": "21.2.3",
+    "@commitlint/config-conventional": "21.2.3",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.8",
+    "prettier": "3.9.9"
+  }
+}

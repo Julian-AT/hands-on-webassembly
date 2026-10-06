@@ -1,0 +1,8 @@
+.git
+.cache
+artifacts
+node_modules
+web/.next
+web/out
+web/public
+.vercel

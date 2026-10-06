@@ -1,0 +1,13 @@
+node_modules/
+.cache/
+artifacts/
+web/.next/
+web/out/
+web/public/
+.vercel/
+.husky/_/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env*
+!.env.example
