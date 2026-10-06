@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  color: #17212b;
+  background: #fff;
+  font:
+    16px system-ui,
+    sans-serif;
+}
+.course {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 1.2rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+label {
+  font-weight: 600;
+}
+select,
+button {
+  font: inherit;
+  padding: 0.3rem 0.5rem;
+}
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid #1464c0;
+  outline-offset: 2px;
+}
+.status {
+  font-size: 0.9rem;
+  margin: 0;
+}
+.frame {
+  flex: 1;
+  min-height: 0;
+}
+iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
