@@ -2,9 +2,7 @@
 
 [Open the assignments](https://h1.julianschmidt.cv).
 
-Seven machine learning assignments run entirely in the browser, using preserved course sources and frozen scientific dependencies. A Next.js static selector opens one assignment at a time in a same-origin iframe. `/` defaults to Assignment 1; `/?unit=1` through `/?unit=7` select assignments, and `/unit1/` through `/unit7/` are direct routes.
-
-Full scientific, interface, browser and hardware certification is still **blocked**. The historical checkpoint was 9/140 suites; current status is recomputed after source changes. See [verification](docs/verification.md) and [current status](proof/status.json).
+Seven machine learning assignments run entirely in the browser, using preserved course sources and frozen scientific dependencies. A Next.js static selector opens one assignment at a time in a same-origin iframe. 
 
 | Area            | Responsibility                                               |
 | --------------- | ------------------------------------------------------------ |
