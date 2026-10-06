@@ -16,7 +16,7 @@ node scripts/toolchain.mjs build
 
 Set `COURSE_ASSET_TOKEN` to a build-only GitHub credential able to read this private repository's release assets. For local offline builds, `COURSE_ASSET_ARCHIVE` can instead point to the verified application archive. Neither value is emitted to the browser. The download is verified against its locked archive checksum and all 218 path/size/hash records before publication. Traversal, links, duplicate or unexpected entries, truncation and checksum failures stop the build. Failed staging directories remain available for inspection.
 
-The build uses `output: 'export'`, `trailingSlash: true` and `next build --webpack`, emits `out/`, verifies that every original application asset is byte-identical, and writes a complete `release-manifest.json`. Build identity is derived from locked shell sources, configuration, toolchain and asset inputs.
+The build uses `output: 'export'`, `trailingSlash: true` and `next build --webpack`, emits `out/`, verifies the original assets and the seven locked startup UI changes, and writes a complete `release-manifest.json`. Build identity is derived from locked shell sources, configuration, toolchain and asset inputs.
 
 ## Hosting
 
@@ -35,3 +35,7 @@ The local release checkout is staged inside the authorized Desktop workspace. Th
 Deploy only the source repository, with the locked asset release and build-only asset credential configured. Verify all deployed hashes, MIME types, ranges, GET/HEAD, cache headers and direct entry points against `out/release-manifest.json`. Record installed-browser tests separately from source tests. Production certification remains pending until every retained and added obligation passes in its final context.
 
 For rollback, select the previous verified deployment in Vercel or run `vercel rollback <previous-deployment-url>`. A first candidate has no previously verified Vercel release, so rollback cannot yet be certified. Preserve the current source commit, pinned asset release and export manifest for future rollback testing.
+
+## Loading animation
+
+The original Shinylive animation is visible during loading. The custom recovery panel is hidden until an actual startup error, preserving Retry and the existing connected/initialized readiness checks. The immutable application archive stays unchanged; `manifests/startup-ui.json` locks the seven approved entry-page changes and the corresponding source-generator correction. All original assets are verified before applying the presentation change in staging, and the export is checked against the resulting hashes.

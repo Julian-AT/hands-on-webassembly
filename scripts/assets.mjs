@@ -71,7 +71,22 @@ export async function prepareAssets(root) {
   if((await stat(archive)).size!==reference.bytes || await hashFile(archive)!==reference.sha256) throw new Error('Release archive checksum rejected');
   const staging=resolve(root,`.asset-staging-${process.pid}`);
   const count=await extractArchive(archive,staging,manifest);
-  // Nothing is published until the complete archive and every extracted byte pass.
+  // Apply only the locked presentation change after verifying the original archive.
+  const overrides=JSON.parse(await readFile(resolve(root,'manifests/startup-ui.json'),'utf8')).files;
+  const allowed=Array.from({length:7},(_,i)=>`unit${i+1}/index.html`);
+  if(!overrides || Object.keys(overrides).length!==7 || allowed.some(name=>!Object.hasOwn(overrides,name))) throw new Error('Incomplete startup UI overrides');
+  for(const name of allowed) {
+    const override=overrides[name], original=manifest.files[name];
+    if(!original || override.original_sha256!==original.sha256) throw new Error(`Startup UI input binding rejected: ${name}`);
+    const target=resolve(staging,name), source=await readFile(target,'utf8');
+    const marker='<section id="course-startup" role="status"';
+    if(source.split(marker).length!==2) throw new Error(`Startup panel contract changed: ${name}`);
+    const patched=source.replace(marker,'<section id="course-startup" hidden role="status"');
+    if(Buffer.byteLength(patched)!==override.bytes || createHash('sha256').update(patched).digest('hex')!==override.sha256) throw new Error(`Startup UI output binding rejected: ${name}`);
+    await writeFile(target,patched);
+    if(await hashFile(target)!==override.sha256) throw new Error(`Startup UI staging rejected: ${name}`);
+  }
+  // Publish only after all original assets and approved UI changes pass.
   await rm(resolve(root,'public'),{recursive:true,force:true}); await rename(staging,resolve(root,'public'));
   console.log(`Verified and published ${count} application files`);
 }
