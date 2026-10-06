@@ -1,0 +1,32 @@
+{
+  "verified_at": "2026-10-06T13:11:29.988623+00:00",
+  "release": "history-before-root-20261006-v1",
+  "downloaded_archive": {
+    "status": "pass",
+    "files": 132526,
+    "objects": 40333,
+    "restored": 0,
+    "old_main": "b38c4a1cc49e52f6847fb974352cc03a7fda83af"
+  },
+  "restoration": {
+    "status": "pass",
+    "files": 132526,
+    "objects": 40333,
+    "restored": 4257,
+    "old_main": "b38c4a1cc49e52f6847fb974352cc03a7fda83af"
+  },
+  "original_baseline": {
+    "status": "pass",
+    "files_verified": 2541,
+    "binding_corrections": 4,
+    "original_manifest_sha256": "0c545d0d8235298b760d94b990054340bd7722a53baa110c23ec49a4223f4492",
+    "corrected_manifest_sha256": "3d34160b049e8d7ee6dcde31c4b8f2c42ea15accf1553e5e6510066d09266f0b"
+  },
+  "old_git_bundle": {
+    "status": "pass",
+    "complete_history": true,
+    "sha256": "be7b6bbe204af661e43153819bbb67b9238746283d9d365f8b3acd15920a3bb5"
+  },
+  "inventory_sha256": "aa52fb06d9226f55932b6a5d8332ad339b33693032d30136952e4839c1d8170b",
+  "scope": "Uploaded archive downloaded and fully verified; original restored baseline and Git history verified before removing local historical copies."
+}
