@@ -1,0 +1,43 @@
+{
+  "nnpack_commit": "c07e3a0400713d546e0dea2d5466dd22ea389c73",
+  "psimd_commit": "072586a71b55b7f8c584153d223e95687148a900",
+  "torch_commit": "5c4886908584029761b579af026dcfb627c84070",
+  "vendor_files": {
+    "vendor/LICENSE": "ab09e33621f513ebdd1ef685b324f39c1f6bee9221d15600bafd958322df1231",
+    "vendor/LICENSE-PSIMD": "984ce1e0b8ee89d234e28b960381f240e03a07a8031f35012f9c3256f56964e2",
+    "vendor/include/nnpack/AlignedAllocator.h": "239788abca87aeb74410842d069051913b0930d43586a75043a6adee10cc10cc",
+    "vendor/include/nnpack/activations.h": "dd1aa261910b5452e678679334e50f6fe75fdcc64075ee8d339638be4a1264cc",
+    "vendor/include/nnpack/arm_neon.h": "de2d7f810dddbbff45ba92194c35b493236ee2244d44808365c831d3ca25ee04",
+    "vendor/include/nnpack/assembly.h": "5948b316b42ff6e5f89ee62971904ea89518a04d6176b43f76f627907f398f1b",
+    "vendor/include/nnpack/blas.h": "4a1a261d052b0112035586070a0dded848eb14cbe2df48fed65a349ae5b61008",
+    "vendor/include/nnpack/complex.h": "f7fc69d25c117aafa6e3af52d2eabb47a7d52adeb4e192ec6eaaf9f7a8c8a2fd",
+    "vendor/include/nnpack/fft-constants.h": "c54dbc3194f0ff117b9bf2327354fe456db5566adf4b7957c723a283aaa21266",
+    "vendor/include/nnpack/fft.h": "717613b789f8b60df737ed1a5e1b6e27d22a1782e8f732b50967475489ad6cd4",
+    "vendor/include/nnpack/hwinfo.h": "b7492b317a674c8a3ec52d4f5f68abdfa39937c0ffbdba5e80cfa2bee4157468",
+    "vendor/include/nnpack/macros.h": "6f9983001ea2b881ac1651436852ec9a4fb2ddb19df20b94210e309410a69239",
+    "vendor/include/nnpack/pooling.h": "25edd2e1f3ffbb85d230b6fe620db6adf5bfde573d32500e6dff8fa965016b7d",
+    "vendor/include/nnpack/reference.h": "45dabb2c9cec63a5ee64a9a8725e21977dcc46fec73e4f608a060030f0d83e71",
+    "vendor/include/nnpack/relu.h": "d560066788b6c04725a0576577955e4af836742a1e46aa873ba6d0f0e9829a8b",
+    "vendor/include/nnpack/softmax.h": "52aacd36e7436be24fae50b80c354a0c4485b269dacf17450d0a1e7114bca1ea",
+    "vendor/include/nnpack/system.h": "07df756c98cffb2875ee7dc3da4f8ad375a487803c6212e56babe734f3218202",
+    "vendor/include/nnpack/transform.h": "0dc7697f8be3279639b903e8a52e0e18a2a66f9052f61a3b3ef0a8c6480a495a",
+    "vendor/include/nnpack/utils.h": "f7dbcba8adcbe98ba230694d47aa51ade389179ae190f808444248296d804121",
+    "vendor/include/nnpack/validation.h": "a52b8502562bb6a9a6e86eee3c359267fb0f31f5f6c7018e1c242c297d9568e2",
+    "vendor/include/nnpack/winograd.h": "77034ebacaf1f5449bef32af039f87bc1a1a89fd6d07e2c357db5ecfe1dc7a34",
+    "vendor/psimd.h": "e33f1b932b322820ab8c8e0c85ca8f508b1d578e9551c45f8caf2f3b7a79ab5e",
+    "vendor/src/psimd/2d-fourier-16x16.c": "1d06ca44baee946c4e08f6edd681a01bacca7f0606abf6299d1204f0a96d693e",
+    "vendor/src/psimd/butterfly.h": "b2db693be1a3ebe3729162c5c1203978deb55f5f8baccdc60311469f0d6a457a",
+    "vendor/src/psimd/fft/aos.h": "452e83b179ffd43f8c29fd4849426ba1ff5d80c0cb90cceedf05e7e6024d007b",
+    "vendor/src/psimd/fft/dualreal.h": "64576ab95b861555ab95937c39bd3934862b243cd3ec8e641ec653f3412b2600",
+    "vendor/src/psimd/fft/real.h": "d7197810e340279f64ff156efe1883d67635f119d158973dcfe99f1d87de678e",
+    "vendor/src/psimd/fft/soa.h": "ebbcf28f3557a3ba2634846cdb123b6deb6713c1df88847ed02701c029a26c4f"
+  },
+  "arithmetic_files": {
+    "LICENSE-PYTORCH": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+    "conv_forward.c": "335f2e170d7e1ce1c83db544bca388a6478a358972f7a59742e9676995cca97c",
+    "linear_reduction.c": "548545736813afaeee6b5dcb816be8112fdb8d888fe4a76e1bf67e832dfd7e72",
+    "native_reductions.c": "1f656610201d70299b077e7f7b59746270ab564d000abd9d8fe9b4b74e4bcd4a",
+    "nnpack_fft_forward.c": "df16570eada29d52d10688ab9b6871f760e21f19b51cdd0fa090d8ff020c86f9"
+  },
+  "scope": "Verified original small MNIST CNN shapes; release dispatch remains restricted."
+}
