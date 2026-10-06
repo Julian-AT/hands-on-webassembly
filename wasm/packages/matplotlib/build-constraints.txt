@@ -1,0 +1,4 @@
+pybind11==2.13.6
+meson-python==0.16.0
+meson==1.12.1
+setuptools-scm==8.2.0

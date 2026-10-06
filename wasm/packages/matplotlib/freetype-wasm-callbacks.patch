@@ -1,0 +1,100 @@
+--- a/src/autofit/afdummy.c
++++ b/src/autofit/afdummy.c
+@@ -40,11 +40,13 @@
+   static FT_Error
+   af_dummy_hints_apply( FT_UInt        glyph_index,
+                         AF_GlyphHints  hints,
+-                        FT_Outline*    outline )
++                        FT_Outline*    outline,
++                        AF_StyleMetrics metrics )
+   {
+     FT_Error  error;
+ 
+     FT_UNUSED( glyph_index );
++    FT_UNUSED( metrics );
+ 
+ 
+     error = af_glyph_hints_reload( hints, outline );
+--- a/src/autofit/aftypes.h
++++ b/src/autofit/aftypes.h
+@@ -216,7 +216,7 @@
+   (*AF_WritingSystem_InitHintsFunc)( AF_GlyphHints    hints,
+                                      AF_StyleMetrics  metrics );
+ 
+-  typedef void
++  typedef FT_Error
+   (*AF_WritingSystem_ApplyHintsFunc)( FT_UInt          glyph_index,
+                                       AF_GlyphHints    hints,
+                                       FT_Outline*      outline,
+--- a/src/cid/cidload.c
++++ b/src/cid/cidload.c
+@@ -146,7 +146,7 @@
+   }
+ 
+ 
+-  FT_CALLBACK_DEF( FT_Error )
++  FT_CALLBACK_DEF( void )
+   cid_parse_font_matrix( CID_Face     face,
+                          CID_Parser*  parser )
+   {
+@@ -171,14 +171,14 @@
+       result = cid_parser_to_fixed_array( parser, 6, temp, 3 );
+ 
+       if ( result < 6 )
+-        return FT_THROW( Invalid_File_Format );
++        return;
+ 
+       temp_scale = FT_ABS( temp[3] );
+ 
+       if ( temp_scale == 0 )
+       {
+         FT_ERROR(( "cid_parse_font_matrix: invalid font matrix\n" ));
+-        return FT_THROW( Invalid_File_Format );
++        return;
+       }
+ 
+       /* atypical case */
+@@ -205,11 +205,11 @@
+       offset->y  = temp[5] >> 16;
+     }
+ 
+-    return FT_Err_Ok;
+-  }
+-
+-
+-  FT_CALLBACK_DEF( FT_Error )
++    return;
++  }
++
++
++  FT_CALLBACK_DEF( void )
+   parse_fd_array( CID_Face     face,
+                   CID_Parser*  parser )
+   {
+@@ -249,7 +249,7 @@
+     }
+ 
+   Exit:
+-    return error;
++    FT_UNUSED( error );
+   }
+ 
+ 
+@@ -257,7 +257,7 @@
+   /* and CID_FaceDictRec (both are public header files and can't  */
+   /* changed); we simply copy the value                           */
+ 
+-  FT_CALLBACK_DEF( FT_Error )
++  FT_CALLBACK_DEF( void )
+   parse_expansion_factor( CID_Face     face,
+                           CID_Parser*  parser )
+   {
+@@ -272,7 +272,7 @@
+       dict->private_dict.expansion_factor = dict->expansion_factor;
+     }
+ 
+-    return FT_Err_Ok;
++    return;
+   }
+ 
+ 
