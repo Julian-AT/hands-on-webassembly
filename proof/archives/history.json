@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "repository": "Julian-AT/hands-on-webassembly",
+  "tag": "history-before-root-20261006-v1",
+  "old_main": "b38c4a1cc49e52f6847fb974352cc03a7fda83af",
+  "inventory": {
+    "name": "inventory.json.gz",
+    "bytes": 7770631,
+    "sha256": "aa52fb06d9226f55932b6a5d8332ad339b33693032d30136952e4839c1d8170b"
+  },
+  "shards": [
+    {
+      "name": "history-001.tar.gz",
+      "bytes": 500149593,
+      "sha256": "43c9fe66794c9d6b8dfd4630bf73b08fda98b30068bcd80f76fa3e581a6e3e1c"
+    },
+    {
+      "name": "history-002.tar.gz",
+      "bytes": 400509054,
+      "sha256": "71fe110753688c4612a702f14c7e8400d0e8823b8c9ab5c1a595f3420f00d008"
+    },
+    {
+      "name": "history-003.tar.gz",
+      "bytes": 378787566,
+      "sha256": "361e82403d9962b878c870467d79d823c5bb8fa528a4de2349f3eb51f7d68c41"
+    },
+    {
+      "name": "history-004.tar.gz",
+      "bytes": 618636106,
+      "sha256": "d8a935ea4ef3476faa314c95a0fe2533a058902b5789e94afa5c8a84a5059446"
+    },
+    {
+      "name": "history-005.tar.gz",
+      "bytes": 355839690,
+      "sha256": "05c14eb8c75637c728b295c389128cdd1daa68a8309f1ddc71729ebde6f812e2"
+    },
+    {
+      "name": "history-006.tar.gz",
+      "bytes": 532224314,
+      "sha256": "46db77762a9b2448fd77080b7a4cf090f54669ce6a2e64437e38c4dc8d6ef977"
+    },
+    {
+      "name": "history-007.tar.gz",
+      "bytes": 814396373,
+      "sha256": "5c555d66f932e22480d8292f1ec759828265139363dcb7d901a3457282abfa84"
+    },
+    {
+      "name": "history-008.tar.gz",
+      "bytes": 555944929,
+      "sha256": "c6a0925c773ea284dc0cb6e51129f858dd64dab4467c9715b7da7f3fa5ff6e80"
+    },
+    {
+      "name": "history-009.tar.gz",
+      "bytes": 498399033,
+      "sha256": "6db5f415c7c9205960d808cb729908c2999b738536d2c95a3ab86b89f0bc4d32"
+    },
+    {
+      "name": "history-010.tar.gz",
+      "bytes": 413040986,
+      "sha256": "0c6485365e973519724a25a61c15d902f9a536615b9201eb5475a60e17c2748f"
+    },
+    {
+      "name": "history-011.tar.gz",
+      "bytes": 398828207,
+      "sha256": "04d8b9116ce660f141ea2cb595f36d9eafeaafc2c66ab7a5f0ed743ac70f7b81"
+    },
+    {
+      "name": "history-012.tar.gz",
+      "bytes": 647283869,
+      "sha256": "1032cc3b56a4b98eaeca89a99919e0666277889faf934e1c7fe53ec555de54b5"
+    },
+    {
+      "name": "history-013.tar.gz",
+      "bytes": 445228976,
+      "sha256": "a7863498e2b8776bc9665f08e3b84ebc62d4064a71ac602f19875df30805eeb7"
+    },
+    {
+      "name": "history-014.tar.gz",
+      "bytes": 42008101,
+      "sha256": "ee2b589b115b0eedab497cb5d75ca8380b552ea1cea8005e45ae6a4833a6fd2a"
+    }
+  ],
+  "file_count": 132526,
+  "symlink_count": 135,
+  "logical_bytes": 263246074876
+}
