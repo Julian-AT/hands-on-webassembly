@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-10-06T13:48:57.900621+00:00",
+  "status": "BLOCKED",
+  "nextjs_authorized": false,
+  "application_parity": "BLOCKED",
+  "fingerprint": "de531e713120258c3ae6aa780fe17a4ef28f6f178264f51f9db016f5ee8621e9",
+  "source_unchanged": true,
+  "required": 140,
+  "passed": 0,
+  "historical_checkpoint": {
+    "passed": 9,
+    "required": 140,
+    "recorded_at": "2026-10-05T16:11:09.993138+00:00",
+    "archive": "history-before-root-20261006-v1"
+  },
+  "current_report": "artifacts/proof/evidence/gate.json",
+  "note": "Required current certification evidence is missing or stale. Historical passes were not carried forward."
+}
