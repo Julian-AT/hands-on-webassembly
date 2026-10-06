@@ -1,0 +1,14 @@
+{
+  "pytorch_commit": "5c4886908584029761b579af026dcfb627c84070",
+  "sleef_commit": "5a1d179df9cf652951b59010a2d2075372d67f68",
+  "files": {
+    "src/libm/sleefsimdsp.c": "726d962aaa9cfb0b1696122f4d26765495491c0cbc26c084c899704de46b2f5c",
+    "src/libm/rempitab.c": "105201cc9c80126a3f18ea96e52540c0d13fda7c91a664599ba4078639f961ad",
+    "src/arch/helperpurec_scalar.h": "1efb1f368850f481e38aaa5ddea8e34873df86056205e6c57c4c21bed00fc919",
+    "src/common/misc.h": "516ddeb5cc9501039b104967f1830b92e94cc6053c401fbb6773873dfb1b6178",
+    "src/common/quaddef.h": "7dd06a0161c384d6823f4554312765cd5af61eb913fd997c5f835c10bf5cf309",
+    "src/common/df.h": "cd3c7de0e47f3751a15dd62878effabdec9e47a892a03fefd75981c26fdaf097",
+    "src/common/estrin.h": "b7b49955fb5fb538096b454792aa0d0566c247ba0ea293f8f05f0c982a4096ed",
+    "LICENSE.txt": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+  }
+}
