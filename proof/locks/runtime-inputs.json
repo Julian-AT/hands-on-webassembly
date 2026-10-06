@@ -1,0 +1,14 @@
+{
+  "runtime-packages/manifest.json": {
+    "path": "proof/locks/runtime-packages/manifest.json",
+    "sha256": "6877a36d5f953dd64041b9a2157d8e8b06bd58f4846b7d4d1c41f7b2df2b5c8e"
+  },
+  "runtime-packages/neural-manifest.json": {
+    "path": "proof/locks/runtime-packages/neural-manifest.json",
+    "sha256": "b590f6b02857bcb46b59398bfea71636d3a70ae8f6bf2d8125bbc56d03023217"
+  },
+  "runtime-packages/cnn-manifest.json": {
+    "path": "proof/locks/runtime-packages/cnn-manifest.json",
+    "sha256": "7cc0e5bbed9b6d8b21fcc961c593357b4a6beb8f42e0248847797fd6248edd8e"
+  }
+}

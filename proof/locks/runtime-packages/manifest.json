@@ -1,0 +1,43 @@
+{
+  "plotly": {
+    "name": "plotly",
+    "version": "7.1.0",
+    "file_name": "plotly-7.1.0-py3-none-any.whl",
+    "sha256": "dbb7fa18afce40d0a8e80d1bf162eceb3faa0ce5a77fe741ad09a74cf78f53f3",
+    "depends": [
+      "narwhals",
+      "packaging"
+    ],
+    "imports": [
+      "plotly"
+    ],
+    "install_dir": "site",
+    "package_type": "package"
+  },
+  "narwhals": {
+    "name": "narwhals",
+    "version": "2.26.0",
+    "file_name": "narwhals-2.26.0-py3-none-any.whl",
+    "sha256": "29326d74f107c347fd1009bd58e38d9f7c7c5b51e6de97bc93dbc325d9038b54",
+    "depends": [],
+    "imports": [
+      "narwhals"
+    ],
+    "install_dir": "site",
+    "package_type": "package"
+  },
+  "numpy": {
+    "depends": [],
+    "file_name": "numpy-1.26.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+    "imports": [
+      "numpy"
+    ],
+    "install_dir": "site",
+    "name": "numpy",
+    "package_type": "package",
+    "sha256": "4a2f5303a88a0747c5e6c80701e0ff4ff5667e487c0c9f9c73875e4d88f4cf9a",
+    "shared_library": false,
+    "unvendored_tests": true,
+    "version": "1.26.4"
+  }
+}

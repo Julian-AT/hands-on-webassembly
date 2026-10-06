@@ -1,0 +1,14 @@
+{
+  "name": "course-native-cnn",
+  "version": "1.0.0",
+  "file_name": "course_native_cnn-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+  "sha256": "bc528125c7385bdcd469433abd7c4384aca5487cb1782c5b865deb0396fd5eab",
+  "depends": [
+    "numpy"
+  ],
+  "imports": [
+    "native_cnn"
+  ],
+  "install_dir": "site",
+  "package_type": "package"
+}

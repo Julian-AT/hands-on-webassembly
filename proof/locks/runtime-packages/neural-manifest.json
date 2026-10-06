@@ -1,0 +1,14 @@
+{
+  "name": "course-native-neural",
+  "version": "1.0.0",
+  "file_name": "course_native_neural-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+  "sha256": "68366247086354fbc6e7883210a0717a15490c4da333475e3f8fdf93ba309ee4",
+  "depends": [
+    "numpy"
+  ],
+  "imports": [
+    "native_linear"
+  ],
+  "install_dir": "site",
+  "package_type": "package"
+}
