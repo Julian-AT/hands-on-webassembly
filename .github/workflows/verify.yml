@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   regressions:
-    runs-on: macos-14
+    runs-on: macos-26
     timeout-minutes: 60
     env:
       COURSE_ASSET_TOKEN: ${{ secrets.COURSE_ASSET_TOKEN || github.token }}
@@ -47,6 +47,13 @@ jobs:
           cp web/out/release-manifest.json artifacts/export-first.json
           make build
           cmp artifacts/export-first.json web/out/release-manifest.json
+      - name: Recompute full certification status
+        id: certification
+        continue-on-error: true
+        run: make proof
+      - name: Report outstanding certification
+        if: steps.certification.outcome == 'failure'
+        run: echo '::warning::Full certification remains blocked. Read the uploaded gate report; regressions do not waive certification.'
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: always()
         with:
