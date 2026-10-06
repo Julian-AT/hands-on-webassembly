@@ -1,0 +1,46 @@
+{
+  "reason": "Keep the custom recovery panel hidden during loading so the original Shinylive animation is visible. Existing startupFailed shows the panel and Retry on errors.",
+  "files": {
+    "unit1/index.html": {
+      "original_sha256": "332f59d5c292ace3d5872d9ac2aafd473d4bbb5188f386947cc82741d11e2aa1",
+      "bytes": 7866,
+      "sha256": "80c07a14167982d26a8463271bfc0a703afef1fe64071d284b2d5a22c0dcc405"
+    },
+    "unit2/index.html": {
+      "original_sha256": "649e13cbdb048392de661b91559e1c4e6ce9df66b62edeaad03e305251b95acc",
+      "bytes": 7866,
+      "sha256": "4329909cebcc5c838472ec016658380cc4a61adf7e84c1f57dc9f08a4bf55934"
+    },
+    "unit3/index.html": {
+      "original_sha256": "facbbb936f52e97464af9971c45fbf124f08e1a0a6eabbd432a6ffe8c62e2dc9",
+      "bytes": 7866,
+      "sha256": "add1ed8aea739dcc19a3d784fbd61a089455440f0e08299a3a6d977d9ccc73a5"
+    },
+    "unit4/index.html": {
+      "original_sha256": "ce1423fe922800fbc612a1ee7078c53369de440c52b4008eb2548658c740b0dc",
+      "bytes": 7866,
+      "sha256": "62926eebf46bc3b2ffb2fac5fd5f40cb92ece8046697d51ed3faf150cd356d41"
+    },
+    "unit5/index.html": {
+      "original_sha256": "0454740a6c8f64ca7c969d52ad9239b2066970e74510c21595a7210470ea3e36",
+      "bytes": 7866,
+      "sha256": "feb3efc8c7d9cb4ed5f1b369c9fec7a61ac2f00d1455408e966031088ed97112"
+    },
+    "unit6/index.html": {
+      "original_sha256": "267c60a36dcf04435abf451a99d8930d8e9f1be7eeb4671bf72ea61eaafb8e9b",
+      "bytes": 7866,
+      "sha256": "f12b60920ad4d32ef25617b4694bb861f0cc34d856c175565626d03e4bdaa5e8"
+    },
+    "unit7/index.html": {
+      "original_sha256": "ac6ea6ca872c00e991919c44bf111a02d7ad1b8ffd6e11b2b54533db6ad25fcc",
+      "bytes": 7866,
+      "sha256": "6913f805ff9d2af00aa97a111e14f89c7758973d04f6d5291f6006394825266a"
+    }
+  },
+  "reference_source_patch": {
+    "path": "reference/proof/scripts/patch_runtime.py",
+    "original_sha256": "00a17ac730b13e1c21d5ede67b099185e44a1aa05f750a49f5b9552a3a119c3b",
+    "sha256": "40872298f6921e8f6d46b1b471af6816d2c6c92569775f514307633000a2d64e",
+    "original_retained_in": "immutable supplemental original-reference-sources.tar.gz"
+  }
+}

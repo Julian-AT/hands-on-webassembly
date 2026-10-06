@@ -1,0 +1,13 @@
+{
+  "repository": "Julian-AT/hands-on-webassembly",
+  "tag": "application-1689b7b72f85608fb743-25858fc37dafff74",
+  "name": "application-1689b7b72f85608fb743.tar.gz",
+  "sha256": "737d64789110671ce8fb753c7cec42a199582f1c2edbaa52adf2bedfd38135c2",
+  "bytes": 649636044,
+  "manifest_sha256": "25858fc37dafff74f0e967c88607d4ec9ba1b85a54c85be68bf28f42983ebcd5",
+  "api_url": "https://api.github.com/repos/Julian-AT/hands-on-webassembly/releases/assets/613565129",
+  "browser_download_url": "https://github.com/Julian-AT/hands-on-webassembly/releases/download/application-1689b7b72f85608fb743-25858fc37dafff74/application-1689b7b72f85608fb743.tar.gz",
+  "release_id": 404077219,
+  "asset_id": 613565129,
+  "immutable": true
+}

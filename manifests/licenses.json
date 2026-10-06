@@ -1,0 +1,724 @@
+{
+  "scope": "License files retained in the immutable application archive and pinned Next/React dependencies. This inventory is not a full legal review.",
+  "files": [
+    {
+      "path": "assets/v1/embedding-runtime/MODEL-LICENSE",
+      "sha256": "3933c176979b68bc6d0bcc902c7d6c130f1d127f476f17ba5cdba8d99cfd0012"
+    },
+    {
+      "path": "assets/v1/embedding-runtime/MODEL-LICENSES_SOURCES",
+      "sha256": "ea21333cecd2593c1fea842e9362bedf7b556abfb97cd08ce0650f2228b2eb58"
+    },
+    {
+      "path": "assets/v1/embedding-runtime/SPACY-LICENSE",
+      "sha256": "3f4378e67708fecacd3e27651c8bc0f977cf20789e19da0d81a2840e7cf573a2"
+    },
+    {
+      "archive": "assets/v1/neural-runtime/pyborch-1.14.1-py3-none-any.whl",
+      "entry": "pyborch-1.14.1.dist-info/licenses/LICENSE",
+      "sha256": "097ba57f52c3d8e316944dded20ee21b698bcc1f797122e4bf9153c89a9ed902"
+    },
+    {
+      "archive": "probes/pyborch-1.14.1-py3-none-any.whl",
+      "entry": "pyborch-1.14.1.dist-info/licenses/LICENSE",
+      "sha256": "097ba57f52c3d8e316944dded20ee21b698bcc1f797122e4bf9153c89a9ed902"
+    },
+    {
+      "archive": "shinylive/pyodide/Jinja2-3.1.3-py3-none-any.whl",
+      "entry": "Jinja2-3.1.3.dist-info/LICENSE.rst",
+      "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+    },
+    {
+      "archive": "shinylive/pyodide/anyio-4.4.0-py3-none-any.whl",
+      "entry": "anyio-4.4.0.dist-info/LICENSE",
+      "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+    },
+    {
+      "archive": "shinylive/pyodide/anywidget-0.9.15-py3-none-any.whl",
+      "entry": "anywidget-0.9.15.dist-info/licenses/LICENSE",
+      "sha256": "22c698b6e5f3878c292471980ffd352ee0fad053f9428c2281f34b5e28a6151f"
+    },
+    {
+      "archive": "shinylive/pyodide/asgiref-3.8.1-py3-none-any.whl",
+      "entry": "asgiref-3.8.1.dist-info/LICENSE",
+      "sha256": "b846415d1b514e9c1dff14a22deb906d794bc546ca6129f950a18cd091e2a669"
+    },
+    {
+      "archive": "shinylive/pyodide/asttokens-2.4.1-py2.py3-none-any.whl",
+      "entry": "asttokens-2.4.1.dist-info/LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "archive": "shinylive/pyodide/comm-0.2.2-py3-none-any.whl",
+      "entry": "comm-0.2.2.dist-info/licenses/LICENSE",
+      "sha256": "97a7e0a142b7c1dcd26461b20fc13980988b4449b7446ed776928826fd2ca9c4"
+    },
+    {
+      "archive": "shinylive/pyodide/contourpy-1.3.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "contourpy-1.3.0.dist-info/LICENSE",
+      "sha256": "c7d0a153bffaa104044463ebc633793d451722efd3138b5ffd2527b40f1505a2"
+    },
+    {
+      "archive": "shinylive/pyodide/course_forest_criterion-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "course_forest_criterion-1.0.0.dist-info/LICENSE",
+      "sha256": "35cbd755e60614a6a7b03fd29c3e95779ed3e991333f7e9e5947797916dd2e37"
+    },
+    {
+      "archive": "shinylive/pyodide/course_native_cnn-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "course_native_cnn-1.0.0.dist-info/licenses/LICENSE-PYTORCH",
+      "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+    },
+    {
+      "archive": "shinylive/pyodide/course_native_cnn-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "course_native_cnn-1.0.0.dist-info/licenses/vendor/LICENSE",
+      "sha256": "ab09e33621f513ebdd1ef685b324f39c1f6bee9221d15600bafd958322df1231"
+    },
+    {
+      "archive": "shinylive/pyodide/course_native_cnn-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "course_native_cnn-1.0.0.dist-info/licenses/vendor/LICENSE-PSIMD",
+      "sha256": "984ce1e0b8ee89d234e28b960381f240e03a07a8031f35012f9c3256f56964e2"
+    },
+    {
+      "archive": "shinylive/pyodide/course_native_neural-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "course_native_neural-1.0.0.dist-info/LICENSE-PYTORCH",
+      "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+    },
+    {
+      "archive": "shinylive/pyodide/course_native_neural-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "course_native_neural-1.0.0.dist-info/LICENSE.txt",
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "archive": "shinylive/pyodide/course_native_tsne-1.0.2-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "course_native_tsne-1.0.2.dist-info/LICENSE",
+      "sha256": "35cbd755e60614a6a7b03fd29c3e95779ed3e991333f7e9e5947797916dd2e37"
+    },
+    {
+      "archive": "shinylive/pyodide/cycler-0.12.1-py3-none-any.whl",
+      "entry": "cycler-0.12.1.dist-info/LICENSE",
+      "sha256": "f1218143d766da3fea66f13396b7f15df46a83303f29bf96ba6e98eb4d42f408"
+    },
+    {
+      "archive": "shinylive/pyodide/decorator-5.1.1-py3-none-any.whl",
+      "entry": "decorator-5.1.1.dist-info/LICENSE.txt",
+      "sha256": "fd11660cabf0532082c45706862fafc294907ec7f8e217818240a4999806782e"
+    },
+    {
+      "archive": "shinylive/pyodide/exceptiongroup-1.2.1-py3-none-any.whl",
+      "entry": "exceptiongroup-1.2.1.dist-info/LICENSE",
+      "sha256": "6e5070d765031e0ad403a1cbf90ae6d19a0228f802e320b7acff460aa72ed47c"
+    },
+    {
+      "archive": "shinylive/pyodide/executing-2.0.1-py2.py3-none-any.whl",
+      "entry": "executing-2.0.1.dist-info/LICENSE.txt",
+      "sha256": "a476a2cb0ef4c41450340a577a28b91ac4c7f669136b2ee148047fabd5fc4181"
+    },
+    {
+      "archive": "shinylive/pyodide/fonttools-4.51.0-py3-none-any.whl",
+      "entry": "fonttools-4.51.0.dist-info/LICENSE",
+      "sha256": "6787208f83f659ccbc2223b2fde952ffa6f7e8aca62f1a8a2bf5bc51bb1b2383"
+    },
+    {
+      "archive": "shinylive/pyodide/htmltools-0.7.0-py3-none-any.whl",
+      "entry": "htmltools-0.7.0.dist-info/licenses/LICENSE",
+      "sha256": "54a55511991726b38e3867966ab14fd62919114670f2178654cced9394af78fd"
+    },
+    {
+      "archive": "shinylive/pyodide/idna-3.7-py3-none-any.whl",
+      "entry": "idna-3.7.dist-info/LICENSE.md",
+      "sha256": "a59f0b0ef3635874109a4461ca44ff7a70d50696e814767bfaf721d4c9b0db0f"
+    },
+    {
+      "archive": "shinylive/pyodide/importlib_metadata-9.0.0-py3-none-any.whl",
+      "entry": "importlib_metadata-9.0.0.dist-info/licenses/LICENSE",
+      "sha256": "e2f7bb0557e7a381499f15baa7c1d776d83d6616599179d71d3109b8e39f7b25"
+    },
+    {
+      "archive": "shinylive/pyodide/ipython-8.23.0-py3-none-any.whl",
+      "entry": "ipython-8.23.0.dist-info/LICENSE",
+      "sha256": "e0e390748ed440ab893ca1f135a88a920aaf5409dbb90a5b427c75c5e51268fb"
+    },
+    {
+      "archive": "shinylive/pyodide/ipywidgets-8.1.3-py3-none-any.whl",
+      "entry": "ipywidgets-8.1.3.dist-info/LICENSE",
+      "sha256": "e5ac2be30b2bcefe330ee9e5ad7fe5b0d1156fecb3555fcaaa908a8d29f9fded"
+    },
+    {
+      "archive": "shinylive/pyodide/joblib-1.4.0-py3-none-any.whl",
+      "entry": "joblib-1.4.0.dist-info/licenses/LICENSE.txt",
+      "sha256": "42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a"
+    },
+    {
+      "archive": "shinylive/pyodide/jupyter_core-5.7.2-py3-none-any.whl",
+      "entry": "jupyter_core-5.7.2.dist-info/licenses/LICENSE",
+      "sha256": "448f1835f5fa08dd075088e46f76f73eb9ac9c2aef0a6c8816be06d30ef592c7"
+    },
+    {
+      "archive": "shinylive/pyodide/jupyterlab_widgets-3.0.11-py3-none-any.whl",
+      "entry": "jupyterlab_widgets-3.0.11.data/data/share/jupyter/labextensions/@jupyter-widgets/jupyterlab-manager/static/439.33696bc45fbd403becbb.js.LICENSE.txt",
+      "sha256": "d49fb5cb77f2f622f79fbfee49eec4d3dab51570ad119d054242acd0535b98d7"
+    },
+    {
+      "archive": "shinylive/pyodide/jupyterlab_widgets-3.0.11-py3-none-any.whl",
+      "entry": "jupyterlab_widgets-3.0.11.data/data/share/jupyter/labextensions/@jupyter-widgets/jupyterlab-manager/static/651.fe40a967a60b543cf15c.js.LICENSE.txt",
+      "sha256": "92c768d7fed05fe5e0b91061add75828abb107eac2be124ba87be8e2fa3658c6"
+    },
+    {
+      "archive": "shinylive/pyodide/jupyterlab_widgets-3.0.11-py3-none-any.whl",
+      "entry": "jupyterlab_widgets-3.0.11.data/data/share/jupyter/labextensions/@jupyter-widgets/jupyterlab-manager/static/third-party-licenses.json",
+      "sha256": "8724e36a1d9e78f166831f7d5c93b9cf7b6c1da1b8639a01a8d42a194438f7d2"
+    },
+    {
+      "archive": "shinylive/pyodide/jupyterlab_widgets-3.0.11-py3-none-any.whl",
+      "entry": "jupyterlab_widgets-3.0.11.dist-info/LICENSE",
+      "sha256": "19e95347fe7dc0777fa312c22cfcd76fd1a15d46e1cde68f12e6e539ddd6b421"
+    },
+    {
+      "archive": "shinylive/pyodide/kiwisolver-1.4.5-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "kiwisolver-1.4.5.dist-info/licenses/LICENSE",
+      "sha256": "26da8d49744796f2601fb5fe9e5d8b9e8102064ca60a8dc1825b6177cb05450c"
+    },
+    {
+      "archive": "shinylive/pyodide/linkify_it_py-2.0.3-py3-none-any.whl",
+      "entry": "linkify_it_py-2.0.3.dist-info/LICENSE",
+      "sha256": "db5d71f61f0f781f5078df4b6a00d5d3c799fb0bb82bcf448a688e9762618a2e"
+    },
+    {
+      "archive": "shinylive/pyodide/markdown_it_py-3.0.0-py3-none-any.whl",
+      "entry": "markdown_it_py-3.0.0.dist-info/LICENSE",
+      "sha256": "4a2260d6e2cd0f5a151a1e86dbfe7d3ed552b1e2beabf9941c1ba5c49cbce484"
+    },
+    {
+      "archive": "shinylive/pyodide/markdown_it_py-3.0.0-py3-none-any.whl",
+      "entry": "markdown_it_py-3.0.0.dist-info/LICENSE.markdown-it",
+      "sha256": "792c48c5a849a15fdf9e37e8bcf9e6d1dd13b32b46c642a748a0a46a9919d473"
+    },
+    {
+      "archive": "shinylive/pyodide/markupsafe-2.1.5-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "markupsafe-2.1.5.dist-info/licenses/LICENSE.rst",
+      "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.10.8-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib/mpl-data/fonts/ttf/LICENSE_DEJAVU",
+      "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.10.8-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib/mpl-data/fonts/ttf/LICENSE_STIX",
+      "sha256": "bab3d31dfef07f483624f2f65f2711e76065b8e7273278b1c071ede1041c9959"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.10.8-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.10.8.dist-info/LICENSE",
+      "sha256": "5a1a81ea301728c8bba2933da832c0cd62229daf20893a024ab3d53244468dbc"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib/mpl-data/fonts/ttf/LICENSE_DEJAVU",
+      "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib/mpl-data/fonts/ttf/LICENSE_STIX",
+      "sha256": "bab3d31dfef07f483624f2f65f2711e76065b8e7273278b1c071ede1041c9959"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE",
+      "sha256": "5a1a81ea301728c8bba2933da832c0cd62229daf20893a024ab3d53244468dbc"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_AMSFONTS",
+      "sha256": "155141d59877f338f6e1c0805de9b79964dce71fe5d2a56c44e38b2c0f7e35ee"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_BAKOMA",
+      "sha256": "93adb2b53c02b7ce06b26bff41358c21248f42fed287b633ec4c31038377cdbb"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_CARLOGO",
+      "sha256": "61902d5eef34dd24870b7287a96260d3328233b96f7202bf70ad6e2a0da2de3f"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_COLORBREWER",
+      "sha256": "01173653fe745ce2124ec156d78b460582d2a719d2d9212804267e95fd2c97e7"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_COURIERTEN",
+      "sha256": "ac81f717aaff9456b88010fc55382a8dff199e4c4bcc5d61e040c3f7063beb43"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_JSXTOOLS_RESIZE_OBSERVER",
+      "sha256": "597756adcb51f243ef4fb386920377f61d012ace0904364e1a8ee9aaec6afc84"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_QHULL",
+      "sha256": "106d55c931fd6a84822e5345d900273d059f1c27310d02567ccb313c5d18c55d"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_QT4_EDITOR",
+      "sha256": "b2b50ca8b6172aca23095adf15db89d3727e9ef2d6ef0178e427234011bed3cd"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_SOLARIZED",
+      "sha256": "12d5327fbc4df845a86883de99ed5fdf4198445d56dbacdf5fad8f0efdc97513"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_STIX",
+      "sha256": "bab3d31dfef07f483624f2f65f2711e76065b8e7273278b1c071ede1041c9959"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib-3.8.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "matplotlib-3.8.4.dist-info/licenses/LICENSE/LICENSE_YORICK",
+      "sha256": "cab753d38c093651e8deb5abb684e3ed68020e0e418034f94d79e890dc7ae84d"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib_inline-0.1.7-py3-none-any.whl",
+      "entry": "matplotlib_inline-0.1.7.dist-info/LICENSE",
+      "sha256": "8521b036c6448e0e0aa7213d4713b6fdee0f4c64c9f320450f77346bf5c0e8e4"
+    },
+    {
+      "archive": "shinylive/pyodide/matplotlib_pyodide-0.2.3-py3-none-any.whl",
+      "entry": "matplotlib_pyodide-0.2.3.dist-info/LICENSE",
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+    },
+    {
+      "archive": "shinylive/pyodide/mdit_py_plugins-0.4.1-py3-none-any.whl",
+      "entry": "mdit_py_plugins/admon/LICENSE",
+      "sha256": "699355a44cb248631a4cde542029b593b7e6663823b0518338e85fd65360bac3"
+    },
+    {
+      "archive": "shinylive/pyodide/mdit_py_plugins-0.4.1-py3-none-any.whl",
+      "entry": "mdit_py_plugins/container/LICENSE",
+      "sha256": "c91339910d300f163edcaddbfb3909f1cffae19a496b7fe3935a9a4073dc305a"
+    },
+    {
+      "archive": "shinylive/pyodide/mdit_py_plugins-0.4.1-py3-none-any.whl",
+      "entry": "mdit_py_plugins/deflist/LICENSE",
+      "sha256": "81d61236a5f25294b2dad0c866d4ad6a40b865148b28df9a71f49ba771a6c54b"
+    },
+    {
+      "archive": "shinylive/pyodide/mdit_py_plugins-0.4.1-py3-none-any.whl",
+      "entry": "mdit_py_plugins/footnote/LICENSE",
+      "sha256": "81d61236a5f25294b2dad0c866d4ad6a40b865148b28df9a71f49ba771a6c54b"
+    },
+    {
+      "archive": "shinylive/pyodide/mdit_py_plugins-0.4.1-py3-none-any.whl",
+      "entry": "mdit_py_plugins/front_matter/LICENSE",
+      "sha256": "9e1bc1fafae020b5c33cc9cb745c707a5addf109cd814f0dac2d41424b83554a"
+    },
+    {
+      "archive": "shinylive/pyodide/mdit_py_plugins-0.4.1-py3-none-any.whl",
+      "entry": "mdit_py_plugins/texmath/LICENSE",
+      "sha256": "012a56cf9e23a2917336178cca417ab4c88fc64ad7086d621d6a8b956593629f"
+    },
+    {
+      "archive": "shinylive/pyodide/mdit_py_plugins-0.4.1-py3-none-any.whl",
+      "entry": "mdit_py_plugins-0.4.1.dist-info/LICENSE",
+      "sha256": "4a2260d6e2cd0f5a151a1e86dbfe7d3ed552b1e2beabf9941c1ba5c49cbce484"
+    },
+    {
+      "archive": "shinylive/pyodide/mdurl-0.1.2-py3-none-any.whl",
+      "entry": "mdurl-0.1.2.dist-info/LICENSE",
+      "sha256": "7c605df6e28667a9603118e98274f64a49ce3eed0d26fccce9534a345e0ef955"
+    },
+    {
+      "archive": "shinylive/pyodide/micropip-0.9.0-py3-none-any.whl",
+      "entry": "micropip/_vendored/packaging/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+    },
+    {
+      "archive": "shinylive/pyodide/micropip-0.9.0-py3-none-any.whl",
+      "entry": "micropip/_vendored/packaging/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "archive": "shinylive/pyodide/micropip-0.9.0-py3-none-any.whl",
+      "entry": "micropip/_vendored/packaging/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+    },
+    {
+      "archive": "shinylive/pyodide/micropip-0.9.0-py3-none-any.whl",
+      "entry": "micropip/_vendored/packaging/src/packaging/licenses/__init__.py",
+      "sha256": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c"
+    },
+    {
+      "archive": "shinylive/pyodide/micropip-0.9.0-py3-none-any.whl",
+      "entry": "micropip/_vendored/packaging/src/packaging/licenses/_spdx.py",
+      "sha256": "a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b"
+    },
+    {
+      "archive": "shinylive/pyodide/micropip-0.9.0-py3-none-any.whl",
+      "entry": "micropip-0.9.0.dist-info/LICENSE",
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+    },
+    {
+      "archive": "shinylive/pyodide/narwhals-1.12.1-py3-none-any.whl",
+      "entry": "narwhals-1.12.1.dist-info/licenses/LICENSE.md",
+      "sha256": "85e303ea1b5ae91cde06e729a71e7d0140a0affba4458d00063d1b72b37798ab"
+    },
+    {
+      "archive": "shinylive/pyodide/narwhals-2.26.0-py3-none-any.whl",
+      "entry": "narwhals-2.26.0.dist-info/licenses/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "shinylive/pyodide/narwhals-2.26.0-py3-none-any.whl",
+      "entry": "narwhals-2.26.0.dist-info/licenses/LICENSE.md",
+      "sha256": "811445f30147b8f0c9d444c9025fd528f9532c54b7b83f6e2368473dc91cfdf0"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-1.26.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy/core/include/numpy/random/LICENSE.txt",
+      "sha256": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-1.26.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy/ma/LICENSE",
+      "sha256": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-1.26.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy/random/LICENSE.md",
+      "sha256": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-1.26.4-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy-1.26.4.dist-info/LICENSE.txt",
+      "sha256": "263223390c43a9d4a0841e0209265fd927a198f8e89c8eee809b7437d7e5e8c2"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-2.0.2-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy/_core/include/numpy/random/LICENSE.txt",
+      "sha256": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-2.0.2-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy/ma/LICENSE",
+      "sha256": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-2.0.2-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy/random/LICENSE.md",
+      "sha256": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f"
+    },
+    {
+      "archive": "shinylive/pyodide/numpy-2.0.2-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "numpy-2.0.2.dist-info/LICENSE.txt",
+      "sha256": "01fb016849aa427edb1bbbbd55f91c26ca6cadb32a5b20e7f000655dd05b0760"
+    },
+    {
+      "archive": "shinylive/pyodide/opentelemetry_api-1.40.0-py3-none-any.whl",
+      "entry": "opentelemetry_api-1.40.0.dist-info/licenses/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "archive": "shinylive/pyodide/orjson-3.10.1-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "orjson-3.10.1.dist-info/licenses/LICENSE-APACHE",
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "archive": "shinylive/pyodide/orjson-3.10.1-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "orjson-3.10.1.dist-info/licenses/LICENSE-MIT",
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "archive": "shinylive/pyodide/packaging-24.2-py3-none-any.whl",
+      "entry": "packaging/licenses/__init__.py",
+      "sha256": "d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c"
+    },
+    {
+      "archive": "shinylive/pyodide/packaging-24.2-py3-none-any.whl",
+      "entry": "packaging/licenses/_spdx.py",
+      "sha256": "a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b"
+    },
+    {
+      "archive": "shinylive/pyodide/packaging-24.2-py3-none-any.whl",
+      "entry": "packaging-24.2.dist-info/licenses/LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+    },
+    {
+      "archive": "shinylive/pyodide/packaging-24.2-py3-none-any.whl",
+      "entry": "packaging-24.2.dist-info/licenses/LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "archive": "shinylive/pyodide/packaging-24.2-py3-none-any.whl",
+      "entry": "packaging-24.2.dist-info/licenses/LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+    },
+    {
+      "archive": "shinylive/pyodide/pandas-2.2.3-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "pandas-2.2.3.dist-info/LICENSE",
+      "sha256": "533eb6d0b98e5be3ddd12dce97be35dd11282f5c47cdf8d08c81756fd5d70a26"
+    },
+    {
+      "archive": "shinylive/pyodide/pillow-10.2.0-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "pillow-10.2.0.dist-info/licenses/LICENSE",
+      "sha256": "e706384c6f299d1b6fa782ae657740b372b4bd7938a1a318bf94ac249114758a"
+    },
+    {
+      "archive": "shinylive/pyodide/platformdirs-4.2.2-py3-none-any.whl",
+      "entry": "platformdirs-4.2.2.dist-info/licenses/LICENSE",
+      "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "jupyterlab_plotly/labextension/static/478.4a789ad34bd920cfbc7d.js.LICENSE.txt",
+      "sha256": "404bcce067fa66d9e044143b9e02dc598852d1ef34ef7efd11c674aed540cd85"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "jupyterlab_plotly/labextension/static/486.6450efe6168c2f8caddb.js.LICENSE.txt",
+      "sha256": "d33efbdf4d309bfa4448199551371ff81d5f57661b781faf79d256554e038595"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "jupyterlab_plotly/labextension/static/third-party-licenses.json",
+      "sha256": "d56f13c91878e1970d5a6b8d7fc617b09d3b013fdd6d14affa82ebbca806b84c"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "jupyterlab_plotly/nbextension/index.js.LICENSE.txt",
+      "sha256": "b513d4f42fc89a308181fcc90d9787835dd481eb7597ced4b607f7726281a948"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "plotly-5.23.0.data/data/share/jupyter/labextensions/jupyterlab-plotly/static/478.4a789ad34bd920cfbc7d.js.LICENSE.txt",
+      "sha256": "404bcce067fa66d9e044143b9e02dc598852d1ef34ef7efd11c674aed540cd85"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "plotly-5.23.0.data/data/share/jupyter/labextensions/jupyterlab-plotly/static/486.6450efe6168c2f8caddb.js.LICENSE.txt",
+      "sha256": "d33efbdf4d309bfa4448199551371ff81d5f57661b781faf79d256554e038595"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "plotly-5.23.0.data/data/share/jupyter/labextensions/jupyterlab-plotly/static/third-party-licenses.json",
+      "sha256": "d56f13c91878e1970d5a6b8d7fc617b09d3b013fdd6d14affa82ebbca806b84c"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "plotly-5.23.0.data/data/share/jupyter/nbextensions/jupyterlab-plotly/index.js.LICENSE.txt",
+      "sha256": "b513d4f42fc89a308181fcc90d9787835dd481eb7597ced4b607f7726281a948"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-5.23.0-py3-none-any.whl",
+      "entry": "plotly-5.23.0.dist-info/LICENSE.txt",
+      "sha256": "8be31ef43f091ec4449b1ef2e238d009672fc30555a5193331bd095a4fa836a6"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-7.1.0-py3-none-any.whl",
+      "entry": "plotly/labextension/static/third-party-licenses.json",
+      "sha256": "e202018f172ddcc66fccef9cbf0c2a2dde2d6be02ef19bb3b9cddf692313447d"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-7.1.0-py3-none-any.whl",
+      "entry": "plotly-7.1.0.data/data/share/jupyter/labextensions/jupyterlab-plotly/static/third-party-licenses.json",
+      "sha256": "e202018f172ddcc66fccef9cbf0c2a2dde2d6be02ef19bb3b9cddf692313447d"
+    },
+    {
+      "archive": "shinylive/pyodide/plotly-7.1.0-py3-none-any.whl",
+      "entry": "plotly-7.1.0.dist-info/licenses/LICENSE.txt",
+      "sha256": "ba712274f8336a5f0828c8e2bf639ab8a632c623800a35f96c8b0a67b5f2ab40"
+    },
+    {
+      "archive": "shinylive/pyodide/prompt_toolkit-3.0.43-py3-none-any.whl",
+      "entry": "prompt_toolkit-3.0.43.dist-info/LICENSE",
+      "sha256": "303574d9bdd85c757d6025017942bf17baeedf2778f62bd7f425d07d880f4c4a"
+    },
+    {
+      "archive": "shinylive/pyodide/psygnal-0.12.0-py3-none-any.whl",
+      "entry": "psygnal-0.12.0.dist-info/licenses/LICENSE",
+      "sha256": "50169b145e35e6ae11a1e05cebdaa7052a58a8a2325dd5c394f8a68199c78415"
+    },
+    {
+      "archive": "shinylive/pyodide/pure_eval-0.2.3-py3-none-any.whl",
+      "entry": "pure_eval-0.2.3.dist-info/LICENSE.txt",
+      "sha256": "a476a2cb0ef4c41450340a577a28b91ac4c7f669136b2ee148047fabd5fc4181"
+    },
+    {
+      "archive": "shinylive/pyodide/pygments-2.17.2-py3-none-any.whl",
+      "entry": "pygments-2.17.2.dist-info/licenses/AUTHORS",
+      "sha256": "71408c264e8030a8ee751f76cd9ff75f0e66586b30b243c5418a54d46f184436"
+    },
+    {
+      "archive": "shinylive/pyodide/pygments-2.17.2-py3-none-any.whl",
+      "entry": "pygments-2.17.2.dist-info/licenses/LICENSE",
+      "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+    },
+    {
+      "archive": "shinylive/pyodide/pyodide_http-0.2.1-py3-none-any.whl",
+      "entry": "pyodide_http-0.2.1.dist-info/LICENSE",
+      "sha256": "991c32d84f07c9626b834dd037942414605546f69170f7b2ac8206abdadc48b0"
+    },
+    {
+      "archive": "shinylive/pyodide/pyparsing-3.1.2-py3-none-any.whl",
+      "entry": "pyparsing-3.1.2.dist-info/LICENSE",
+      "sha256": "10d5120a16805804ffda8b688c220bfb4e8f39741b57320604d455a309e01972"
+    },
+    {
+      "archive": "shinylive/pyodide/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "entry": "python_dateutil-2.9.0.post0.dist-info/LICENSE",
+      "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e"
+    },
+    {
+      "archive": "shinylive/pyodide/pytz-2024.1-py2.py3-none-any.whl",
+      "entry": "pytz-2024.1.dist-info/LICENSE.txt",
+      "sha256": "be8b1a37ebe26c592a90f6c0eb33103a7f383ce2f4d7498c0af9a526990a07b8"
+    },
+    {
+      "archive": "shinylive/pyodide/scipy-1.14.1-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "scipy/_lib/_uarray/LICENSE",
+      "sha256": "c80c39b5fce06ba4897e14e0b0a88b54458334d951eb1361402ffad2cfb863b4"
+    },
+    {
+      "archive": "shinylive/pyodide/scipy-1.14.1-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "scipy/fft/_pocketfft/LICENSE.md",
+      "sha256": "c254b2b5fd30ae3c89d36ba061730563b9760fca04f1b746a1b2c3157da2c789"
+    },
+    {
+      "archive": "shinylive/pyodide/scipy-1.14.1-cp312-cp312-pyodide_2024_0_wasm32.whl",
+      "entry": "scipy-1.14.1.dist-info/LICENSE.txt",
+      "sha256": "c29fb8e5936f33237a8b15256b4c6e93037f05bbf58c3d7b5755aede4c200173"
+    },
+    {
+      "archive": "shinylive/pyodide/seaborn-0.13.2-py3-none-any.whl",
+      "entry": "seaborn-0.13.2.dist-info/LICENSE.md",
+      "sha256": "357ad276e086fab501163d4e9a0ae13c2fd0647eb08d2305fbc0ca3813892601"
+    },
+    {
+      "archive": "shinylive/pyodide/setuptools-69.5.1-py3-none-any.whl",
+      "entry": "setuptools-69.5.1.dist-info/LICENSE",
+      "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+    },
+    {
+      "archive": "shinylive/pyodide/shiny-1.8.0-py3-none-any.whl",
+      "entry": "shiny/www/shared/busy-indicators/spinners/LICENSE",
+      "sha256": "712f8f614e9a23cc754a21d72ea443f1166077e4ee0e6c3b6f9fa576a6d37254"
+    },
+    {
+      "archive": "shinylive/pyodide/shiny-1.8.0-py3-none-any.whl",
+      "entry": "shiny/www/shared/highlight/LICENSE",
+      "sha256": "bdb8f9bba7125549cb01d68d90050ac9604f5aa43f6fd63e070f6d7d095f8d74"
+    },
+    {
+      "archive": "shinylive/pyodide/shiny-1.8.0-py3-none-any.whl",
+      "entry": "shiny/www/shared/jqueryui/LICENSE.txt",
+      "sha256": "f649025cf65c8dcd8588b0937883ba7a52bdb6d35129464a36a1602eb00250f1"
+    },
+    {
+      "archive": "shinylive/pyodide/shiny-1.8.0-py3-none-any.whl",
+      "entry": "shiny-1.8.0.dist-info/licenses/LICENSE",
+      "sha256": "54a55511991726b38e3867966ab14fd62919114670f2178654cced9394af78fd"
+    },
+    {
+      "archive": "shinylive/pyodide/shinychat-0.2.8-py3-none-any.whl",
+      "entry": "shinychat-0.2.8.dist-info/licenses/LICENSE",
+      "sha256": "a01d97d466638d615b5c63236ed3cb5a0dbd6a3ec1ce36de72c9c6ef211a63c5"
+    },
+    {
+      "archive": "shinylive/pyodide/shinywidgets-0.8.1-py3-none-any.whl",
+      "entry": "shinywidgets-0.8.1.dist-info/licenses/LICENSE",
+      "sha256": "6297b9d59d7502c9ed86e1a7eb1858137c0055798ba814961a26d1b3d113f25f"
+    },
+    {
+      "archive": "shinylive/pyodide/six-1.16.0-py2.py3-none-any.whl",
+      "entry": "six-1.16.0.dist-info/LICENSE",
+      "sha256": "8bb850c565aa389fdc16f3a46965ad23d82adff60f2393fc2762b63185e8e6c9"
+    },
+    {
+      "archive": "shinylive/pyodide/sniffio-1.3.1-py3-none-any.whl",
+      "entry": "sniffio-1.3.1.dist-info/LICENSE",
+      "sha256": "652c878488d1456361e08c3f8607fd7ba59892a14103d15cce4ff93c85b5cc8b"
+    },
+    {
+      "archive": "shinylive/pyodide/sniffio-1.3.1-py3-none-any.whl",
+      "entry": "sniffio-1.3.1.dist-info/LICENSE.APACHE2",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "archive": "shinylive/pyodide/sniffio-1.3.1-py3-none-any.whl",
+      "entry": "sniffio-1.3.1.dist-info/LICENSE.MIT",
+      "sha256": "3e6dae555eb92787fc82d1d48355677f454c7f65aeb38d3f9e72bf9a3daf034b"
+    },
+    {
+      "archive": "shinylive/pyodide/stack_data-0.6.3-py3-none-any.whl",
+      "entry": "stack_data-0.6.3.dist-info/LICENSE.txt",
+      "sha256": "a476a2cb0ef4c41450340a577a28b91ac4c7f669136b2ee148047fabd5fc4181"
+    },
+    {
+      "archive": "shinylive/pyodide/starlette-0.38.1-py3-none-any.whl",
+      "entry": "starlette-0.38.1.dist-info/licenses/LICENSE.md",
+      "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+    },
+    {
+      "archive": "shinylive/pyodide/tenacity-8.5.0-py3-none-any.whl",
+      "entry": "tenacity-8.5.0.dist-info/LICENSE",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "archive": "shinylive/pyodide/threadpoolctl-3.5.0-py3-none-any.whl",
+      "entry": "threadpoolctl-3.5.0.dist-info/LICENSE",
+      "sha256": "81ac619075248b06e53660b652d10e485f4675f5d0ae0f97ea22370da1f7e23b"
+    },
+    {
+      "archive": "shinylive/pyodide/traitlets-5.14.3-py3-none-any.whl",
+      "entry": "traitlets-5.14.3.dist-info/licenses/LICENSE",
+      "sha256": "2f51727d9063b54856773cb51388bdb79f2936ee4a1b692ef553d8c4201311ab"
+    },
+    {
+      "archive": "shinylive/pyodide/typing_extensions-4.11.0-py3-none-any.whl",
+      "entry": "typing_extensions-4.11.0.dist-info/LICENSE",
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+    },
+    {
+      "archive": "shinylive/pyodide/uc_micro_py-1.0.3-py3-none-any.whl",
+      "entry": "uc_micro_py-1.0.3.dist-info/LICENSE",
+      "sha256": "270c94e1a22aca5eb28f4e67490062530b319b2f61d2f5d55390828d59760a95"
+    },
+    {
+      "archive": "shinylive/pyodide/wcwidth-0.2.13-py2.py3-none-any.whl",
+      "entry": "wcwidth-0.2.13.dist-info/LICENSE",
+      "sha256": "70b98a95a2144eb70af8017fa8c6d95ce247e40867436e8bc649e137fe13d21a"
+    },
+    {
+      "archive": "shinylive/pyodide/zipp-3.23.0-py3-none-any.whl",
+      "entry": "zipp-3.23.0.dist-info/licenses/LICENSE",
+      "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+    },
+    {
+      "path": "shinylive/pyright/PYRIGHT_LICENSE.txt",
+      "sha256": "f7c936bc43f132b08497ac952e9376cbc102e5eedb4bf6ec902ea8442bd9c68d"
+    },
+    {
+      "dependency": "next",
+      "path": "license.md",
+      "sha256": "ee765244e2d59f5234d474f62e0766fa0c8b99af967fdd4c0cb8dcb0c76ea224",
+      "text": "The MIT License (MIT)\n\nCopyright (c) 2025 Vercel, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "dependency": "react",
+      "path": "LICENSE",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "text": "MIT License\n\nCopyright (c) Meta Platforms, Inc. and affiliates.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "dependency": "react-dom",
+      "path": "LICENSE",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "text": "MIT License\n\nCopyright (c) Meta Platforms, Inc. and affiliates.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ]
+}
