@@ -1,0 +1,2 @@
+node scripts/quality/hygiene.mjs --staged
+node scripts/toolchain.mjs staged
