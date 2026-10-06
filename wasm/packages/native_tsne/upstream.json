@@ -1,0 +1,55 @@
+{
+  "scikit_learn": "1.6.1",
+  "commit": "f159b78dc59f250cdde8fe391a21f0bc871960ad",
+  "original_sources": {
+    "sklearn/manifold/_barnes_hut_tsne.pyx": {
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/f159b78dc59f250cdde8fe391a21f0bc871960ad/sklearn/manifold/_barnes_hut_tsne.pyx",
+      "sha256": "fe3574651906c29d279af9f62393b6d7cfcb499e55115e460c8483a09f191c22"
+    },
+    "sklearn/neighbors/_quad_tree.pyx": {
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/f159b78dc59f250cdde8fe391a21f0bc871960ad/sklearn/neighbors/_quad_tree.pyx",
+      "sha256": "a1b40442301c6b3a1547c468aadf983fb9a80576895ea77eea011f0685f571c3"
+    },
+    "sklearn/neighbors/_quad_tree.pxd": {
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/f159b78dc59f250cdde8fe391a21f0bc871960ad/sklearn/neighbors/_quad_tree.pxd",
+      "sha256": "1b8a210170776cd62d182411fb653e862198938c83ea22fd39ca57a84f17c66b"
+    },
+    "COPYING": {
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/f159b78dc59f250cdde8fe391a21f0bc871960ad/COPYING",
+      "sha256": "75684d16f4662ab842ed5af9482ac01939aee83c8243d89993616d959d3053f8"
+    },
+    "sklearn/utils/_heap.pyx": {
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/f159b78dc59f250cdde8fe391a21f0bc871960ad/sklearn/utils/_heap.pyx",
+      "sha256": "71afab2aa1b34db1b3ed7f87b8b17d573919dc27cd122205d8187b4237d943bb"
+    },
+    "sklearn/utils/_sorting.pyx": {
+      "url": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/f159b78dc59f250cdde8fe391a21f0bc871960ad/sklearn/utils/_sorting.pyx",
+      "sha256": "43e17f87077c285a2471f6955ceb303965d58dd223890444a1044b691c65f5d6"
+    }
+  },
+  "source_files": {
+    "LICENSE": "35cbd755e60614a6a7b03fd29c3e95779ed3e991333f7e9e5947797916dd2e37",
+    "_heap.pyx": "71afab2aa1b34db1b3ed7f87b8b17d573919dc27cd122205d8187b4237d943bb",
+    "_heap.pyx.pxi": "bb91a46514ed0d6eff2089c3638c7ca2865f5afa737ef18d79540e7e4063ae36",
+    "_sorting.pyx": "43e17f87077c285a2471f6955ceb303965d58dd223890444a1044b691c65f5d6",
+    "_sorting.pyx.pxi": "43e17f87077c285a2471f6955ceb303965d58dd223890444a1044b691c65f5d6",
+    "native_barnes_hut_tsne.pyx": "8df637a70005fbdaa8c46b90af73054b0aceb666350e71879478858d703fd439",
+    "native_neighbors.pyx": "d7d8c63e50ed7a7a08fb006d2c22781e130a13d1504673fb232740a5d5609f13",
+    "native_quad_tree.pxd": "4d9d5fbd444b7f2b257a6cc41d02230f8baddcfdc5f60b1152e6b09486b0c3b9",
+    "native_quad_tree.pyx": "7837c9e55cdcdd07333e147815a324ba987fb5660d038edd070e0a5191b25e31",
+    "neighbor_compat.py": "4f153d78807a031e60d71b4fedc9e801262449caa9d18f1d3cedfa382a1a17f9",
+    "positive_power.c": "0808158e58d27baeed721bec863251fd55997ed49377df7d54946e4e220b4cf4",
+    "positive_power.h": "8b2a2bd65c4e4627a27f71f835cc16ee050ff444f942f222394db89b0c5febc3",
+    "pyproject.toml": "6910333309826f0ff6b3d10999227c09352c2814bf09182682c9da041296ea99",
+    "setup.py": "7002508a7c9ad99e0f4914d201bc8127b18633809bf7c8f80fa615aed56b4022"
+  },
+  "reference_platform": "macOS 26.5.2 ARM64",
+  "table_generation": "100-digit Decimal reciprocals, scaled log2 of midpoint centers, and exp2(i/128); no fixture fitting",
+  "arithmetic_changes": "Explicit fused operations, deterministic one-thread accumulator, verified native positive-float power arithmetic. Estimator parameters, probabilities, initializer, optimizer, and stopping unchanged. Native four-feature row norms/middle term; preserve original heap selection and native auto-strategy merge.",
+  "compiler_directives": {
+    "cdivision": true,
+    "native_build_source": "https://raw.githubusercontent.com/scikit-learn/scikit-learn/f159b78dc59f250cdde8fe391a21f0bc871960ad/sklearn/meson.build",
+    "native_build_sha256": "6f7ecf2eef3bf89461f03ee43d9949a5a4ad8d7f0f0da61bd17b6802d609fb71"
+  },
+  "distance_scope": "Four float64 features, 150/178/256 points, single brute Euclidean chunk. Independently verified native DDOT/DGEMM arithmetic, original private-heap merge/sort/self-removal. Other shapes/settings retain sklearn backend."
+}
